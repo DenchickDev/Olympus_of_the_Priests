@@ -98,6 +98,7 @@ public class Player : MonoBehaviour
 
         CalculateState();
         anim.SetInteger("stateAnim", (int)state);
+        print((int)state);
     }
     void FixedUpdate()
     {
@@ -134,16 +135,19 @@ public class Player : MonoBehaviour
     /// </summary>
     void CalculateState()
     {
-        if (state == State.Jumping)
+        //if (state == State.Jumping)
+        //{
+        //}
+        if (rb.velocity.y < 0f)
         {
-            if (rb.velocity.y < .1f)
-            {
-                state = State.Falling;
-            }
+            state = State.Falling;
+        }else if (rb.velocity.y > 0f)
+        {
+            state = State.Jumping;
         }
         else if (state == State.Falling)
         {
-            if(collider.IsTouchingLayers(ground))
+            if(rb.velocity.y >= -.1f && collider.IsTouchingLayers(ground))
             {
                 state = State.Idle;
             }

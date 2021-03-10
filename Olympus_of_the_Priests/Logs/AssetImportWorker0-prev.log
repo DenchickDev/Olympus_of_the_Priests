@@ -1,10 +1,10 @@
 Using pre-set license
-Built from '2020.2/staging' branch; Version is '2020.2.6f1 (8a2143876886) revision 9052483'; Using compiler version '192528614'; Build Type 'Release'
+Built from '2020.2/staging' branch; Version is '2020.2.7f1 (c53830e277f1) revision 12924976'; Using compiler version '192528614'; Build Type 'Release'
 OS: 'Windows 10 Home Single Language; OS build 18363.1379; Version 1909; 64bit' Language: 'ru' Physical Memory: 16267 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-D:\Unity\Unity 2020-2\Unity 2020.2.6f1\Unity\Editor\Unity.exe
+D:\Unity\Unity 2020-2\Unity 2020.2.7f1\Unity\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
@@ -15,14 +15,14 @@ D:/ChameleonGames/OlympusOfThePriests/Olympus_of_the_Priests
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-53056
+49378
 Successfully changed project path to: D:/ChameleonGames/OlympusOfThePriests/Olympus_of_the_Priests
 D:/ChameleonGames/OlympusOfThePriests/Olympus_of_the_Priests
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 57.06 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 61.19 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Initialize engine version: 2020.2.6f1 (8a2143876886)
-[Subsystems] Discovering subsystems at path D:/Unity/Unity 2020-2/Unity 2020.2.6f1/Unity/Editor/Data/Resources/UnitySubsystems
+Initialize engine version: 2020.2.7f1 (c53830e277f1)
+[Subsystems] Discovering subsystems at path D:/Unity/Unity 2020-2/Unity 2020.2.7f1/Unity/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path D:/ChameleonGames/OlympusOfThePriests/Olympus_of_the_Priests/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
@@ -32,233 +32,58 @@ Direct3D:
     VRAM:     4018 MB
     Driver:   27.21.14.5730
 Initialize mono
-Mono path[0] = 'D:/Unity/Unity 2020-2/Unity 2020.2.6f1/Unity/Editor/Data/Managed'
-Mono path[1] = 'D:/Unity/Unity 2020-2/Unity 2020.2.6f1/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'D:/Unity/Unity 2020-2/Unity 2020.2.6f1/Unity/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56108
+Mono path[0] = 'D:/Unity/Unity 2020-2/Unity 2020.2.7f1/Unity/Editor/Data/Managed'
+Mono path[1] = 'D:/Unity/Unity 2020-2/Unity 2020.2.7f1/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'D:/Unity/Unity 2020-2/Unity 2020.2.7f1/Unity/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56872
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/Unity 2020-2/Unity 2020.2.6f1/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001736 seconds.
+Register platform support module: D:/Unity/Unity 2020-2/Unity 2020.2.7f1/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001436 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 51.68 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 46.40 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.318 seconds
+- Completed reload, in  2.326 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.001565 seconds.
+Registered in 0.001668 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 59.04 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 51.73 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.541 seconds
+- Completed reload, in  1.311 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
-Refreshing native plugins compatible for Editor in 0.36 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.37 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1798 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 84.4 MB.
-System memory in use after: 84.4 MB.
+Unloading 1809 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.6 MB.
+System memory in use after: 84.6 MB.
 
-Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 2239.
-Total: 2.116800 ms (FindLiveObjects: 0.180900 ms CreateObjectMapping: 0.083900 ms MarkObjects: 1.716000 ms  DeleteObjects: 0.134900 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/Sunnyland/artwork/Sprites/Enemies/frog
-  artifactKey: Guid(146e5c72b642042a7bff0a4312903a62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sunnyland/artwork/Sprites/Enemies/frog using Guid(146e5c72b642042a7bff0a4312903a62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e46023468179d04322fba9749d29d46f') in 0.023424 seconds
-  Import took 0.028253 seconds .
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 2251.
+Total: 2.891100 ms (FindLiveObjects: 0.199300 ms CreateObjectMapping: 0.116100 ms MarkObjects: 2.388400 ms  DeleteObjects: 0.186000 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.456739 seconds.
-  path: Assets/Sunnyland/artwork/Sprites/Enemies/frog/idle
-  artifactKey: Guid(a7e0d8dacdac94b808e416f4fe68d8ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sunnyland/artwork/Sprites/Enemies/frog/idle using Guid(a7e0d8dacdac94b808e416f4fe68d8ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7bd4391971af8f91e486ed31d9ecea0') in 0.035325 seconds
-  Import took 0.046078 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000418 seconds.
-  path: Assets/Sunnyland/artwork/Sprites/Enemies/frog/idle/frog-idle-3.png
-  artifactKey: Guid(662ace939438646e7a4067a89ec54b9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sunnyland/artwork/Sprites/Enemies/frog/idle/frog-idle-3.png using Guid(662ace939438646e7a4067a89ec54b9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '651b3e6229a1d8452dfc9e75e42b1624') in 0.303456 seconds
-  Import took 0.306829 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000257 seconds.
-  path: Assets/Sunnyland/artwork/Sprites/Enemies/frog/idle/frog-idle-1.png
-  artifactKey: Guid(86ca59b9bca0e409b9ba2784fbe69f01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sunnyland/artwork/Sprites/Enemies/frog/idle/frog-idle-1.png using Guid(86ca59b9bca0e409b9ba2784fbe69f01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ce16d9bc00830c3c370fd2edd58a0f7') in 0.022141 seconds
-  Import took 0.029226 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000290 seconds.
-  path: Assets/Sunnyland/artwork/Sprites/Enemies/frog/idle/frog-idle-4.png
-  artifactKey: Guid(b0305a6bb0adb4f66b864290967ea22b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sunnyland/artwork/Sprites/Enemies/frog/idle/frog-idle-4.png using Guid(b0305a6bb0adb4f66b864290967ea22b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ada2d4df3fb597b91c3f5af8c8706e2c') in 0.050059 seconds
-  Import took 0.053486 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000267 seconds.
-  path: Assets/Sunnyland/artwork/Sprites/Enemies/frog/idle/frog-idle-2.png
-  artifactKey: Guid(116ac2caa16ad4f73af4539f8b07d019) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sunnyland/artwork/Sprites/Enemies/frog/idle/frog-idle-2.png using Guid(116ac2caa16ad4f73af4539f8b07d019) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f1fc3b692feddc8af740ab6cbba7033') in 0.037160 seconds
-  Import took 0.043763 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1536.437105 seconds.
-  path: Assets/Sunnyland/artwork/Sprites/Items/gem
-  artifactKey: Guid(17f597b0b8c304eab96c9cd958dd1ec9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sunnyland/artwork/Sprites/Items/gem using Guid(17f597b0b8c304eab96c9cd958dd1ec9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52bbaf33bfc7e92b94273e2f9981f4ee') in 0.005834 seconds
-  Import took 0.012013 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.088948 seconds.
-  path: Assets/Sunnyland/artwork/Sprites/Items/gem/gem-1.png
-  artifactKey: Guid(bd59bf2e866ed4529ae645637eb9c11d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sunnyland/artwork/Sprites/Items/gem/gem-1.png using Guid(bd59bf2e866ed4529ae645637eb9c11d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97cf2a2d177349d56837861d19ce87db') in 0.068974 seconds
-  Import took 0.072681 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000362 seconds.
-  path: Assets/Sunnyland/artwork/Sprites/Items/gem/gem-4.png
-  artifactKey: Guid(5f35659c40d6a435fade670c478a52b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sunnyland/artwork/Sprites/Items/gem/gem-4.png using Guid(5f35659c40d6a435fade670c478a52b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cab9017e3f4196432e25719d4160b210') in 0.058631 seconds
-  Import took 0.061538 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000299 seconds.
-  path: Assets/Sunnyland/artwork/Sprites/Items/gem/gem-3.png
-  artifactKey: Guid(de20f767e3f3f4aff870112daa2b2562) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sunnyland/artwork/Sprites/Items/gem/gem-3.png using Guid(de20f767e3f3f4aff870112daa2b2562) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '478fef7de44f1ade21dc5cf29e13511e') in 0.032629 seconds
-  Import took 0.035898 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000224 seconds.
-  path: Assets/Sunnyland/artwork/Sprites/Items/gem/gem-5.png
-  artifactKey: Guid(63fd366633d434aeb8ee3ee766305016) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sunnyland/artwork/Sprites/Items/gem/gem-5.png using Guid(63fd366633d434aeb8ee3ee766305016) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5110e8a1ee2b42ef1529c252f85366f') in 0.048174 seconds
-  Import took 0.052050 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000379 seconds.
-  path: Assets/Sunnyland/artwork/Sprites/Items/gem/gem-2.png
-  artifactKey: Guid(c9e6b5e11d0ef456eb7f7ebd3e750671) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sunnyland/artwork/Sprites/Items/gem/gem-2.png using Guid(c9e6b5e11d0ef456eb7f7ebd3e750671) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ff607423f71a616364703f84482b94a') in 0.060888 seconds
-  Import took 0.064142 seconds .
+  path: Assets/Scripts/Enemy.cs
+  artifactKey: Guid(7c32bb5799025ed49a5cbee209ad0788) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy.cs using Guid(7c32bb5799025ed49a5cbee209ad0788) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06b80114def4dd75d56d42fee68c35fe') in 0.114239 seconds
+  Import took 0.118217 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001502 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.51 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.911 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.43 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1793 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 87.5 MB.
-System memory in use after: 87.5 MB.
-
-Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2250.
-Total: 3.565200 ms (FindLiveObjects: 0.305700 ms CreateObjectMapping: 0.222600 ms MarkObjects: 2.910100 ms  DeleteObjects: 0.124300 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 3233.034556 seconds.
-  path: Assets/Fisics
-  artifactKey: Guid(140d6130e9e9d6e41b45112f214a67f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fisics using Guid(140d6130e9e9d6e41b45112f214a67f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2df698e0cd1b57fd1fa015c21c17d05') in 0.013702 seconds
-  Import took 0.018397 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 41.066433 seconds.
-  path: Assets/Physics Matirials
-  artifactKey: Guid(140d6130e9e9d6e41b45112f214a67f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Physics Matirials using Guid(140d6130e9e9d6e41b45112f214a67f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0688f80a8d5558ebd7f78abfac61bd78') in 0.014951 seconds
-  Import took 0.035145 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 27.366250 seconds.
-  path: Assets/Physics Materials
-  artifactKey: Guid(140d6130e9e9d6e41b45112f214a67f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Physics Materials using Guid(140d6130e9e9d6e41b45112f214a67f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '109a0407ac87bff5486669df396a233c') in 0.036464 seconds
-  Import took 0.054479 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 128.509807 seconds.
-  path: Assets/Physics Materials/New Physics Material 2D.physicsMaterial2D
-  artifactKey: Guid(2a3f074089f589f438f092af3a171fde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Physics Materials/New Physics Material 2D.physicsMaterial2D using Guid(2a3f074089f589f438f092af3a171fde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eaa67ce892a16daa52264ab8e41ce4f9') in 0.030862 seconds
-  Import took 0.054672 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 10.471632 seconds.
-  path: Assets/Physics Materials/Player.physicsMaterial2D
-  artifactKey: Guid(2a3f074089f589f438f092af3a171fde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Physics Materials/Player.physicsMaterial2D using Guid(2a3f074089f589f438f092af3a171fde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'faeb52999559a6a1bf8eb7a859bd4200') in 0.008747 seconds
-  Import took 0.017881 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.023420 seconds.
-  path: Assets/Physics Materials/Player.physicsMaterial2D
-  artifactKey: Guid(2a3f074089f589f438f092af3a171fde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Physics Materials/Player.physicsMaterial2D using Guid(2a3f074089f589f438f092af3a171fde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'faeb52999559a6a1bf8eb7a859bd4200') in 0.008884 seconds
-  Import took 0.017942 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 15.337673 seconds.
-  path: Assets/Physics Materials/PlayerMaterials.physicsMaterial2D
-  artifactKey: Guid(2a3f074089f589f438f092af3a171fde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Physics Materials/PlayerMaterials.physicsMaterial2D using Guid(2a3f074089f589f438f092af3a171fde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'baf6c8e6c7a0e4faba7b38e2f74b5ae5') in 0.008408 seconds
-  Import took 0.013456 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.022298 seconds.
-  path: Assets/Physics Materials/PlayerMaterials.physicsMaterial2D
-  artifactKey: Guid(2a3f074089f589f438f092af3a171fde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Physics Materials/PlayerMaterials.physicsMaterial2D using Guid(2a3f074089f589f438f092af3a171fde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'baf6c8e6c7a0e4faba7b38e2f74b5ae5') in 0.068019 seconds
-  Import took 0.078902 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001427 seconds.
+Registered in 0.001278 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.37 ms, found 1 plugins.
@@ -267,15 +92,14 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.182 seconds
+- Completed reload, in  1.018 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.36 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1793 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 87.5 MB.
-System memory in use after: 87.5 MB.
+Unloading 1804 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.6 MB.
+System memory in use after: 84.6 MB.
 
-Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2253.
-Total: 2.231300 ms (FindLiveObjects: 0.224600 ms CreateObjectMapping: 0.079100 ms MarkObjects: 1.747600 ms  DeleteObjects: 0.178500 ms)
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2255.
+Total: 2.284700 ms (FindLiveObjects: 0.203100 ms CreateObjectMapping: 0.084100 ms MarkObjects: 1.837200 ms  DeleteObjects: 0.159100 ms)
 
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
