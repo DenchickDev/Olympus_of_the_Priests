@@ -63,13 +63,13 @@ public class Player : MonoBehaviour
         /// </summary>
         Falling,
         /// <summary>
-        /// Ранение
-        /// </summary>
-        Hurt,
-        /// <summary>
         /// Смерть
         /// </summary>
-        Dead
+        Dead,
+        /// <summary>
+        /// Ранение
+        /// </summary>
+        Hurt
     }
 
     /// <summary>
@@ -145,27 +145,31 @@ public class Player : MonoBehaviour
         //if (state == State.Jumping)
         //{
         //}
-        if (rb.velocity.y < 0f)
+        if (state != State.Dead)
         {
-            state = State.Falling;
-        }else if (rb.velocity.y > 0f)
-        {
-            state = State.Jumping;
-        }
-        else if (state == State.Falling)
-        {
-            if(rb.velocity.y >= -.1f && collider.IsTouchingLayers(ground))
+            if (rb.velocity.y < 0f)
+            {
+                state = State.Falling;
+            }
+            else if (rb.velocity.y > 0f)
+            {
+                state = State.Jumping;
+            }
+            else if (state == State.Falling)
+            {
+                if (rb.velocity.y >= -.1f)
+                {
+                    state = State.Idle;
+                }
+            }
+            else if (Mathf.Abs(rb.velocity.x) > 2f)
+            {
+                state = State.Running;
+            }
+            else
             {
                 state = State.Idle;
             }
-        }
-        else if (Mathf.Abs(rb.velocity.x) > 2f)
-        {
-            state = State.Running;
-        }
-        else
-        {
-            state = State.Idle;
         }
     }
     //Метод подсчитывает кол-во жизни, на основании получения урона запускает корутину и инициирует смерть 
@@ -183,6 +187,7 @@ public class Player : MonoBehaviour
         {
             GetComponent <Rigidbody2D>().simulated = false;
             GetComponent<Animator>().SetBool("Player_Death", true);
+            state = State.Dead;
             Invoke("Lose", 2f);
 
         }
