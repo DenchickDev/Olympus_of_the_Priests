@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     Animator anim;
     bool isHit = false;
     public Main main;
+    int souls = 0;
 
     /// <summary>
     /// Скорость передвижения
@@ -19,7 +20,7 @@ public class Player : MonoBehaviour
     /// Режим движения: 
     /// true - бежит автоматом,
     /// false - бежит с помощью клавиш
-    /// </summary>
+    /// </summary> 
     public bool controlMode = true;
 
     /// <summary>
@@ -213,6 +214,15 @@ public class Player : MonoBehaviour
     {
         main.GetComponent<Main>().Lose();
         
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "soul")
+        {
+            Destroy(collision.gameObject);
+            souls++;
+            print("Кол-во душ: "+souls);
+        }
     }
 }   
 
