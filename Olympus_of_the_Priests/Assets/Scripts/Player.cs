@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     Rigidbody2D rb;
     Animator anim;
+    bool isHit = false;
+    public Main main;
 
     /// <summary>
     /// —корость передвижени€
@@ -21,11 +23,13 @@ public class Player : MonoBehaviour
     public bool controlMode = true;
 
     /// <summary>
-    ///  ол-во жизней
+    ///  ол-во жизней на данный момент
+    ///  ћаксимальное кол-во жизней 
     /// </summary>
     [SerializeField]
-    private int life = 100;
-
+    private int life;
+    private int MaxLife = 100;
+    
     /// <summary>
     /// ћаска земли
     /// </summary>
@@ -78,6 +82,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         collider = GetComponent<Collider2D>();
+        life = MaxLife;
     }
 
     // Update is called once per frame
@@ -99,6 +104,7 @@ public class Player : MonoBehaviour
         CalculateState();
         anim.SetInteger("stateAnim", (int)state);
         print((int)state);
+        
     }
     void FixedUpdate()
     {
@@ -161,4 +167,52 @@ public class Player : MonoBehaviour
             state = State.Idle;
         }
     }
-}
+    //ћетод подсчитывает кол-во жизни, на основании получени€ урона запускает корутину и инициирует смерть 
+    public void RecountLife(int deltaLife)
+    {
+        life = life + deltaLife;
+        print(life);
+        if (deltaLife <0)
+        {
+            StopCoroutine(OnHit());
+            isHit = true;
+            StartCoroutine(OnHit()); 
+        }
+        if (life <= 0)
+        {
+            GetComponent <Rigidbody2D>().simulated = false;
+            GetComponent<Animator>().SetBool("Player_Death", true);
+            Invoke("Lose", 2f);
+
+        }
+        
+    }
+    // орутина изменени€ звета при получении урона игроком
+    IEnumerator OnHit()
+    {
+        if (isHit)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1f, GetComponent<SpriteRenderer>().color.g - 0.08f, GetComponent<SpriteRenderer>().color.b - 0.08f);
+        }
+        else 
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1f, GetComponent<SpriteRenderer>().color.g + 0.08f, GetComponent<SpriteRenderer>().color.b + 0.08f);
+        }
+        if(GetComponent<SpriteRenderer>().color.g <= 1)
+        {
+            StopCoroutine(OnHit());
+        }
+        if(GetComponent<SpriteRenderer>().color.g <=0)
+        {
+            isHit = false;
+        }
+        yield return new WaitForSeconds(0.02f);
+        StartCoroutine(OnHit());
+    }
+    void Lose()
+    {
+        main.GetComponent<Main>().Lose();
+        
+    }
+}   
+
