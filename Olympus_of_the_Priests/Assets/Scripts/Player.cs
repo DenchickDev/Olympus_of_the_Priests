@@ -199,11 +199,11 @@ public class Player : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().color = new Color(1f, GetComponent<SpriteRenderer>().color.g + 0.08f, GetComponent<SpriteRenderer>().color.b + 0.08f);
         }
-        if(GetComponent<SpriteRenderer>().color.g <= 1)
+        if(GetComponent<SpriteRenderer>().color.g >= 1f)
         {
-            StopCoroutine(OnHit());
+            yield break;
         }
-        if(GetComponent<SpriteRenderer>().color.g <=0)
+        if (GetComponent<SpriteRenderer>().color.g <=0)
         {
             isHit = false;
         }
