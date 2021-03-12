@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     Animator anim;
     bool isHit = false;
     public Main main;
-    int souls = 0;
+    int soulsCount = 0;
 
     /// <summary>
     /// Скорость передвижения
@@ -104,14 +104,17 @@ public class Player : MonoBehaviour
 
         CalculateState();
         anim.SetInteger("stateAnim", (int)state);
-        print((int)state);
-        
+        //Debug.Log("ddddd");
+        //print((int)state);
+        print(GetComponent<SpriteRenderer>().color.g);
+        //Debug.DrawLine(transform.position, new Vector3(transform.position.x + 100, transform.position.y, transform.position.z));
+
     }
     void FixedUpdate()
     {
         //if (Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground")))
         //Если коллайдер гг дотронулся до маски "Ground", то мы на земле
-        isGrounded = collider.IsTouchingLayers(ground);
+        isGrounded = collider.IsTouchingLayers(ground); // исправить
     }
 
     /// <summary>
@@ -186,10 +189,8 @@ public class Player : MonoBehaviour
         if (life <= 0)
         {
             GetComponent <Rigidbody2D>().simulated = false;
-            GetComponent<Animator>().SetBool("Player_Death", true);
             state = State.Dead;
             Invoke("Lose", 2f);
-
         }
         
     }
@@ -225,8 +226,8 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "soul")
         {
             Destroy(collision.gameObject);
-            souls++;
-            print("Кол-во душ: "+souls);
+            soulsCount++;
+            print("Кол-во душ: "+ soulsCount);
         }
     }
 }   

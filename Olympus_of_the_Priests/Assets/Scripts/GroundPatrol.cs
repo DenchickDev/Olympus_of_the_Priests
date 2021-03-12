@@ -27,9 +27,12 @@ public class GroundPatrol : MonoBehaviour
     /// <summary>
     /// Движется ли вправо
     /// </summary>
-    private bool moveingRight
+    public bool moveingRight
     {
-        get { return _moveingRight; }
+        get
+        {
+            return _moveingRight;
+        }
         set
         {
             if (value != _moveingRight)
