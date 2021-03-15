@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour
     public Vector2 offset = new Vector2(2f, 1f); // смещение камеры относительно персонажа.
     public bool isLeft; // ппроверка повората персонажа, то, куда он смотрит.
     private Transform player; // определение уровня персонажа.
-    private int lastX; //куда смтрит персонаж, последнее положение камеры.
+    private int lastX; //куда смотрит персонаж, последнее положение камеры.
     // Start is called before the first frame update
     void Start()
     {
