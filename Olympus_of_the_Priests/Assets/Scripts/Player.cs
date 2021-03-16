@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     bool isHit = false;
     public Main main;
     int soulsCount = 0;
+    //bool isHit = false;
 
     /// <summary>
     /// Скорость передвижения
