@@ -9,7 +9,7 @@ public class Trap : MonoBehaviour
     {
         if(collision.gameObject.tag =="Player")
         {
-            collision.gameObject.GetComponent<Player>().RecountLife(-damage);
+            collision.gameObject.GetComponent<Player>().SetDamageWithGodMode(damage);
             
         }
     }

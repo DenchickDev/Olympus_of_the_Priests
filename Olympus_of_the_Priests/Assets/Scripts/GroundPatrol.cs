@@ -70,7 +70,7 @@ public class GroundPatrol : MonoBehaviour
     {
         CheckDirection();
         Chill();
-        print(rb.velocity.x);
+        //print(rb.velocity.x);
     }
 
     /// <summary>

@@ -9,7 +9,33 @@ public class Player : MonoBehaviour
     bool isHit = false;
     public Main main;
     int soulsCount = 0;
+
+    /// <summary>
+    /// Режим бессмертия
+    /// </summary>
+    [SerializeField]
+    private bool isGodMod = false;
     //bool isHit = false;
+
+    /// <summary>
+    /// Время одного мигания в мс
+    /// </summary>
+    [SerializeField]
+    private float timeOfOneBlink = 15f;
+
+    /// <summary>
+    /// Кол-во миганий
+    /// </summary>
+    [SerializeField]
+    private int CountBlinks = 3;
+
+    /// <summary>
+    /// Кол-во миганий
+    /// </summary>
+    [SerializeField]
+    private int CurrentCountBlinks = 0;
+
+
 
     /// <summary>
     /// Скорость передвижения
@@ -107,7 +133,7 @@ public class Player : MonoBehaviour
         anim.SetInteger("stateAnim", (int)state);
         //Debug.Log("ddddd");
         //print((int)state);
-        print(GetComponent<SpriteRenderer>().color.g);
+        //print(GetComponent<SpriteRenderer>().color.g);
         //Debug.DrawLine(transform.position, new Vector3(transform.position.x + 100, transform.position.y, transform.position.z));
 
     }
@@ -176,16 +202,37 @@ public class Player : MonoBehaviour
             }
         }
     }
+
+    public void SetDamageWithGodMode(int deltaLife)
+    {
+        if (!isGodMod)
+        {
+            this.RecountLife(-deltaLife);
+            isGodMod = true;
+            Invoke("TurnOffGodeMode", 2f);
+        }
+    }
+
+    private void TurnOffGodeMode()
+    {
+        isGodMod = false;
+    }
+
     //Метод подсчитывает кол-во жизни, на основании получения урона запускает корутину и инициирует смерть 
     public void RecountLife(int deltaLife)
     {
+        
         life = life + deltaLife;
         print(life);
         if (deltaLife <0)
         {
-            StopCoroutine(OnHit());
-            isHit = true;
-            StartCoroutine(OnHit()); 
+            if (CurrentCountBlinks <= 0)
+            {
+                StopCoroutine(Blink());
+                isHit = true;
+                CurrentCountBlinks = CountBlinks;
+                StartCoroutine(Blink());
+            } 
         }
         if (life <= 0)
         {
@@ -196,26 +243,34 @@ public class Player : MonoBehaviour
         
     }
     //Корутина изменения звета при получении урона игроком
-    IEnumerator OnHit()
+    IEnumerator Blink()
     {
+        float deltaAlpha = 4f / timeOfOneBlink; 
         if (isHit)
         {
-            GetComponent<SpriteRenderer>().color = new Color(1f, GetComponent<SpriteRenderer>().color.g - 0.08f, GetComponent<SpriteRenderer>().color.b - 0.08f);
+            GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, GetComponent<SpriteRenderer>().color.a - deltaAlpha);
         }
         else 
         {
-            GetComponent<SpriteRenderer>().color = new Color(1f, GetComponent<SpriteRenderer>().color.g + 0.08f, GetComponent<SpriteRenderer>().color.b + 0.08f);
+            GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, GetComponent<SpriteRenderer>().color.a + deltaAlpha);
         }
-        if(GetComponent<SpriteRenderer>().color.g >= 1f)
+        //print(GetComponent<SpriteRenderer>().color.a);
+        print(1);
+        if (GetComponent<SpriteRenderer>().color.a >= 1f)
         {
-            yield break;
+            isHit = true;
+            CurrentCountBlinks--;
         }
-        if (GetComponent<SpriteRenderer>().color.g <=0)
+        else if (GetComponent<SpriteRenderer>().color.a <=0)
         {
             isHit = false;
         }
+        if (CurrentCountBlinks <= 0)
+        {
+            yield break;
+        }
         yield return new WaitForSeconds(0.02f);
-        StartCoroutine(OnHit());
+        StartCoroutine(Blink());
     }
     void Lose()
     {
@@ -228,7 +283,7 @@ public class Player : MonoBehaviour
         {
             Destroy(collision.gameObject);
             soulsCount++;
-            print("Кол-во душ: "+ soulsCount);
+            //print("Кол-во душ: "+ soulsCount);
         }
     }
 }   
