@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//тест
+
 public class AirPatrol : MonoBehaviour
 {
     /// <summary>
