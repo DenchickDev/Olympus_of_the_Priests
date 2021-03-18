@@ -207,7 +207,8 @@ GameObject:
   - component: {fileID: 24114242}
   - component: {fileID: 24114244}
   - component: {fileID: 24114243}
-  m_Layer: 0
+  - component: {fileID: 24114245}
+  m_Layer: 10
   m_Name: eagle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,6 +326,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.17
+--- !u!114 &24114245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24114239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a3148cf4e232341b1c76fc5ac031fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &25130096
 GameObject:
   m_ObjectHideFlags: 0
@@ -3149,6 +3162,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 308330334}
   m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &327153197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 327153198}
+  m_Layer: 7
+  m_Name: AtackPos
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &327153198
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327153197}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.191, y: -0.018, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2014754766}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &346271919
 GameObject:
@@ -18128,6 +18171,7 @@ GameObject:
   - component: {fileID: 1724154192}
   - component: {fileID: 1724154194}
   - component: {fileID: 1724154193}
+  - component: {fileID: 1724154195}
   m_Layer: 8
   m_Name: opossum-1
   m_TagString: Untagged
@@ -18234,7 +18278,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724154189}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 142e858c804509149be146f795d7cef4, type: 3}
   m_Name: 
@@ -18264,6 +18308,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1724154195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724154189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a3148cf4e232341b1c76fc5ac031fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1726166404
 GameObject:
   m_ObjectHideFlags: 0
@@ -20714,10 +20770,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014754762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 101.73, y: -1.68, z: -1}
+  m_LocalPosition: {x: 70.45, y: -1.64, z: -1}
   m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children:
   - {fileID: 519420032}
+  - {fileID: 327153198}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20745,6 +20802,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   state: 0
+  attackPos: {fileID: 327153198}
+  attackRange: 0.82
 --- !u!95 &2014754768
 Animator:
   serializedVersion: 3
@@ -21566,7 +21625,8 @@ GameObject:
   - component: {fileID: 2081120736}
   - component: {fileID: 2081120738}
   - component: {fileID: 2081120737}
-  m_Layer: 0
+  - component: {fileID: 2081120739}
+  m_Layer: 10
   m_Name: eagle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21684,6 +21744,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.17
+--- !u!114 &2081120739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081120733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a3148cf4e232341b1c76fc5ac031fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2081799948
 GameObject:
   m_ObjectHideFlags: 0

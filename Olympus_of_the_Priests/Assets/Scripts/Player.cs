@@ -103,13 +103,27 @@ public class Player : MonoBehaviour
         /// <summary>
         /// Сгорание
         /// </summary>
-        Combustion
+        Combustion,
+        /// <summary>
+        /// Удар
+        /// </summary>
+        Stab
     }
 
     /// <summary>
     /// Текущее состояние персонажа
     /// </summary>
     public State state = State.Idle;
+
+    /// <summary>
+    /// Позиция атаки
+    /// </summary>
+    public Transform attackPos;
+
+    /// <summary>
+    /// Радиус действия атаки
+    /// </summary>
+    public float attackRange;
 
     // Start is called before the first frame update
     void Start()
@@ -126,6 +140,10 @@ public class Player : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)) && isGrounded)
         {
             Jump();
+        } 
+        else if (Input.GetMouseButtonDown(0))
+        {
+            state = State.Stab;
         }
         if (controlMode)
         {
@@ -144,6 +162,40 @@ public class Player : MonoBehaviour
         //Debug.DrawLine(transform.position, new Vector3(transform.position.x + 100, transform.position.y, transform.position.z));
 
     }
+
+    public void OnAttak()
+    {
+        //собсна атака
+        //возвращаем все колайдеры, которые попадуться
+        //в радиус attackRange относительно позиции attackPos
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPos.position, attackRange);
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            var nameMask = LayerMask.LayerToName(enemies[i].gameObject.layer);
+            if (nameMask.Contains("Enemy"))
+            {
+                enemies[i].GetComponent<Enemy>().TakeDamage();
+
+            }
+        }
+    }
+
+    public void SetDefaultState()
+    {
+        state = State.Idle;
+    }
+
+    /// <summary>
+    /// Отрисовывает радиус атаки на сцене,
+    /// при выделении объекта
+    /// </summary>
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPos.position, attackRange);
+    }
+
+
     void FixedUpdate()
     {
         //if (Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground")))
@@ -182,7 +234,7 @@ public class Player : MonoBehaviour
         //if (state == State.Jumping)
         //{
         //}
-        if (state != State.Dead && state != State.Combustion)
+        if (state != State.Dead && state != State.Combustion && state != State.Stab)
         {
             if (rb.velocity.y < 0f)
             {
