@@ -53,16 +53,40 @@ public class GroundPatrol : MonoBehaviour
     /// <summary>
     /// Признак: должен ли двигаться
     /// </summary>
-    private bool isMove = true;
+    public bool isMove = true;
 
 
     Rigidbody2D rb;
+
+    public enum State
+    {
+        /// <summary>
+        /// Состояние покоя
+        /// </summary>
+        Idle,
+        /// <summary>
+        /// Бег
+        /// </summary>
+        Running,
+        /// <summary>
+        /// Смерть
+        /// </summary>
+        Dead
+    }
+
+    /// <summary>
+    /// Текущее состояние
+    /// </summary>
+    public State state = State.Idle;
+
+    Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        isMove = true;
+        anim = GetComponent<Animator>();
+        isMove = false;
     }
 
     // Update is called once per frame
@@ -70,7 +94,28 @@ public class GroundPatrol : MonoBehaviour
     {
         CheckDirection();
         Chill();
+        CalculateState();
+        anim.SetInteger("stateAnim", (int)state);
         //print(rb.velocity.x);
+    }
+
+
+    /// <summary>
+    /// Подсчет текущего состояния
+    /// </summary>
+    void CalculateState()
+    {
+        if (state != State.Dead)
+        {
+            if (isMove)
+            {
+                state = State.Running;
+            }
+            else
+            {
+                state = State.Idle;
+            }
+        }
     }
 
     /// <summary>

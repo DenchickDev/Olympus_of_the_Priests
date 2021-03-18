@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 24114244}
   - component: {fileID: 24114243}
   - component: {fileID: 24114245}
+  - component: {fileID: 24114246}
   m_Layer: 10
   m_Name: eagle2
   m_TagString: Untagged
@@ -296,6 +297,8 @@ MonoBehaviour:
   point2: {fileID: 644996012}
   speed: 4
   waintTime: 2
+  isMove: 1
+  state: 0
   typePatrol: 0
 --- !u!114 &24114243
 MonoBehaviour:
@@ -338,6 +341,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a3148cf4e232341b1c76fc5ac031fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typePatrol: 1
+--- !u!95 &24114246
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24114239}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 95a37b62aa5f17a4b9f4db6bc88f85e1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &25130096
 GameObject:
   m_ObjectHideFlags: 0
@@ -18172,6 +18195,7 @@ GameObject:
   - component: {fileID: 1724154194}
   - component: {fileID: 1724154193}
   - component: {fileID: 1724154195}
+  - component: {fileID: 1724154196}
   m_Layer: 8
   m_Name: opossum-1
   m_TagString: Untagged
@@ -18278,7 +18302,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724154189}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 142e858c804509149be146f795d7cef4, type: 3}
   m_Name: 
@@ -18287,6 +18311,8 @@ MonoBehaviour:
   RadiusOfPatrol: 6.2
   point: {fileID: 114659699}
   waintTime: 2
+  isMove: 0
+  state: 0
 --- !u!50 &1724154194
 Rigidbody2D:
   serializedVersion: 4
@@ -18320,6 +18346,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a3148cf4e232341b1c76fc5ac031fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typePatrol: 0
+--- !u!95 &1724154196
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724154189}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 49c0f33395c54764ab16a1c0cea080d0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1726166404
 GameObject:
   m_ObjectHideFlags: 0
@@ -20770,7 +20816,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014754762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 70.45, y: -1.64, z: -1}
+  m_LocalPosition: {x: -9.7, y: -1.64, z: -1}
   m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children:
   - {fileID: 519420032}
@@ -21626,6 +21672,7 @@ GameObject:
   - component: {fileID: 2081120738}
   - component: {fileID: 2081120737}
   - component: {fileID: 2081120739}
+  - component: {fileID: 2081120740}
   m_Layer: 10
   m_Name: eagle1
   m_TagString: Untagged
@@ -21714,6 +21761,8 @@ MonoBehaviour:
   point2: {fileID: 311988120}
   speed: 2
   waintTime: 2
+  isMove: 1
+  state: 0
   typePatrol: 1
 --- !u!114 &2081120737
 MonoBehaviour:
@@ -21756,6 +21805,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a3148cf4e232341b1c76fc5ac031fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typePatrol: 1
+--- !u!95 &2081120740
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081120733}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 95a37b62aa5f17a4b9f4db6bc88f85e1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2081799948
 GameObject:
   m_ObjectHideFlags: 0

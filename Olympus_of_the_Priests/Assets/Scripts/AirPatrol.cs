@@ -27,7 +27,7 @@ public class AirPatrol : MonoBehaviour
     /// <summary>
     /// Признак: должен ли двигаться
     /// </summary>
-    private bool isMove = true;
+    public bool isMove = true;
     
     /// <summary>
     /// Тип патрулирования
@@ -45,15 +45,40 @@ public class AirPatrol : MonoBehaviour
         HorizontalPatrol,
     }
 
+    public enum State
+    {
+        /// <summary>
+        /// Состояние покоя
+        /// </summary>
+        Idle,
+        /// <summary>
+        /// Бег
+        /// </summary>
+        Running,
+        /// <summary>
+        /// Смерть
+        /// </summary>
+        Dead
+    }
+
+    /// <summary>
+    /// Текущее состояние
+    /// </summary>
+    public State state = State.Idle;
+
     /// <summary>
     /// Текущее тип патрулирования
     /// </summary>
     public TypePatrol typePatrol = TypePatrol.HorizontalPatrol;
 
+    Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
         gameObject.transform.position = new Vector3(point1.transform.position.x, point1.transform.position.y, point1.transform.position.z);
+        anim = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -63,7 +88,10 @@ public class AirPatrol : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, point1.position, speed * Time.deltaTime);
         }
-
+        if(state == State.Dead)
+        {
+            isMove = false;
+        }
         if (transform.position == point1.position)
         {
             Transform swapVal = point1;
@@ -73,8 +101,28 @@ public class AirPatrol : MonoBehaviour
             StartCoroutine(Wainting());
             
         }
+        CalculateState();
+        anim.SetInteger("stateAnim", (int)state);
     }
-    
+
+    /// <summary>
+    /// Подсчет текущего состояния
+    /// </summary>
+    void CalculateState()
+    {
+        if (state != State.Dead)
+        {
+            if (isMove)
+            {
+                state = State.Running;
+            }
+            else
+            {
+                state = State.Idle;
+            }
+        }
+    }
+
     IEnumerator Wainting()
     {
         yield return new WaitForSeconds(waintTime);
