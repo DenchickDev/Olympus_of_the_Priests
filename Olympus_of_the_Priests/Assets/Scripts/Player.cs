@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     bool isHit = false;
     public Main main;
     int soulsCount = 0;
+    bool Lava = false;
 
     /// <summary>
     /// Режим бессмертия
@@ -52,10 +53,12 @@ public class Player : MonoBehaviour
 
     /// <summary>
     /// Кол-во жизней на данный момент
-    ///  Максимальное кол-во жизней 
     /// </summary>
     [SerializeField]
-    private int life;
+    public int life;
+    /// <summary>
+    ///  Максимальное кол-во жизней 
+    /// </summary>
     private int MaxLife = 100;
     
     /// <summary>
@@ -96,7 +99,11 @@ public class Player : MonoBehaviour
         /// <summary>
         /// Ранение
         /// </summary>
-        Hurt
+        Hurt,
+        /// <summary>
+        /// Сгорание
+        /// </summary>
+        Combustion
     }
 
     /// <summary>
@@ -175,7 +182,7 @@ public class Player : MonoBehaviour
         //if (state == State.Jumping)
         //{
         //}
-        if (state != State.Dead)
+        if (state != State.Dead && state != State.Combustion)
         {
             if (rb.velocity.y < 0f)
             {
@@ -234,14 +241,22 @@ public class Player : MonoBehaviour
                 StartCoroutine(Blink());
             } 
         }
-        if (life <= 0)
+        if (life <= 0 && Lava == false)
         {
             GetComponent <Rigidbody2D>().simulated = false;
             state = State.Dead;
             Invoke("Lose", 2f);
-        }
-        
+        }      
     }
+    public void Combustion()
+    {
+        Lava = true;
+        SetDamageWithGodMode(life);
+        GetComponent<Rigidbody2D>().simulated = false;
+        state = State.Combustion;
+        Invoke("Lose", 2f);
+    }
+    
     //Корутина изменения звета при получении урона игроком
     IEnumerator Blink()
     {
@@ -275,7 +290,6 @@ public class Player : MonoBehaviour
     void Lose()
     {
         main.GetComponent<Main>().Lose();
-        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
