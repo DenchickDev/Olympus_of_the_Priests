@@ -131,6 +131,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         collider = GetComponent<Collider2D>();
+        main = new Main();
         life = MaxLife;
     }
 
@@ -339,9 +340,9 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(0.02f);
         StartCoroutine(Blink());
     }
-    void Lose()
+    public void Lose()
     {
-        main.GetComponent<Main>().Lose();
+        main.Lose();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
