@@ -237,11 +237,11 @@ public class Player : MonoBehaviour
         //}
         if (state != State.Dead && state != State.Combustion && state != State.Stab)
         {
-            if (rb.velocity.y < 0f)
+            if (rb.velocity.y < -.1f)
             {
                 state = State.Falling;
             }
-            else if (rb.velocity.y > 0f)
+            else if (rb.velocity.y > .1f)
             {
                 state = State.Jumping;
             }
