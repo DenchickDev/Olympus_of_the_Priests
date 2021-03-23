@@ -353,5 +353,12 @@ public class Player : MonoBehaviour
             //print("Кол-во душ: "+ soulsCount);
         }
     }
+    public int GetCountUI()
+    {
+        return soulsCount;
+        return life;
+    }
+    
 }   
+
 
