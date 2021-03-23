@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
     /// <summary>
     /// Получить урон
     /// </summary>
-    public void TakeDamage()
+    public void TakeDamage(GameObject player)
     {
         switch (typePatrol)
         {
@@ -44,6 +44,9 @@ public class Enemy : MonoBehaviour
                 break;
             case TypePatrol.Ground:
                 gameObject.GetComponent<GroundPatrol>().state = GroundPatrol.State.Dead;
+                break;
+            case TypePatrol.NoPatrol:
+                gameObject.GetComponent<Reaper>().KillMe(player);
                 break;
         }
         Invoke("DestroyMe", 1f);

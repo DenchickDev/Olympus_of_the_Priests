@@ -175,7 +175,7 @@ public class Player : MonoBehaviour
             var nameMask = LayerMask.LayerToName(enemies[i].gameObject.layer);
             if (nameMask.Contains("Enemy"))
             {
-                enemies[i].GetComponent<Enemy>().TakeDamage();
+                enemies[i].GetComponent<Enemy>().TakeDamage(gameObject);
 
             }
         }
@@ -281,8 +281,14 @@ public class Player : MonoBehaviour
     //Метод подсчитывает кол-во жизни, на основании получения урона запускает корутину и инициирует смерть 
     public void RecountLife(int deltaLife)
     {
-        
-        life = life + deltaLife;
+        if (deltaLife > 0 && (life + deltaLife) > MaxLife)
+        {
+            life = MaxLife;
+        }
+        else
+        {
+            life = life + deltaLife;
+        }
         print(life);
         if (deltaLife <0)
         {
