@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Disclamer.unity
+    guid: 9d94cb0f6ba11a54a8dc4cdae8016699
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 55837e383200dc54caea76e13403de1f
   - enabled: 1
