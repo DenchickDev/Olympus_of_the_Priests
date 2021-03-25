@@ -65,8 +65,7 @@ MonoBehaviour:
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
   m_Parent: {fileID: 11400000}
-  m_Children:
-  - {fileID: -1475662313795568769}
+  m_Children: []
   m_Clips: []
   m_Markers:
     m_Objects: []

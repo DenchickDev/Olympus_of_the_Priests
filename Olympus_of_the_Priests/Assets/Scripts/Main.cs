@@ -9,6 +9,9 @@ public class Main : MonoBehaviour
     public Player player;
     public Text soulText;
     public Text lifeText;
+    //public GameObject PauseScreen;
+    public GameObject WinScreen;
+
     
 
    public void Lose ()
@@ -20,5 +23,16 @@ public class Main : MonoBehaviour
         soulText.text = player.GetCountUI().ToString();
         lifeText.text = player.life.ToString();
 
+    }
+    public void Win()
+    {
+        player.enabled = true;
+        Time.timeScale = 0f;
+        WinScreen.SetActive(true);
+        //Invoke("stopControl",4);
+    }
+    void stopControl()
+    {
+     //player.enabled = true;
     }
 }
