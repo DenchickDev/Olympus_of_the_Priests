@@ -76,6 +76,7 @@
     <Compile Include="Assets\Scripts\AirPatrol.cs" />
     <Compile Include="Assets\Scripts\Main.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
+    <Compile Include="Assets\Scripts\StartingRockOnChain.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\UI\Spritesheet\greySheet.xml" />
