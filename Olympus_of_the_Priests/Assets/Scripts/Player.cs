@@ -131,7 +131,6 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         collider = GetComponent<Collider2D>();
-        main = new Main();
         life = MaxLife;
     }
 
@@ -142,9 +141,9 @@ public class Player : MonoBehaviour
         {
             Jump();
         } 
-        else if (Input.GetMouseButtonDown(0))
+        else if (state != State.Dead && state != State.Combustion && Input.GetMouseButtonDown(0))
         {
-            state = State.Stab;
+                state = State.Stab;
         }
         if (controlMode)
         {
@@ -158,7 +157,8 @@ public class Player : MonoBehaviour
         CalculateState();
         anim.SetInteger("stateAnim", (int)state);
         //Debug.Log("ddddd");
-        //print((int)state);
+        if (state == State.Combustion || state == State.Jumping )
+        print(state.ToString());
         //print(GetComponent<SpriteRenderer>().color.g);
         //Debug.DrawLine(transform.position, new Vector3(transform.position.x + 100, transform.position.y, transform.position.z));
 
@@ -224,7 +224,6 @@ public class Player : MonoBehaviour
     void Jump()
     {
         rb.AddForce(transform.up * 5f, ForceMode2D.Impulse);
-        state = State.Jumping;
     }
 
     /// <summary>
@@ -289,7 +288,7 @@ public class Player : MonoBehaviour
         {
             life = life + deltaLife;
         }
-        print(life);
+        //print(life);
         if (deltaLife <0)
         {
             if (CurrentCountBlinks <= 0)
@@ -329,7 +328,7 @@ public class Player : MonoBehaviour
             GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, GetComponent<SpriteRenderer>().color.a + deltaAlpha);
         }
         //print(GetComponent<SpriteRenderer>().color.a);
-        print(1);
+        //print(1);
         if (GetComponent<SpriteRenderer>().color.a >= 1f)
         {
             isHit = true;
@@ -348,7 +347,7 @@ public class Player : MonoBehaviour
     }
     public void Lose()
     {
-        main.Lose();
+        main.gameObject.GetComponent<Main>().Lose();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

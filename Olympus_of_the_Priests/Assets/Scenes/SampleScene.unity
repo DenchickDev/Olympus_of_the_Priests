@@ -29787,7 +29787,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014754762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 115.5, y: -1.5, z: -1}
+  m_LocalPosition: {x: 74, y: -1.64, z: -1}
   m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children:
   - {fileID: 327153198}
@@ -29807,13 +29807,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d410ce608712e044eb7fe3e5940504d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  main: {fileID: 0}
+  main: {fileID: 519420033}
   isGodMod: 0
   timeOfOneBlink: 15
   CountBlinks: 8
   CurrentCountBlinks: 0
   speed: 4
-  controlMode: 0
+  controlMode: 1
   life: 100
   ground:
     serializedVersion: 2
