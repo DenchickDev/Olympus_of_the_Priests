@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\Lava.cs" />
     <Compile Include="Assets\Scripts\FinalPlatform.cs" />
     <Compile Include="Assets\Scripts\PulloutY_axisTrap.cs" />
+    <Compile Include="Assets\Scripts\ExitButton.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyTrigger.cs" />
     <Compile Include="Assets\Scripts\PulloutX_axisTrap.cs" />
     <Compile Include="Assets\Scripts\Trap.cs" />
@@ -75,7 +76,6 @@
     <Compile Include="Assets\Scripts\AirPatrol.cs" />
     <Compile Include="Assets\Scripts\Main.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
-    <Compile Include="Assets\Scripts\ExitButton.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\UI\Spritesheet\greySheet.xml" />
