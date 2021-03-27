@@ -86,7 +86,7 @@ public class GroundPatrol : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        isMove = false;
+        // isMove = false;
     }
 
     // Update is called once per frame
