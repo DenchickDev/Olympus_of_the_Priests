@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/LogoChameleonGames.unity
+    guid: 9b29218b46c04294e9ff142f552fec8d
+  - enabled: 1
     path: Assets/Scenes/Disclamer.unity
     guid: 9d94cb0f6ba11a54a8dc4cdae8016699
   - enabled: 1
