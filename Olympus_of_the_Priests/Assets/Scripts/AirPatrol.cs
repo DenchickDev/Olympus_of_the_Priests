@@ -103,6 +103,7 @@ public class AirPatrol : MonoBehaviour
         }
         CalculateState();
         anim.SetInteger("stateAnim", (int)state);
+        CheckDead();
     }
 
     /// <summary>
@@ -132,5 +133,16 @@ public class AirPatrol : MonoBehaviour
             transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         }
 
+    }
+    private void CheckDead()
+    {
+        if (state == State.Dead)
+        {
+            var damage = GetComponentInChildren<EnemyTrigger>();
+            if (damage != null)
+            {
+                damage.damage = 0;
+            }
+        }
     }
 }

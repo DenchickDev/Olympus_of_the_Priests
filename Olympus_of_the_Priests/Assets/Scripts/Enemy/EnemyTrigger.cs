@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyTrigger : MonoBehaviour
 {
     [SerializeField]
-    int damage = 10;
+    public int damage = 10;
     bool noDamage = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {

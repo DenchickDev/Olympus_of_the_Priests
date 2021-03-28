@@ -52233,7 +52233,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -740, y: 482}
+  m_AnchoredPosition: {x: -739.99994, y: 482}
   m_SizeDelta: {x: -863.572, y: -217.473}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1682075820
@@ -62520,7 +62520,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071362812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.1, y: 109.7, z: -1}
+  m_LocalPosition: {x: 32.42, y: 109.9, z: -1}
   m_LocalScale: {x: 0.74856156, y: 0.74856156, z: 0.74856156}
   m_Children:
   - {fileID: 15401728}
@@ -62541,12 +62541,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 519420033}
-  isGodMod: 0
+  isGodMod: 1
   timeOfOneBlink: 15
   CountBlinks: 8
   CurrentCountBlinks: 0
   speed: 15.53
-  controlMode: 1
+  controlMode: 0
   life: 100
   ground:
     serializedVersion: 2

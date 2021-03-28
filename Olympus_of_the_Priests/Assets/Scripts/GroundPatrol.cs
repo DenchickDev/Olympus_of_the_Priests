@@ -97,6 +97,7 @@ public class GroundPatrol : MonoBehaviour
         CalculateState();
         anim.SetInteger("stateAnim", (int)state);
         //print(rb.velocity.x);
+        CheckDead();
     }
 
 
@@ -177,5 +178,15 @@ public class GroundPatrol : MonoBehaviour
         }
         //Gizmos.DrawWireSphere(point.position, attackRange);
     }
-
+    private void CheckDead()
+    {
+        if (state == State.Dead)
+        {
+            var damage = GetComponentInChildren<EnemyTrigger>();
+            if (damage != null)
+            {
+                damage.damage = 0;
+            }
+        }
+    }
 }
