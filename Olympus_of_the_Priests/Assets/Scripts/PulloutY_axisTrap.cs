@@ -38,12 +38,12 @@ public class PulloutY_axisTrap : MonoBehaviour
             {
                 if (isHidden == true)
                 {
-                    point.transform.position = new Vector3(transform.position.x, transform.position.y + 5f, transform.position.z);
+                    point.transform.position = new Vector3(transform.position.x, transform.position.y + 4f, transform.position.z);
                     isHidden = false;
                 }
                 else
                 {
-                    point.transform.position = new Vector3(transform.position.x, transform.position.y - 5f, transform.position.z);
+                    point.transform.position = new Vector3(transform.position.x, transform.position.y - 4f, transform.position.z);
                     isHidden = true;
                 }
                 isWait = true;

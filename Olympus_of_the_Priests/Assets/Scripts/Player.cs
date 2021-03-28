@@ -223,7 +223,7 @@ public class Player : MonoBehaviour
     //Метод обрабатывает прыжок
     void Jump()
     {
-        rb.AddForce(transform.up * 5f, ForceMode2D.Impulse);
+        rb.AddForce(transform.up * 8f, ForceMode2D.Impulse);
     }
 
     /// <summary>
