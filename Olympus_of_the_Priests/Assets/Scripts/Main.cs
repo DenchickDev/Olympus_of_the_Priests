@@ -12,9 +12,9 @@ public class Main : MonoBehaviour
     //public GameObject PauseScreen;
     public GameObject WinScreen;
 
-    
 
-   public void Lose ()
+
+    public void Lose()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
@@ -31,8 +31,10 @@ public class Main : MonoBehaviour
         WinScreen.SetActive(true);
         //Invoke("stopControl",4);
     }
-    void stopControl()
+   /* public void StartTime()
     {
-     //player.enabled = true;
-    }
+        Time.timeScale = 1f;
+    }*/
+
+
 }
