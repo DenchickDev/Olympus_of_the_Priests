@@ -6,10 +6,7 @@ public class ExitButton : MonoBehaviour
 {
     private void Update()
     {
-        if(Input.GetKey("escape"))
-        {
-            Application.Quit();
-        }
+       
     }
     public void exitButton()
     {
