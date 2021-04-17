@@ -80,11 +80,6 @@
     <Compile Include="Assets\Scripts\Menu.cs" />
   </ItemGroup>
   <ItemGroup>
-     <None Include="Assets\UI\Spritesheet\greySheet.xml" />
-     <None Include="Assets\UI\Spritesheet\redSheet.xml" />
-     <None Include="Assets\UI\Spritesheet\greenSheet.xml" />
-     <None Include="Assets\UI\Spritesheet\blueSheet.xml" />
-     <None Include="Assets\UI\Spritesheet\yellowSheet.xml" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.2.7f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
