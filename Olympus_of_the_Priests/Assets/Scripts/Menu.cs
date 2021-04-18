@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    public GameObject ChoiceLevelButtonOn;
+    public GameObject ChoiceLevelPanel;
+    private bool ChoicePanelOn = false;
       public void OpenScene(int index)
     {
         SceneManager.LoadScene(index);
@@ -17,5 +20,19 @@ public class Menu : MonoBehaviour
             Time.timeScale = 1f;
         }
 
+    }
+   public void choiceLevelButtonOn ()
+    {
+        if (ChoicePanelOn == false)
+        {
+            ChoiceLevelPanel.SetActive(true);
+            ChoicePanelOn = true;
+        }
+        else
+        {
+            ChoiceLevelPanel.SetActive(false);
+            ChoicePanelOn = false;
+        } 
+            
     }
 }
