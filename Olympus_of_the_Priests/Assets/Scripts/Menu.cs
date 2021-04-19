@@ -7,10 +7,16 @@ public class Menu : MonoBehaviour
 {
     public GameObject ChoiceLevelButtonOn;
     public GameObject ChoiceLevelPanel;
+    public GameObject ButtonMusicOff;
+    public GameObject ButtonMusicOn;
+    public GameObject BackgoungMusic;
+    private bool CheckMusicMute = false;
     private bool ChoicePanelOn = false;
+
       public void OpenScene(int index)
     {
         SceneManager.LoadScene(index);
+        Time.timeScale = 1f;
     }
     //Метод продолжения игры при смене уровня 
    public void startingTime (bool startTime)
@@ -21,6 +27,7 @@ public class Menu : MonoBehaviour
         }
 
     }
+    //Метод вызова меню выбора уровней
    public void choiceLevelButtonOn ()
     {
         if (ChoicePanelOn == false)
@@ -34,5 +41,34 @@ public class Menu : MonoBehaviour
             ChoicePanelOn = false;
         } 
             
+    }public void ButtonMusicMute ()
+    {
+        if (CheckMusicMute == false)
+        {
+            ButtonMusicOff.SetActive(false);
+            ButtonMusicOn.SetActive(true);
+            MusicMute();
+            CheckMusicMute = true;
+        }
+        else
+        {
+            ButtonMusicOff.SetActive(true);
+            ButtonMusicOn.SetActive(false);
+            MusicMute();
+            CheckMusicMute = false;
+        } 
+            
+    }
+    
+    private void MusicMute ()
+    {
+        if (CheckMusicMute == false)
+        {
+            BackgoungMusic.gameObject.GetComponent<AudioSource>().mute = true;
+        }
+        else
+        {
+            BackgoungMusic.gameObject.GetComponent<AudioSource>().mute = false;
+        }
     }
 }

@@ -10,13 +10,18 @@ public class Player : MonoBehaviour
     public Main main;
     int soulsCount = 0;
     bool Lava = false;
+    ///<summary>
+    /// Звуковой менеджер
+    /// </summary>
+    [SerializeField]
+    public SoundManager soundManager;
 
     /// <summary>
     /// Режим бессмертия
     /// </summary>
     [SerializeField]
     private bool isGodMod = false;
-    //bool isHit = false;
+   
 
     /// <summary>
     /// Время одного мигания в мс
@@ -30,13 +35,11 @@ public class Player : MonoBehaviour
     [SerializeField]
     private int CountBlinks = 3;
 
-    /// <summary>
+      /// <summary>
     /// Кол-во миганий
     /// </summary>
     [SerializeField]
     private int CurrentCountBlinks = 0;
-
-
 
     /// <summary>
     /// Скорость передвижения
@@ -137,7 +140,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)) && isGrounded)
+        if ((/*Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) ||*/ Input.GetKeyDown(KeyCode.Space)) && isGrounded)
         {
             Jump();
         } 
@@ -212,6 +215,7 @@ public class Player : MonoBehaviour
         if (Input.GetAxis("Horizontal") != 0)
         {
             rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
+            
         }
         else
         {
@@ -224,6 +228,7 @@ public class Player : MonoBehaviour
     void Jump()
     {
         rb.AddForce(transform.up * 8f, ForceMode2D.Impulse);
+        soundManager.PlayJumpSound();
     }
 
     /// <summary>
@@ -254,6 +259,7 @@ public class Player : MonoBehaviour
             else if (Mathf.Abs(rb.velocity.x) > 2f)
             {
                 state = State.Running;
+               // soundManager.PlayRunSound();
             }
             else
             {
@@ -355,6 +361,7 @@ public class Player : MonoBehaviour
         {
             Destroy(collision.gameObject);
             soulsCount++;
+            soundManager.PlaySoulSound();
             //print("Кол-во душ: "+ soulsCount);
         }
     }
