@@ -26,7 +26,7 @@ public class Main : MonoBehaviour
         soulText.text = player.GetCountUI().ToString();
         lifeText.text = player.life.ToString();
         //Проверка на нажатие клавишы ESC
-        if(Input.GetKey("escape"))
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
             Pause();
         }

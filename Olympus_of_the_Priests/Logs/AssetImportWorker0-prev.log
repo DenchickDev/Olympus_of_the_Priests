@@ -1,0 +1,145 @@
+Using pre-set license
+Built from '2020.2/staging' branch; Version is '2020.2.7f1 (c53830e277f1) revision 12924976'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 7  (6.1.0) 64bit' Language: 'ru' Physical Memory: 8055 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.2.7f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/Development/Репозиторий/Olympus_of_the_Priests/Olympus_of_the_Priests
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+14405
+Successfully changed project path to: D:/Development/Репозиторий/Olympus_of_the_Priests/Olympus_of_the_Priests
+D:/Development/Репозиторий/Olympus_of_the_Priests/Olympus_of_the_Priests
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 52.73 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.2.7f1 (c53830e277f1)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.7f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Development/Репозиторий/Olympus_of_the_Priests/Olympus_of_the_Priests/Assets
+GfxDevice: creating device client; threaded=0
+d3d11: CreateDXGIFactory2(...) not found, fallbacking to CreateDXGIFactory1(...).
+d3d11: QueryInterface(IDXGIFactory5) failed (80004002).
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GT 630 (ID=0xf00)
+    Vendor:   
+    VRAM:     977 MB
+    Driver:   9.18.13.908
+Could not load symbol clCreateImage : Не найдена указанная процедура.
+
+
+Could not load symbol clEnqueueFillBuffer : Не найдена указанная процедура.
+
+
+Could not load symbol clEnqueueFillImage : Не найдена указанная процедура.
+
+
+Could not load symbol clEnqueueMarkerWithWaitList : Не найдена указанная процедура.
+
+
+Could not load symbol clGetExtensionFunctionAddressForPlatform : Не найдена указанная процедура.
+
+
+Could not load symbol clUnloadPlatformCompiler : Не найдена указанная процедура.
+
+
+Could not load symbol clCreateFromGLTexture : Не найдена указанная процедура.
+
+
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.7f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.7f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56860
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001725 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 51.27 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.470 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.000927 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 53.79 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.279 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.55 seconds
+Refreshing native plugins compatible for Editor in 0.57 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1828 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 86.5 MB.
+System memory in use after: 86.5 MB.
+
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 2276.
+Total: 3.359358 ms (FindLiveObjects: 0.355186 ms CreateObjectMapping: 0.084956 ms MarkObjects: 2.775515 ms  DeleteObjects: 0.140689 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Scenes/Level_1.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level_1.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fec40407e355e0b53ed7e72c3b6730c9') in 0.082889 seconds
+  Import took 0.103479 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 32.257865 seconds.
+  path: Assets/Scripts/Main.cs
+  artifactKey: Guid(9127be780d8de2341be64200db6a90f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Main.cs using Guid(9127be780d8de2341be64200db6a90f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5c1f4bde4cd2bdee20e2892660dc55d') in 0.911745 seconds
+  Import took 0.915394 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 310.000421 seconds.
+  path: Assets/Scripts/Main.cs
+  artifactKey: Guid(9127be780d8de2341be64200db6a90f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Main.cs using Guid(9127be780d8de2341be64200db6a90f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8141fec0671d8e6afb35505b520701c') in 0.018239 seconds
+  Import took 0.022758 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001348 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.394 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.90 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1822 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 86.4 MB.
+System memory in use after: 86.4 MB.
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 2280.
+Total: 3.010197 ms (FindLiveObjects: 0.204857 ms CreateObjectMapping: 0.071700 ms MarkObjects: 2.607411 ms  DeleteObjects: 0.124119 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
