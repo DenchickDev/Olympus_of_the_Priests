@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\GroundPatrol.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyCollision.cs" />
     <Compile Include="Assets\Scripts\LogoScript.cs" />
+    <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Rock\Rock.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Reaper\Reaper.cs" />
@@ -78,7 +79,6 @@
     <Compile Include="Assets\Scripts\AirPatrol.cs" />
     <Compile Include="Assets\Scripts\Main.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
-    <Compile Include="Assets\Scripts\SoundManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
