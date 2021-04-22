@@ -8,9 +8,9 @@ public class SoundManager : MonoBehaviour
     //звуки главного геро€: прыжок, бег, кувырок, удар, исцеление, ранение;
     public AudioClip jumpSound, runSound, tucksSound, hitSound, hillSound, woundSound;
     //«вуки монстров: черт, демон, собака, призрак, потер€нный, бегун;
-    public AudioClip heckSound, demonSound, hellDogSound, ghostSound, lostSound, sinnerSound;
+    //public AudioClip heckSound, demonSound, hellDogSound, ghostSound, lostSound, sinnerSound;
     //«вуки окружени€: звук—бораƒуши, ма€тник, шипы, пилы, лава, падающа€ летка, падающа€ѕлатформа;
-    public AudioClip soulSound, pendulumSound, spikeSound, sawSound, lavaSound, cellSound, platformSound;
+    public AudioClip takeItemsSound,  platformSound, cellSound; // sawSound, spikeSound, lavaSound,  pendulumSound;
     //«вуки игрока
     public void PlayJumpSound()
     {
@@ -37,7 +37,7 @@ public class SoundManager : MonoBehaviour
         audioSorce.PlayOneShot(woundSound);
     }
     //«вуки монстров
-    public void PlayHeckSound()
+  /*  public void PlayHeckSound()
     {
         audioSorce.PlayOneShot(heckSound);
     }
@@ -60,35 +60,37 @@ public class SoundManager : MonoBehaviour
     public void PlaySinnerSound()
     {
         audioSorce.PlayOneShot(sinnerSound);
-    }
+    }*/
     //«вуки окружени€
-    public void PlaySoulSound()
+    public void PlayTakeItemsSound()
     {
-        audioSorce.PlayOneShot(soulSound);
+        audioSorce.PlayOneShot(takeItemsSound);
     }
-    public void PlayPendulumSound()
-    {
-        audioSorce.PlayOneShot(pendulumSound);
-    }
-    public void PlaySpikeSound()
-    {
-        audioSorce.PlayOneShot(spikeSound);
-    }
-    public void PlaySawSound()
-    {
-        audioSorce.PlayOneShot(sawSound);
-    }
-    public void PlayLavaSound()
-    {
-        audioSorce.PlayOneShot(lavaSound);
-    }
-    public void PlayCellSound()
+    
+    
+     public void PlayCellSound()
     {
         audioSorce.PlayOneShot(cellSound);
     }
     public void PlayPlatformSound()
     {
         audioSorce.PlayOneShot(platformSound);
+    }/*
+    public void PlayPendulumSound()
+    {
+        audioSorce.PlayOneShot(pendulumSound);
     }
+    public void PlaySawSound()
+    {
+        audioSorce.PlayOneShot(sawSound);
+    }
+    public void PlaySpikeSound()
+    {
+        audioSorce.PlayOneShot(spikeSound);
+    }
+    public void PlayLavaSound()
+    {
+        audioSorce.PlayOneShot(lavaSound);
+    }*/
 }
   

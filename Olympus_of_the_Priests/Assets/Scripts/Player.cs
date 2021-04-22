@@ -146,7 +146,8 @@ public class Player : MonoBehaviour
         } 
         else if (state != State.Dead && state != State.Combustion && Input.GetMouseButtonDown(0))
         {
-                state = State.Stab;
+            state = State.Stab;
+            soundManager.PlayHitSound();
         }
         if (controlMode)
         {
@@ -361,7 +362,7 @@ public class Player : MonoBehaviour
         {
             Destroy(collision.gameObject);
             soulsCount++;
-            soundManager.PlaySoulSound();
+            soundManager.PlayTakeItemsSound();
             //print("Кол-во душ: "+ soulsCount);
         }
     }

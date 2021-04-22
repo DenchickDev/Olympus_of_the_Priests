@@ -6,6 +6,9 @@ public class RockStarting : MonoBehaviour
 {
     [SerializeField]
     Transform rock;
+    public AudioClip fallingSound;
+    public AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +25,7 @@ public class RockStarting : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             rock.gameObject.GetComponent<Rock>().ChangeSimulated(true);
-
+            audioSource.PlayOneShot(fallingSound);
         }
     }
 }

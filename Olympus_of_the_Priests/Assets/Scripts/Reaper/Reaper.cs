@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Reaper : MonoBehaviour
 {
+
     Animator anim;
     Rigidbody2D rb;
 
@@ -12,6 +13,7 @@ public class Reaper : MonoBehaviour
     /// </summary>
     [SerializeField]
     float speed = 2.3f;
+    public SoundManager soundManager;
 
     /// <summary>
     /// Время до уничтожения жнеца
@@ -52,6 +54,7 @@ public class Reaper : MonoBehaviour
         rb.simulated = false;
         isRuning = false;
         player.GetComponent<Player>().RecountLife(10);
+        soundManager.PlayHillSound();
         anim.SetBool("isDead", true);
     }
 }
