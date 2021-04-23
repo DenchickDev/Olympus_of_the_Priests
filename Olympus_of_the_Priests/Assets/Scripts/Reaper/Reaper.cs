@@ -14,6 +14,7 @@ public class Reaper : MonoBehaviour
     [SerializeField]
     float speed = 2.3f;
     public SoundManager soundManager;
+    public SoulGuide soulGuide;
 
     /// <summary>
     /// Время до уничтожения жнеца
@@ -41,6 +42,7 @@ public class Reaper : MonoBehaviour
     public void Run()
     {
         isRuning = true;
+        soulGuide.GetComponent<SoulGuide>().ReperRun = true;
         Invoke("DestroyMe", timeToDestroy);
     }
 
@@ -53,9 +55,10 @@ public class Reaper : MonoBehaviour
     {
         rb.simulated = false;
         isRuning = false;
-        gameObject.GetComponent<SoulGuide>().DeadReaper();
+        anim.SetBool("isDead", true);
+        soulGuide.GetComponent<SoulGuide>().DeadReaper();
         //player.GetComponent<Player>().RecountLife(10);
         //soundManager.PlayHillSound();
-        anim.SetBool("isDead", true);
+        
     }
 }

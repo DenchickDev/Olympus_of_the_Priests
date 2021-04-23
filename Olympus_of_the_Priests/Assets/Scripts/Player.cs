@@ -360,11 +360,15 @@ public class Player : MonoBehaviour
     {
             soulsCount++;
             soundManager.PlayTakeItemsSound();
+    }public void LifeCount()
+    {
+        RecountLife(10);
+        soundManager.PlayHillSound();
     }
     public int GetCountUI()
     {
         return soulsCount;
-        //return life;
+        return life;
     }
     
 }   

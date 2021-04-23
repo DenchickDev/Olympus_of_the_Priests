@@ -22,7 +22,7 @@ public class RockStarting : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+          if (collision.gameObject.tag == "Player")
         {
             rock.gameObject.GetComponent<Rock>().ChangeSimulated(true);
             audioSource.PlayOneShot(fallingSound);

@@ -6,50 +6,57 @@ public class SoulGuide : MonoBehaviour
 { 
         public Transform soulCount;
         public Transform lifeCount;
+        public Transform reaper;
         public float speed;
-        public SoundManager soundManager;
         //Проверка на движение 
-        private bool soulStartToTarrget = false;
-        private bool lifeStartToTarrget = false;
+        private bool soulStartToCount = false;
+        private bool lifeStartToCount = false;
+        public bool ReperRun = false;
         public Player player;
+       
 
-        public void OnTriggerEnter2D(Collider2D collision)
-        {//Косание души с игроком 
-            if (collision.gameObject.tag == "Player")
-            {
-                soulStartToTarrget = true;
-            }//Ксание души о счетчик
-            if (collision.gameObject.tag == "SoulCount")
-            {   //добовляет к счетчику +1 душу и вызывает звук
-                //разрушает душу при косании о счетчик
-                player.SoulCount();
-                Destroy(gameObject);
-            }
-            //Ксание души о счетчик
-            if (collision.gameObject.tag == "lifeCount")
-            {   //добовляет к счетчику +1 душу и вызывает звук
-                //разрушает душу при косании о счетчик
-                player.RecountLife(10);
-                soundManager.PlayHillSound();
-                Destroy(gameObject);
-            }
-
-        }
-
-        private void FixedUpdate()
+    public void OnTriggerEnter2D(Collider2D collision)
+    {   //Косание души с игроком 
+        if (collision.gameObject.tag == "Player")
         {
-            if (soulStartToTarrget == true)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, soulCount.position, speed * Time.deltaTime);
-            }
-            if (lifeStartToTarrget == true)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, lifeCount.position, speed * Time.deltaTime);
-            }
+            soulStartToCount = true;
+        }//Ксание души о счетчик
+        if (collision.gameObject.tag == "SoulCount")
+        {   //добовляет к счетчику +1 душу и вызывает звук
+            //разрушает душу при косании о счетчик
+            player.SoulCount();
+            Destroy(gameObject);
         }
+        //Ксание души о счетчик
+        if (collision.gameObject.tag == "LifeCount")
+        {   //добовляет к счетчику +1 душу и вызывает звук
+            //разрушает душу при косании о счетчик
+            player.GetComponent<Player>().LifeCount();
+            Destroy(gameObject);
+        }
+    }
+    //метод движения душы к счетчику и движения за жнецом 
+    private void FixedUpdate()
+     {
+      if (soulStartToCount == true)
+      {
+        transform.position = Vector3.MoveTowards(transform.position, soulCount.position, speed * Time.deltaTime);
+      }
+        if (lifeStartToCount == true)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, lifeCount.position, speed * Time.deltaTime);
+        }
+       if (ReperRun == true)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, reaper.position, speed * Time.deltaTime);
+        }
+
+    }
         public void DeadReaper()
         {
-            lifeStartToTarrget = true;
+            lifeStartToCount = true;
+            ReperRun = false;
         }
+    
     
 }
