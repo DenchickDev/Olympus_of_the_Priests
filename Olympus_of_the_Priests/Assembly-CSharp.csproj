@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\AirPatrol.cs" />
     <Compile Include="Assets\Scripts\Main.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
+    <Compile Include="Assets\Scripts\SoulGuide.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -356,20 +356,15 @@ public class Player : MonoBehaviour
     {
         main.gameObject.GetComponent<Main>().Lose();
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void SoulCount()
     {
-        if (collision.gameObject.tag == "soul")
-        {
-            Destroy(collision.gameObject);
             soulsCount++;
             soundManager.PlayTakeItemsSound();
-            //print("Кол-во душ: "+ soulsCount);
-        }
     }
     public int GetCountUI()
     {
         return soulsCount;
-        return life;
+        //return life;
     }
     
 }   

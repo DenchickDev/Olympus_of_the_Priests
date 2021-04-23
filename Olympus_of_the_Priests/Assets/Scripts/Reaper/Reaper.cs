@@ -53,8 +53,9 @@ public class Reaper : MonoBehaviour
     {
         rb.simulated = false;
         isRuning = false;
-        player.GetComponent<Player>().RecountLife(10);
-        soundManager.PlayHillSound();
+        gameObject.GetComponent<SoulGuide>().DeadReaper();
+        //player.GetComponent<Player>().RecountLife(10);
+        //soundManager.PlayHillSound();
         anim.SetBool("isDead", true);
     }
 }

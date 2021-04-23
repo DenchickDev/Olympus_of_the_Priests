@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - soul
+  - SoulCount
+  - LifeCount
   layers:
   - Default
   - TransparentFX
