@@ -3372,7 +3372,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &118431990
@@ -5045,7 +5045,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &192859447
@@ -6409,7 +6409,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &243692216
@@ -6547,7 +6547,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &244721355
@@ -7788,7 +7788,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &298688690
@@ -9692,7 +9692,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &344765620
@@ -10376,7 +10376,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &370304052
@@ -14413,7 +14413,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &442124121
@@ -14879,7 +14879,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &455438088
@@ -15017,7 +15017,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &459396937
@@ -15915,7 +15915,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &483335783
@@ -17309,7 +17309,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &507064336
@@ -19431,7 +19431,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &567660221
@@ -19569,7 +19569,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &569588680
@@ -21930,7 +21930,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &608945775
@@ -22548,7 +22548,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &644996011
@@ -24032,7 +24032,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &681054006
@@ -25978,7 +25978,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &749234498
@@ -27752,7 +27752,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &811832122
@@ -30125,7 +30125,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &887464689
@@ -30652,7 +30652,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &895772994
@@ -31111,7 +31111,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &899839766
@@ -31249,7 +31249,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &901880978
@@ -32279,7 +32279,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &939903903
@@ -33606,7 +33606,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &971637725
@@ -34743,7 +34743,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &998266475
@@ -35898,7 +35898,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1038865109
@@ -36387,7 +36387,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1045134877
@@ -38202,7 +38202,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1103020317
@@ -38681,7 +38681,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1114251085
@@ -40965,7 +40965,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1167269614
@@ -41380,7 +41380,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1185492362
@@ -41896,7 +41896,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1199112671
@@ -43314,7 +43314,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1251177031
@@ -43760,7 +43760,7 @@ MonoBehaviour:
   soulCount: {fileID: 0}
   lifeCount: {fileID: 2080973910}
   reaper: {fileID: 1093925758}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1263118086
@@ -44900,7 +44900,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1292844270
@@ -45116,7 +45116,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1298629229
@@ -45519,7 +45519,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1314575172
@@ -45962,7 +45962,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1334026013
@@ -46357,7 +46357,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1335643032
@@ -47561,7 +47561,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1358190329
@@ -48600,7 +48600,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1390956578
@@ -48814,7 +48814,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1398225261
@@ -49811,7 +49811,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1435249345
@@ -49949,7 +49949,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1435644090
@@ -50936,7 +50936,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1483749429
@@ -51188,7 +51188,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1491713628
@@ -51649,7 +51649,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1499866032
@@ -53981,7 +53981,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1575357900
@@ -54882,7 +54882,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1608692173
@@ -56380,7 +56380,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1636658046
@@ -56962,7 +56962,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1648264494
@@ -57401,7 +57401,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1656345007
@@ -57654,7 +57654,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1670813320
@@ -57827,7 +57827,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1672666596
@@ -59119,7 +59119,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1714180070
@@ -59858,7 +59858,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1742738031
@@ -60671,7 +60671,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1773413342
@@ -61805,7 +61805,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1816979808
@@ -66361,7 +66361,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &1981731824
@@ -68814,7 +68814,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &2052814965
@@ -69033,7 +69033,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &2056692942
@@ -69898,6 +69898,7 @@ GameObject:
   - component: {fileID: 2071362814}
   - component: {fileID: 2071362813}
   - component: {fileID: 2071362817}
+  - component: {fileID: 2071362819}
   - component: {fileID: 2071362816}
   - component: {fileID: 2071362818}
   m_Layer: 7
@@ -70067,6 +70068,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &2071362819
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071362812}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.99, y: -1.98}
+  m_Size: {x: 5.89, y: 2.001537}
+  m_Direction: 1
 --- !u!1 &2071444562
 GameObject:
   m_ObjectHideFlags: 0
@@ -70441,7 +70458,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &2077175862
@@ -71858,7 +71875,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &2117712439
@@ -71996,7 +72013,7 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 20
+  speed: 75
   ReperRun: 0
   player: {fileID: 2071362816}
 --- !u!1 &2119836060

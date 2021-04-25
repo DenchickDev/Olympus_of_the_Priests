@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public Main main;
     int soulsCount = 0;
     bool Lava = false;
+    bool onRollover = false;
     ///<summary>
     /// Звуковой менеджер
     /// </summary>
@@ -21,7 +22,7 @@ public class Player : MonoBehaviour
     /// </summary>
     [SerializeField]
     private bool isGodMod = false;
-   
+
 
     /// <summary>
     /// Время одного мигания в мс
@@ -35,7 +36,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private int CountBlinks = 3;
 
-      /// <summary>
+    /// <summary>
     /// Кол-во миганий
     /// </summary>
     [SerializeField]
@@ -63,7 +64,7 @@ public class Player : MonoBehaviour
     ///  Максимальное кол-во жизней 
     /// </summary>
     private int MaxLife = 100;
-    
+
     /// <summary>
     /// Маска земли
     /// </summary>
@@ -110,7 +111,11 @@ public class Player : MonoBehaviour
         /// <summary>
         /// Удар
         /// </summary>
-        Stab
+        Stab,
+        /// <summary>
+        /// перекат
+        /// </summary>
+        Rollover
     }
 
     /// <summary>
@@ -143,8 +148,8 @@ public class Player : MonoBehaviour
         if ((/*Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) ||*/ Input.GetKeyDown(KeyCode.Space)) && isGrounded)
         {
             Jump();
-        } 
-        else if (state != State.Dead && state != State.Combustion && Input.GetMouseButtonDown(0))
+        }
+        else if (state != State.Dead && state != State.Combustion && Input.GetMouseButtonDown(0) && onRollover == false)
         {
             state = State.Stab;
             soundManager.PlayHitSound();
@@ -161,11 +166,14 @@ public class Player : MonoBehaviour
         CalculateState();
         anim.SetInteger("stateAnim", (int)state);
         //Debug.Log("ddddd");
-        if (state == State.Combustion || state == State.Jumping )
-        print(state.ToString());
+        if (state == State.Combustion || state == State.Jumping)
+            print(state.ToString());
         //print(GetComponent<SpriteRenderer>().color.g);
         //Debug.DrawLine(transform.position, new Vector3(transform.position.x + 100, transform.position.y, transform.position.z));
-
+        if ((Input.GetKeyDown(KeyCode.S)) && isGrounded)
+        {
+            OnRollover();
+        }
     }
 
     public void OnAttak()
@@ -216,7 +224,7 @@ public class Player : MonoBehaviour
         if (Input.GetAxis("Horizontal") != 0)
         {
             rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
-            
+
         }
         else
         {
@@ -240,7 +248,7 @@ public class Player : MonoBehaviour
         //if (state == State.Jumping)
         //{
         //}
-        if (state != State.Dead && state != State.Combustion && state != State.Stab)
+        if (state != State.Dead && state != State.Combustion && state != State.Stab && state != State.Rollover)
         {
             if (rb.velocity.y < -.1f)
             {
@@ -260,7 +268,7 @@ public class Player : MonoBehaviour
             else if (Mathf.Abs(rb.velocity.x) > 2f)
             {
                 state = State.Running;
-               // soundManager.PlayRunSound();
+                // soundManager.PlayRunSound();
             }
             else
             {
@@ -296,7 +304,7 @@ public class Player : MonoBehaviour
             life = life + deltaLife;
         }
         //print(life);
-        if (deltaLife <0)
+        if (deltaLife < 0)
         {
             if (CurrentCountBlinks <= 0)
             {
@@ -304,14 +312,14 @@ public class Player : MonoBehaviour
                 isHit = true;
                 CurrentCountBlinks = CountBlinks;
                 StartCoroutine(Blink());
-            } 
+            }
         }
         if (life <= 0 && Lava == false)
         {
-            GetComponent <Rigidbody2D>().simulated = false;
+            GetComponent<Rigidbody2D>().simulated = false;
             state = State.Dead;
             Invoke("Lose", 2f);
-        }      
+        }
     }
     public void Combustion()
     {
@@ -321,16 +329,16 @@ public class Player : MonoBehaviour
         state = State.Combustion;
         Invoke("Lose", 2f);
     }
-    
+
     //Корутина изменения звета при получении урона игроком
     IEnumerator Blink()
     {
-        float deltaAlpha = 4f / timeOfOneBlink; 
+        float deltaAlpha = 4f / timeOfOneBlink;
         if (isHit)
         {
             GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, GetComponent<SpriteRenderer>().color.a - deltaAlpha);
         }
-        else 
+        else
         {
             GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, GetComponent<SpriteRenderer>().color.a + deltaAlpha);
         }
@@ -341,7 +349,7 @@ public class Player : MonoBehaviour
             isHit = true;
             CurrentCountBlinks--;
         }
-        else if (GetComponent<SpriteRenderer>().color.a <=0)
+        else if (GetComponent<SpriteRenderer>().color.a <= 0)
         {
             isHit = false;
         }
@@ -358,9 +366,10 @@ public class Player : MonoBehaviour
     }
     public void SoulCount()
     {
-            soulsCount++;
-            soundManager.PlayTakeItemsSound();
-    }public void LifeCount()
+        soulsCount++;
+        soundManager.PlayTakeItemsSound();
+    }
+    public void LifeCount()
     {
         RecountLife(10);
         soundManager.PlayHillSound();
@@ -368,9 +377,25 @@ public class Player : MonoBehaviour
     public int GetCountUI()
     {
         return soulsCount;
-        return life;
+        //return life;
     }
-    
-}   
+    private void OnRollover()
+    {
+        GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<CapsuleCollider2D>().enabled = true;
+        state = State.Rollover;
+        Invoke("OffRollover", 1);
+        onRollover = true;
+    }
+    private void OffRollover()
+    {
+        GetComponent<BoxCollider2D>().enabled = true;
+        GetComponent<CapsuleCollider2D>().enabled = false;
+        state = State.Idle;
+        onRollover = false;
+    }
+}
+
+
 
 
