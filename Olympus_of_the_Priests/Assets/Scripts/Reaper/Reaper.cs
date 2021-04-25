@@ -59,6 +59,6 @@ public class Reaper : MonoBehaviour
         soulGuide.GetComponent<SoulGuide>().DeadReaper();
         //player.GetComponent<Player>().RecountLife(10);
         //soundManager.PlayHillSound();
-        
+        Invoke("DestroyMe", 1f);
     }
 }

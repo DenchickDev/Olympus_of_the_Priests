@@ -143,6 +143,12 @@ public class AirPatrol : MonoBehaviour
             {
                 damage.damage = 0;
             }
+            Invoke("DestroyMe", 1f);
         }
+    }
+
+    private void DestroyMe()
+    {
+        Destroy(this.gameObject);
     }
 }
