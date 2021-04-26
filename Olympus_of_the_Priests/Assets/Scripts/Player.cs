@@ -28,8 +28,14 @@ public class Player : MonoBehaviour
     /// Время одного мигания в мс
     /// </summary>
     [SerializeField]
+    
     private float timeOfOneBlink = 15f;
 
+    /// <summary>
+    /// Время прибывания в перекате
+    /// </summary>
+    [SerializeField]
+    public float timeRollover = 1;
     /// <summary>
     /// Кол-во миганий
     /// </summary>
@@ -395,7 +401,7 @@ public class Player : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = false;
         GetComponent<CapsuleCollider2D>().enabled = true;
         state = State.Rollover;
-        Invoke("OffRollover", 1);
+        Invoke("OffRollover", timeRollover);
         onRollover = true;
     }
     private void OffRollover()

@@ -27,8 +27,17 @@ public class Menu : MonoBehaviour
         }
 
     }
+    private void FixedUpdate()
+    {
+        if (AudioListener.volume == 0 && CheckMusicMute == false )
+        {
+            ButtonMusicOff.SetActive(false);
+            ButtonMusicOn.SetActive(true);
+            CheckMusicMute = true;
+        }
+    }
     //Метод вызова меню выбора уровней
-   public void choiceLevelButtonOn ()
+    public void choiceLevelButtonOn ()
     {
         if (ChoicePanelOn == false)
         {
@@ -64,11 +73,13 @@ public class Menu : MonoBehaviour
     {
         if (CheckMusicMute == false)
         {
-            BackgoungMusic.gameObject.GetComponent<AudioSource>().mute = true;
+            //BackgoungMusic.gameObject.GetComponent<AudioSource>().mute = true;
+            AudioListener.volume = 0;
         }
         else
         {
-            BackgoungMusic.gameObject.GetComponent<AudioSource>().mute = false;
+            //BackgoungMusic.gameObject.GetComponent<AudioSource>().mute = false;
+            AudioListener.volume = 1;
         }
     }
 }
