@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
     private float timeOfOneBlink = 15f;
 
     /// <summary>
-    /// Время прибывания в перекате
+    /// Время прибывания в перекатеи
     /// </summary>
     [SerializeField]
     public float timeRollover = 1;

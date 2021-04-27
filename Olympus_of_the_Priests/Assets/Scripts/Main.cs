@@ -66,7 +66,11 @@ public class Main : MonoBehaviour
         player.enabled = true;
         Time.timeScale = 0f;
         WinScreen.SetActive(true);
-        //Invoke("stopControl",4);
+
+
+        if (!PlayerPrefs.HasKey("Lvl") || PlayerPrefs.GetInt("Lvl") < SceneManager.GetActiveScene().buildIndex)
+            PlayerPrefs.SetInt("Lvl", SceneManager.GetActiveScene().buildIndex);
+        print(PlayerPrefs.GetInt("Lvl")); 
     }
     
 

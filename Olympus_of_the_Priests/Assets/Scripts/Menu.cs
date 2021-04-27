@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
@@ -12,8 +13,37 @@ public class Menu : MonoBehaviour
     public GameObject BackgoungMusic;
     private bool CheckMusicMute = false;
     private bool ChoicePanelOn = false;
+    public Button [] lvls;
+    public Button ResumeButton;
+    private int resume;
+    
 
-      public void OpenScene(int index)
+
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey("Lvl"))
+            for(int i = 0; i<lvls.Length; i++)
+            {
+                if (i <= PlayerPrefs.GetInt("Lvl"))
+                {
+                    lvls[i].interactable = true;
+                    resume = PlayerPrefs.GetInt("Lvl") +1;
+                    ResumeButton.interactable = true;
+                }
+
+                else
+                    lvls[i].interactable = false;
+            }
+    }
+    public void Resume()
+    {
+        SceneManager.LoadScene(resume);
+    }
+    public void DellKeys()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+    public void OpenScene(int index)
     {
         SceneManager.LoadScene(index);
         Time.timeScale = 1f;
