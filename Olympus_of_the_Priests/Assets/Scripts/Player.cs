@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
     bool isHit = false;
     public Main main;
     int soulsCount = 0;
-    bool Lava = false;
     bool onRollover = false;
     ///<summary>
     /// Звуковой менеджер
@@ -121,7 +120,11 @@ public class Player : MonoBehaviour
         /// <summary>
         /// перекат
         /// </summary>
-        Rollover
+        Rollover,
+        /// <summary>
+        /// распиливание 
+        /// </summary>
+        Sawing
     }
 
     /// <summary>
@@ -155,7 +158,7 @@ public class Player : MonoBehaviour
         {
             Jump();
         }
-        else if (state != State.Dead && state != State.Combustion && Input.GetMouseButtonDown(0) && onRollover == false)
+        else if (state != State.Dead && state != State.Combustion && state !=State.Sawing && Input.GetMouseButtonDown(0) && onRollover == false)
         {
             state = State.Stab;
             soundManager.PlayHitSound();
@@ -265,7 +268,7 @@ public class Player : MonoBehaviour
         //if (state == State.Jumping)
         //{
         //}
-        if (state != State.Dead && state != State.Combustion && state != State.Stab && state != State.Rollover)
+        if (state != State.Dead && state != State.Combustion && state != State.Stab && state != State.Rollover && state != State.Sawing)
         {
             if (rb.velocity.y < -.1f)
             {
@@ -285,7 +288,7 @@ public class Player : MonoBehaviour
             else if (Mathf.Abs(rb.velocity.x) > 2f)
             {
                 state = State.Running;
-                // soundManager.PlayRunSound();
+                
             }
             else
             {
@@ -331,20 +334,36 @@ public class Player : MonoBehaviour
                 StartCoroutine(Blink());
             }
         }
-        if (life <= 0 && Lava == false)
+        if (life <= 0 )
         {
             GetComponent<Rigidbody2D>().simulated = false;
             state = State.Dead;
             Invoke("Lose", 2f);
         }
     }
-    public void Combustion()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Lava = true;
-        SetDamageWithGodMode(life);
-        GetComponent<Rigidbody2D>().simulated = false;
-        state = State.Combustion;
-        Invoke("Lose", 2f);
+        if (collision.gameObject.tag == "Lava")
+        {
+            SetDamageWithGodMode(life);
+            GetComponent<Rigidbody2D>().simulated = false;
+            state = State.Combustion;
+            Invoke("Lose", 2f);
+        }
+        if(collision.gameObject.tag == "Saw")
+        {
+            SetDamageWithGodMode(life);
+            GetComponent<Rigidbody2D>().simulated = false;
+            state = State.Sawing;
+            Invoke("Lose", 2f);
+        }
+      /*  if (collision.gameObject.tag == "Rock")
+        {
+            SetDamageWithGodMode(life);
+            GetComponent<Rigidbody2D>().simulated = false;
+            state = State.Combustion;
+            Invoke("Lose", 2f);
+        }*/
     }
 
     //Корутина изменения звета при получении урона игроком

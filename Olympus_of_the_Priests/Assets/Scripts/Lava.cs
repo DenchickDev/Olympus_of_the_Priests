@@ -10,7 +10,7 @@ public class Lava : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
 
-            collision.gameObject.GetComponent<Player>().Combustion();
+          //  collision.gameObject.GetComponent<Player>().Combustion();
         }
     }
 }
