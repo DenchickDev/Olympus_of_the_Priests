@@ -70,18 +70,19 @@ public class Player : MonoBehaviour
     /// </summary>
     private int MaxLife = 100;
 
-    /// <summary>
-    /// Маска земли
-    /// </summary>
-    public LayerMask ground;
-
     private new Collider2D collider;
 
     /// <summary>
     /// Признак соприкосновения
     /// героя с землей
     /// </summary>
-    private bool isGrounded;
+    private bool isGrounded = true;
+
+    /// <summary>
+    /// Расположение земли
+    /// </summary>
+    [SerializeField]
+    Transform groundCheck;
 
     public enum State
     {
@@ -233,7 +234,8 @@ public class Player : MonoBehaviour
     {
         //if (Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground")))
         //Если коллайдер гг дотронулся до маски "Ground", то мы на земле
-        isGrounded = collider.IsTouchingLayers(ground); // исправить
+        //isGrounded = collider.IsTouchingLayers(ground); // исправить
+        isGrounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
     }
 
     /// <summary>
