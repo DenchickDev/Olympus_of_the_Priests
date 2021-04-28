@@ -13,7 +13,7 @@ public class SoulGuide : MonoBehaviour
         private bool lifeStartToCount = false;
         public bool ReperRun = false;
         public Player player;
-       
+     
 
     public void OnTriggerEnter2D(Collider2D collision)
     {   //Косание души с игроком 
@@ -57,6 +57,9 @@ public class SoulGuide : MonoBehaviour
             lifeStartToCount = true;
             ReperRun = false;
         }
-    
+   public void destroySoul()
+    {
+        Destroy(this.gameObject);
+    }
     
 }
