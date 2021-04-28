@@ -155,7 +155,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((/*Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) ||*/ Input.GetKeyDown(KeyCode.Space)) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && !Input.GetKeyDown(KeyCode.S) && isGrounded && onRollover == false && state != State.Rollover)
         {
             Jump();
         }
@@ -180,11 +180,16 @@ public class Player : MonoBehaviour
             print(state.ToString());
         //print(GetComponent<SpriteRenderer>().color.g);
         //Debug.DrawLine(transform.position, new Vector3(transform.position.x + 100, transform.position.y, transform.position.z));
-        if ((Input.GetKeyDown(KeyCode.S)) && isGrounded)
+        
+    }
+    private void LateUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.S) && isGrounded && !Input.GetKeyDown(KeyCode.Space) && state != State.Jumping)
         {
             OnRollover();
         }
     }
+    
 
     public void OnAttak()
     {
