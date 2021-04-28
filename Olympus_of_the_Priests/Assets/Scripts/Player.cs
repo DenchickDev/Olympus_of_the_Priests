@@ -326,6 +326,10 @@ public class Player : MonoBehaviour
         {
             life = MaxLife;
         }
+        else if((life + deltaLife) < 0)
+        {
+            life = 0;
+        }
         else
         {
             life = life + deltaLife;
