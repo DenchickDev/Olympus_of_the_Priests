@@ -182,6 +182,7 @@ public class Player : MonoBehaviour
         //Debug.DrawLine(transform.position, new Vector3(transform.position.x + 100, transform.position.y, transform.position.z));
         
     }
+    //Метод срабатывает сразу же после полного срабатывания метода Update
     private void LateUpdate()
     {
         if (Input.GetKeyDown(KeyCode.S) && isGrounded && !Input.GetKeyDown(KeyCode.Space) && state != State.Jumping)
@@ -326,7 +327,7 @@ public class Player : MonoBehaviour
         {
             life = MaxLife;
         }
-        else if((life + deltaLife) < 0)
+        else if ((life + deltaLife) < 0)
         {
             life = 0;
         }
@@ -345,38 +346,41 @@ public class Player : MonoBehaviour
                 StartCoroutine(Blink());
             }
         }
-        if (life <= 0 )
+        if (life <= 0)
         {
             GetComponent<Rigidbody2D>().simulated = false;
-            state = State.Dead;
             Invoke("Lose", 2f);
+            state = State.Dead;
+
         }
     }
+    //Метод вызова моментальной смерти через тег 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Lava")
         {
-            SetDamageWithGodMode(life);
-            GetComponent<Rigidbody2D>().simulated = false;
+            isDead();
             state = State.Combustion;
-            Invoke("Lose", 2f);
         }
         if(collision.gameObject.tag == "Saw")
         {
-            SetDamageWithGodMode(life);
-            GetComponent<Rigidbody2D>().simulated = false;
+            isDead();
             state = State.Sawing;
-            Invoke("Lose", 2f);
+            
         }
       /*  if (collision.gameObject.tag == "Rock")
         {
-            SetDamageWithGodMode(life);
-            GetComponent<Rigidbody2D>().simulated = false;
             state = State.Combustion;
-            Invoke("Lose", 2f);
+            isDead();
         }*/
     }
-
+    //Метод моментальной смерти
+    public void isDead()
+    {
+        SetDamageWithGodMode(life);
+        GetComponent<Rigidbody2D>().simulated = false;
+        Invoke("Lose", 2f);
+    }
     //Корутина изменения звета при получении урона игроком
     IEnumerator Blink()
     {
@@ -407,25 +411,30 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(0.02f);
         StartCoroutine(Blink());
     }
+    //Метод перезапуска сцены 
     public void Lose()
     {
         main.gameObject.GetComponent<Main>().Lose();
     }
+    //Метод сбора души с звуком 
     public void SoulCount()
     {
         soulsCount++;
         soundManager.PlayTakeItemsSound();
     }
+    //Метод исцеления с звуком 
     public void LifeCount()
     {
         RecountLife(10);
         soundManager.PlayHillSound();
     }
+    //Метод передачи данных в счетчик 
     public int GetCountUI()
     {
         return soulsCount;
         //return life;
     }
+    //Метод включения подката
     private void OnRollover()
     {
         GetComponent<BoxCollider2D>().enabled = false;
@@ -434,12 +443,17 @@ public class Player : MonoBehaviour
         Invoke("OffRollover", timeRollover);
         onRollover = true;
     }
+    //Метод отключения подката
     private void OffRollover()
     {
         GetComponent<BoxCollider2D>().enabled = true;
         GetComponent<CapsuleCollider2D>().enabled = false;
-        state = State.Idle;
+        //state = State.Idle;
         onRollover = false;
+        if (isGrounded)
+        {
+            state = State.Idle;
+        }
     }
 }
 
