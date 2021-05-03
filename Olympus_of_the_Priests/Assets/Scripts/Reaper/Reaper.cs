@@ -15,7 +15,9 @@ public class Reaper : MonoBehaviour
     float speed = 2.3f;
     public SoundManager soundManager;
     public SoulGuide soulGuide;
-    
+    public bool soulToDestroy  = false;
+    public bool SoulMuve = false;
+
     /// <summary>
     /// Время до уничтожения жнеца
     /// </summary>
@@ -48,8 +50,12 @@ public class Reaper : MonoBehaviour
 
     private void DestroyMe()
     {
-        Destroy(this.gameObject);
-        soulGuide.GetComponent<SoulGuide>().destroySoul();
+        if (isRuning == true)
+        { 
+            soulGuide.GetComponent<SoulGuide>().destroySoul();
+        } 
+            Destroy(this.gameObject); 
+        
     }
 
     public void KillMe(GameObject player)

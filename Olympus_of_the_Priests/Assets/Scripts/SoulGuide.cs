@@ -10,29 +10,31 @@ public class SoulGuide : MonoBehaviour
         public float speed;
         //Проверка на движение 
         private bool soulStartToCount = false;
-        private bool lifeStartToCount = false;
+        public bool lifeStartToCount = false;
         public bool ReperRun = false;
         public Player player;
+        
      
-
+    //Метод на проверку косания 
     public void OnTriggerEnter2D(Collider2D collision)
     {   //Косание души с игроком 
         if (collision.gameObject.tag == "Player")
         {
             soulStartToCount = true;
-        }//Ксание души о счетчик
+        }
+        //Ксание души о счетчик
         if (collision.gameObject.tag == "SoulCount")
         {   //добовляет к счетчику +1 душу и вызывает звук
             //разрушает душу при косании о счетчик
             player.SoulCount();
-            Destroy(gameObject);
+            destroySoul();
         }
         //Ксание души о счетчик
         if (collision.gameObject.tag == "LifeCount")
         {   //добовляет к счетчику +1 душу и вызывает звук
             //разрушает душу при косании о счетчик
             player.GetComponent<Player>().LifeCount();
-            Destroy(gameObject);
+            destroySoul();
         }
     }
     //метод движения душы к счетчику и движения за жнецом 
@@ -52,14 +54,15 @@ public class SoulGuide : MonoBehaviour
         }
 
     }
-        public void DeadReaper()
-        {
-            lifeStartToCount = true;
-            ReperRun = false;
-        }
+    public void DeadReaper()
+    {
+       lifeStartToCount = true;
+       ReperRun = false;
+       
+    }
    public void destroySoul()
     {
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
     
 }

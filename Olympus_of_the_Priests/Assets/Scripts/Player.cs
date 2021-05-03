@@ -17,6 +17,12 @@ public class Player : MonoBehaviour
     public SoundManager soundManager;
 
     /// <summary>
+    /// Игрок бежит 
+    /// саунд бега запущен  
+    /// </summary>
+    public bool isMovement = false;
+    public bool isSoundRunPlay = false;
+    /// /// <summary>
     /// Режим бессмертия
     /// </summary>
     [SerializeField]
@@ -150,6 +156,7 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         collider = GetComponent<Collider2D>();
         life = MaxLife;
+        
     }
 
     // Update is called once per frame
@@ -171,6 +178,7 @@ public class Player : MonoBehaviour
         else
         {
             Movement();
+           
         }
 
         CalculateState();
@@ -242,6 +250,7 @@ public class Player : MonoBehaviour
         //Если коллайдер гг дотронулся до маски "Ground", то мы на земле
         //isGrounded = collider.IsTouchingLayers(ground); // исправить
         isGrounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+        
     }
 
     /// <summary>
@@ -252,11 +261,14 @@ public class Player : MonoBehaviour
         if (Input.GetAxis("Horizontal") != 0)
         {
             rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
+            isMovement = true;
+            PlayRunSound();
 
         }
         else
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
+            isMovement = false;
         }
 
     }
@@ -428,6 +440,26 @@ public class Player : MonoBehaviour
         RecountLife(10);
         soundManager.PlayHillSound();
     }
+    //Метод вызова звука бега 
+    private void PlayRunSound()
+    {
+
+        if (isGrounded && onRollover == false && state != State.Rollover && state != State.Jumping )
+        {
+            if (isMovement == true && isSoundRunPlay == false)
+            {
+                soundManager.PlayRunSound();
+                isSoundRunPlay = true;
+                isMovement = false;
+
+            }
+            else
+            {
+               
+            }
+        }
+    }    
+   
     //Метод передачи данных в счетчик 
     public int GetCountUI()
     {
@@ -442,6 +474,7 @@ public class Player : MonoBehaviour
         state = State.Rollover;
         Invoke("OffRollover", timeRollover);
         onRollover = true;
+        soundManager.PlayWoundSound();
     }
     //Метод отключения подката
     private void OffRollover()
@@ -455,6 +488,7 @@ public class Player : MonoBehaviour
             state = State.Idle;
         }
     }
+    
 }
 
 

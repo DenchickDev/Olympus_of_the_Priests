@@ -4277,6 +4277,8 @@ MonoBehaviour:
   speed: 2.3
   soundManager: {fileID: 0}
   soulGuide: {fileID: 0}
+  soulToDestroy: 0
+  SoulMuve: 0
   timeToDestroy: 7
   isRuning: 0
 --- !u!50 &175708372
@@ -5040,6 +5042,8 @@ MonoBehaviour:
   speed: 2.3
   soundManager: {fileID: 519420036}
   soulGuide: {fileID: 1261925608}
+  soulToDestroy: 0
+  SoulMuve: 0
   timeToDestroy: 7
   isRuning: 0
 --- !u!95 &201865069
@@ -28100,8 +28104,10 @@ MonoBehaviour:
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
   speed: 75
+  lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  reaperScript: {fileID: 0}
 --- !u!212 &908236826
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -37747,8 +37753,10 @@ MonoBehaviour:
   lifeCount: {fileID: 2080973910}
   reaper: {fileID: 1093925758}
   speed: 75
+  lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  reaperScript: {fileID: 175708371}
 --- !u!1 &1262957315
 GameObject:
   m_ObjectHideFlags: 0
@@ -57141,6 +57149,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   main: {fileID: 519420033}
   soundManager: {fileID: 0}
+  isMovement: 0
+  isSoundRunPlay: 0
   isGodMod: 0
   timeOfOneBlink: 15
   timeRollover: 1
@@ -58994,8 +59004,10 @@ MonoBehaviour:
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
   speed: 75
+  lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  reaperScript: {fileID: 0}
 --- !u!212 &2049213758
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -60186,7 +60198,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071362812}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 173.61, y: 7.25, z: -1}
   m_LocalScale: {x: 0.74856156, y: 0.74856156, z: 0.74856156}
   m_Children:
   - {fileID: 15401728}
@@ -60213,6 +60225,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   main: {fileID: 519420033}
   soundManager: {fileID: 519420036}
+  isMovement: 0
+  isSoundRunPlay: 0
   isGodMod: 0
   timeOfOneBlink: 15
   timeRollover: 1
