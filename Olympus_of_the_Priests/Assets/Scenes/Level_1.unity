@@ -3872,11 +3872,10 @@ GameObject:
   - component: {fileID: 118431996}
   - component: {fileID: 118431995}
   - component: {fileID: 118431994}
-  - component: {fileID: 118431993}
   - component: {fileID: 118431992}
   m_Layer: 0
   m_Name: Cell (1)
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3914,19 +3913,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &118431993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 118431990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16d3603d8ef2f0f46b3d54133d381006, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 20
 --- !u!50 &118431994
 Rigidbody2D:
   serializedVersion: 4
@@ -3939,7 +3925,7 @@ Rigidbody2D:
   m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 11.93
+  m_Mass: 20
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3.57
@@ -12026,7 +12012,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378691112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -33.38, y: -0.21, z: 0}
+  m_LocalPosition: {x: -33.4, y: -0.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 886088558}
@@ -18163,6 +18149,7 @@ MonoBehaviour:
   BackgoungMusic: {fileID: 102530371}
   lvls: []
   ResumeButton: {fileID: 0}
+  saveMode: 0
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61809,7 +61796,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816979808}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.932, y: -0.505, z: -0.95083416}
+  m_LocalPosition: {x: -12.163, y: -0.48, z: -0.95083416}
   m_LocalScale: {x: 0.23489365, y: 0.095083416, z: 0.095083416}
   m_Children: []
   m_Father: {fileID: 1038865110}
@@ -68232,6 +68219,7 @@ MonoBehaviour:
   isGodMod: 0
   timeOfOneBlink: 15
   timeRollover: 1
+  speedRollover: 1
   CountBlinks: 8
   CurrentCountBlinks: 0
   speed: 4
@@ -71320,7 +71308,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071362812}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.6, y: 4.5, z: -1}
+  m_LocalPosition: {x: 425.05, y: 6.4, z: -1}
   m_LocalScale: {x: 0.74856156, y: 0.74856156, z: 0.74856156}
   m_Children:
   - {fileID: 15401728}
@@ -71352,6 +71340,7 @@ MonoBehaviour:
   isGodMod: 0
   timeOfOneBlink: 15
   timeRollover: 1
+  speedRollover: 8
   CountBlinks: 8
   CurrentCountBlinks: 0
   speed: 15.53

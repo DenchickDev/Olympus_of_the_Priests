@@ -42,6 +42,11 @@ public class Player : MonoBehaviour
     [SerializeField]
     public float timeRollover = 1;
     /// <summary>
+    /// Значение повышения скорости движения в перекате 
+    /// </summary>
+    [SerializeField]
+    public float speedRollover = 1;
+    /// <summary>
     /// Кол-во миганий
     /// </summary>
     [SerializeField]
@@ -131,7 +136,15 @@ public class Player : MonoBehaviour
         /// <summary>
         /// распиливание 
         /// </summary>
-        Sawing
+        Sawing,
+        /// <summary>
+        /// распиливание 
+        /// </summary>
+        Crushed,
+        /// <summary>
+        /// распиливание 
+        /// </summary>
+        SawingInRollover
     }
 
     /// <summary>
@@ -162,7 +175,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !Input.GetKeyDown(KeyCode.S) && isGrounded && onRollover == false && state != State.Rollover)
+        if (Input.GetKeyDown(KeyCode.Space) && !Input.GetKeyDown(KeyCode.S) && isGrounded && onRollover == false && state != State.Rollover && state != State.Crushed && state != State.SawingInRollover)
         {
             Jump();
         }
@@ -193,7 +206,7 @@ public class Player : MonoBehaviour
     //Метод срабатывает сразу же после полного срабатывания метода Update
     private void LateUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.S) && isGrounded && !Input.GetKeyDown(KeyCode.Space) && state != State.Jumping)
+        if (Input.GetKeyDown(KeyCode.S) && isGrounded && !Input.GetKeyDown(KeyCode.Space) && state != State.Jumping && state != State.Crushed && state != State.SawingInRollover)
         {
             OnRollover();
         }
@@ -288,13 +301,13 @@ public class Player : MonoBehaviour
         //if (state == State.Jumping)
         //{
         //}
-        if (state != State.Dead && state != State.Combustion && state != State.Stab && state != State.Rollover && state != State.Sawing)
+        if (state != State.SawingInRollover && state != State.Dead && state != State.Combustion && state != State.Stab && state != State.Rollover && state != State.Sawing && state != State.Crushed)
         {
-            if (rb.velocity.y < -.1f)
+            if (rb.velocity.y < -.1f && !isGrounded && state != State.Crushed )
             {
                 state = State.Falling;
             }
-            else if (rb.velocity.y > .1f)
+            else if (rb.velocity.y > .1f && !isGrounded && state != State.Crushed)
             {
                 state = State.Jumping;
             }
@@ -377,14 +390,21 @@ public class Player : MonoBehaviour
         if(collision.gameObject.tag == "Saw")
         {
             isDead();
-            state = State.Sawing;
+            if (state == State.Rollover)
+            {
+                state = State.SawingInRollover;
+            }
+            else
+            {
+                state = State.Sawing;
+            }
             
         }
-      /*  if (collision.gameObject.tag == "Rock")
+        if (collision.gameObject.tag == "Rock")
         {
-            state = State.Combustion;
             isDead();
-        }*/
+            state = State.Crushed;
+        }
     }
     //Метод моментальной смерти
     public void isDead()
@@ -469,6 +489,7 @@ public class Player : MonoBehaviour
     //Метод включения подката
     private void OnRollover()
     {
+        speed += speedRollover;
         GetComponent<BoxCollider2D>().enabled = false;
         GetComponent<CapsuleCollider2D>().enabled = true;
         state = State.Rollover;
@@ -479,11 +500,12 @@ public class Player : MonoBehaviour
     //Метод отключения подката
     private void OffRollover()
     {
+        speed -= speedRollover;
         GetComponent<BoxCollider2D>().enabled = true;
         GetComponent<CapsuleCollider2D>().enabled = false;
         //state = State.Idle;
         onRollover = false;
-        if (isGrounded)
+        if (isGrounded && state != State.Crushed && state != State.SawingInRollover)
         {
             state = State.Idle;
         }
