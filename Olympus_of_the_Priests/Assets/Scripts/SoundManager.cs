@@ -4,6 +4,22 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+    public GameObject[] BGMusic;  //объект с фоновой музыкой
+    public void Start()
+    {
+        DontDestroyOnLoad(BGMusic[0]);
+        BGMusic = GameObject.FindGameObjectsWithTag("Music");
+
+        if (BGMusic.Length > 1)
+        {
+            Destroy(BGMusic[1]);
+        }
+    }
+    public void DestroyBGMusic()
+    {
+        Destroy(BGMusic[0]);
+    }
+
     public AudioSource audioSorce;
     //звуки главного героя: прыжок, бег, кувырок, удар, исцеление, ранение;
     public AudioClip jumpSound, runSound, tucksSound, hitSound, hillSound, woundSound;

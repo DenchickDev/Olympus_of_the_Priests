@@ -16,24 +16,30 @@ public class Menu : MonoBehaviour
     public Button [] lvls;
     public Button ResumeButton;
     private int resume;
+    public bool saveMode;
     
-
-
     private void Start()
     {
-        if (PlayerPrefs.HasKey("Lvl"))
-            for(int i = 0; i<lvls.Length; i++)
-            {
-                if (i <= PlayerPrefs.GetInt("Lvl"))
+        if (saveMode == true)
+        {
+            if (PlayerPrefs.HasKey("Lvl"))
+                for (int i = 0; i < lvls.Length; i++)
                 {
-                    lvls[i].interactable = true;
-                    resume = PlayerPrefs.GetInt("Lvl") +1;
-                    ResumeButton.interactable = true;
-                }
+                    if (i <= PlayerPrefs.GetInt("Lvl"))
+                    {
+                        lvls[i].interactable = true;
+                        resume = PlayerPrefs.GetInt("Lvl") + 1;
+                        ResumeButton.interactable = true;
+                    }
 
-                else
-                    lvls[i].interactable = false;
-            }
+                    else
+                        lvls[i].interactable = false;
+                }
+        }
+    }
+    public void DontSavingBGMusic()
+    {
+        gameObject.GetComponent<SoundManager>().DestroyBGMusic();
     }
     public void Resume()
     {
