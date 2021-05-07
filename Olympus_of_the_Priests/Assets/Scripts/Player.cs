@@ -144,7 +144,11 @@ public class Player : MonoBehaviour
         /// <summary>
         /// распиливание 
         /// </summary>
-        SawingInRollover
+        SawingInRollover,
+        /// <summary>
+        /// Падение в яму с шипами
+        /// </summary>
+        PitWithSpikes
     }
 
     /// <summary>
@@ -175,11 +179,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !Input.GetKeyDown(KeyCode.S) && isGrounded && onRollover == false && state != State.Rollover && state != State.Crushed && state != State.SawingInRollover)
+        if (Input.GetKeyDown(KeyCode.Space) && !Input.GetKeyDown(KeyCode.S) && isGrounded && onRollover == false && state != State.Rollover && state != State.Crushed && state != State.SawingInRollover && state != State.PitWithSpikes)
         {
             Jump();
         }
-        else if (state != State.Dead && state != State.Combustion && state !=State.Sawing && Input.GetMouseButtonDown(0) && onRollover == false)
+        else if (state != State.Dead && state != State.Combustion && state !=State.Sawing && Input.GetMouseButtonDown(0) && onRollover == false && state != State.PitWithSpikes)
         {
             state = State.Stab;
             soundManager.PlayHitSound();
@@ -206,7 +210,7 @@ public class Player : MonoBehaviour
     //Метод срабатывает сразу же после полного срабатывания метода Update
     private void LateUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.S) && isGrounded && !Input.GetKeyDown(KeyCode.Space) && state != State.Jumping && state != State.Crushed && state != State.SawingInRollover)
+        if (Input.GetKeyDown(KeyCode.S) && isGrounded && state !=State.PitWithSpikes && !Input.GetKeyDown(KeyCode.Space) && state != State.Jumping && state != State.Crushed && state != State.SawingInRollover)
         {
             OnRollover();
         }
@@ -301,7 +305,7 @@ public class Player : MonoBehaviour
         //if (state == State.Jumping)
         //{
         //}
-        if (state != State.SawingInRollover && state != State.Dead && state != State.Combustion && state != State.Stab && state != State.Rollover && state != State.Sawing && state != State.Crushed)
+        if (state != State.SawingInRollover && state != State.PitWithSpikes && state != State.Dead && state != State.Combustion && state != State.Stab && state != State.Rollover && state != State.Sawing && state != State.Crushed)
         {
             if (rb.velocity.y < -.1f && !isGrounded && state != State.Crushed )
             {
@@ -397,14 +401,19 @@ public class Player : MonoBehaviour
             else
             {
                 state = State.Sawing;
-            }
-            
+            }   
         }
         if (collision.gameObject.tag == "Rock")
         {
             isDead();
             state = State.Crushed;
         }
+        if (collision.gameObject.tag == "PitWithSpikes")
+        {
+            isDead();
+            state = State.PitWithSpikes;
+        }
+
     }
     //Метод моментальной смерти
     public void isDead()
