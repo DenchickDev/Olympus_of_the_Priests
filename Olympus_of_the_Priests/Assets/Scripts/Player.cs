@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -195,7 +194,6 @@ public class Player : MonoBehaviour
         else
         {
             Movement();
-           
         }
 
         CalculateState();
@@ -210,13 +208,11 @@ public class Player : MonoBehaviour
     //Метод срабатывает сразу же после полного срабатывания метода Update
     private void LateUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.S) && isGrounded && state !=State.PitWithSpikes && !Input.GetKeyDown(KeyCode.Space) && state != State.Jumping && state != State.Crushed && state != State.SawingInRollover)
+        if (Input.GetKeyDown(KeyCode.S) && isGrounded && state !=State.PitWithSpikes && !Input.GetKeyDown(KeyCode.Space) &&  state != State.Crushed && state != State.SawingInRollover)
         {
             OnRollover();
         }
     }
-    
-
     public void OnAttak()
     {
         //собсна атака
@@ -307,11 +303,11 @@ public class Player : MonoBehaviour
         //}
         if (state != State.SawingInRollover && state != State.PitWithSpikes && state != State.Dead && state != State.Combustion && state != State.Stab && state != State.Rollover && state != State.Sawing && state != State.Crushed)
         {
-            if (rb.velocity.y < -.1f && !isGrounded && state != State.Crushed )
+            if ( rb.velocity.y < -.1f && state != State.Crushed && !isGrounded )
             {
                 state = State.Falling;
             }
-            else if (rb.velocity.y > .1f && !isGrounded && state != State.Crushed)
+            else if (rb.velocity.y >.1f  && state != State.Crushed)
             {
                 state = State.Jumping;
             }
@@ -325,7 +321,6 @@ public class Player : MonoBehaviour
             else if (Mathf.Abs(rb.velocity.x) > 2f)
             {
                 state = State.Running;
-                
             }
             else
             {
