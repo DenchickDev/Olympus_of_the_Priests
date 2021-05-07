@@ -493,6 +493,8 @@ public class Player : MonoBehaviour
     //Метод включения подката
     private void OnRollover()
     {
+      if(onRollover == false)
+      {
         speed += speedRollover;
         GetComponent<BoxCollider2D>().enabled = false;
         GetComponent<CapsuleCollider2D>().enabled = true;
@@ -500,6 +502,7 @@ public class Player : MonoBehaviour
         Invoke("OffRollover", timeRollover);
         onRollover = true;
         soundManager.PlayWoundSound();
+      }
     }
     //Метод отключения подката
     private void OffRollover()

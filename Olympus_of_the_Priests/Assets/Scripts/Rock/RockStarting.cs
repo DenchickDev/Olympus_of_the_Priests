@@ -25,7 +25,7 @@ public class RockStarting : MonoBehaviour
           if (collision.gameObject.tag == "Player")
         {
             rock.gameObject.GetComponent<Rock>().ChangeSimulated(true);
-            audioSource.PlayOneShot(fallingSound);
+            //audioSource.PlayOneShot(fallingSound);
         }
     }
 }

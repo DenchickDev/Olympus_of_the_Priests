@@ -28,7 +28,7 @@ public class Rock : MonoBehaviour
         if (collision.gameObject.tag == "Player" || LayerMask.LayerToName(collision.gameObject.layer) == "Ground")
         {
             anim.SetBool("isDestroyed", true);
-            Invoke("DestroyMe", 0.08f);
+            Invoke("DestroyMe", 0.8f);
 
         }
     }

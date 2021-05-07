@@ -25,7 +25,7 @@ public class FallPlatform : MonoBehaviour
       {
             Invoke("FallingPlatform", timeToFall);
             Destroy(gameObject, timeToDestroy);
-            audioSource.PlayOneShot(fallingSound);
+            //audioSource.PlayOneShot(fallingSound);
         }
       
     }
