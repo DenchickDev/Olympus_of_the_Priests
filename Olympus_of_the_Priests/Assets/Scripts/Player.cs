@@ -182,7 +182,7 @@ public class Player : MonoBehaviour
         {
             Jump();
         }
-        else if (state != State.Dead && state != State.Combustion && state !=State.Sawing && Input.GetMouseButtonDown(0) && onRollover == false && state != State.PitWithSpikes)
+        else if (state != State.Dead && state != State.Combustion && state !=State.Sawing && Input.GetMouseButtonDown(0) && onRollover == false && state != State.PitWithSpikes && state !=State.Stab && state !=State.Crushed)
         {
             state = State.Stab;
             soundManager.PlayHitSound();
@@ -301,7 +301,7 @@ public class Player : MonoBehaviour
         //if (state == State.Jumping)
         //{
         //}
-        if (state != State.SawingInRollover && state != State.PitWithSpikes && state != State.Dead && state != State.Combustion && state != State.Stab && state != State.Rollover && state != State.Sawing && state != State.Crushed)
+        if ( state != State.SawingInRollover && state != State.PitWithSpikes && state != State.Dead && state != State.Combustion  && state != State.Sawing && state != State.Crushed && state != State.Stab && state != State.Rollover)
         {
             if ( rb.velocity.y < -.1f && state != State.Crushed && !isGrounded )
             {
@@ -322,7 +322,7 @@ public class Player : MonoBehaviour
             {
                 state = State.Running;
             }
-            else
+            else 
             {
                 state = State.Idle;
             }
@@ -398,10 +398,10 @@ public class Player : MonoBehaviour
                 state = State.Sawing;
             }   
         }
-        if (collision.gameObject.tag == "Rock")
+        if (collision.gameObject.tag == "Rock" && isGrounded)
         {
             isDead();
-            state = State.Crushed;
+             state = State.Crushed;
         }
         if (collision.gameObject.tag == "PitWithSpikes")
         {
