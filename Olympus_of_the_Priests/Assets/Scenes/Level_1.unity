@@ -21111,7 +21111,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1000110895
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21127,10 +21127,10 @@ RectTransform:
   m_Father: {fileID: 1292844273}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.41750488, y: 0.029824663}
-  m_AnchorMax: {x: 0.5805452, y: 0.6874123}
-  m_AnchoredPosition: {x: 1.3905029, y: 4.1914988}
-  m_SizeDelta: {x: 7.74, y: -1.3364084}
+  m_AnchorMin: {x: 0.41750488, y: 0.32839507}
+  m_AnchorMax: {x: 0.5805452, y: 0.5}
+  m_AnchoredPosition: {x: 1.3905029, y: -1.8106079}
+  m_SizeDelta: {x: 7.74, y: 0.61987305}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1000110896
 MonoBehaviour:
@@ -21178,8 +21178,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 519420034}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: OpenScene
-        m_Mode: 3
+        m_MethodName: OpenNextLvlScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -27764,8 +27764,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 519420034}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: OpenScene
-        m_Mode: 3
+        m_MethodName: OpenSceneMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -32272,8 +32272,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00024414062, y: 62.01}
-  m_SizeDelta: {x: 0, y: -124.02}
+  m_AnchoredPosition: {x: 0, y: -5.2181}
+  m_SizeDelta: {x: 0, y: -10.436}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1447907432
 MonoBehaviour:
@@ -43023,8 +43023,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 519420034}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: OpenScene
-        m_Mode: 3
+        m_MethodName: OpenSceneMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -45147,7 +45147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071362812}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 320.44, y: 8.29, z: -1}
+  m_LocalPosition: {x: 13.24, y: -1.1, z: -1}
   m_LocalScale: {x: 0.74856156, y: 0.7532026, z: 0.74856156}
   m_Children:
   - {fileID: 15401728}

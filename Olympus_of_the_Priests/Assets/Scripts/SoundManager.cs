@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
     public GameObject[] BGMusic;  //объект с фоновой музыкой
+    
     public void Start()
     {
+       /* sceneName = SceneManager.GetActiveScene().name;
+
+        if (sceneName == SceneManager.LoadScene.name)*/
+
         DontDestroyOnLoad(BGMusic[0]);
         BGMusic = GameObject.FindGameObjectsWithTag("Music");
 

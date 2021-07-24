@@ -49,10 +49,15 @@ public class Menu : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
     }
-    public void OpenScene(int index)
+    public void OpenNextLvlScene()
     {
-        SceneManager.LoadScene(index);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
         Time.timeScale = 1f;
+        DontSavingBGMusic();
+    }
+    public void OpenSceneMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
     //Метод продолжения игры при смене уровня 
    public void startingTime (bool startTime)
@@ -86,7 +91,8 @@ public class Menu : MonoBehaviour
             ChoicePanelOn = false;
         } 
             
-    }public void ButtonMusicMute ()
+    }
+    public void ButtonMusicMute ()
     {
         if (CheckMusicMute == false)
         {
@@ -104,7 +110,6 @@ public class Menu : MonoBehaviour
         } 
             
     }
-    
     private void MusicMute ()
     {
         if (CheckMusicMute == false)
