@@ -21,7 +21,10 @@ public class EnemyTrigger : MonoBehaviour
             }
         }
     }
-
+    public void DestroyOjectDamage()
+    {
+        Destroy(this.gameObject);
+    }
     void SetDamage()
     {
         noDamage = false;
