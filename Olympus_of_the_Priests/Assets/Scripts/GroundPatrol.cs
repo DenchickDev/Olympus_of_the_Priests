@@ -182,12 +182,12 @@ public class GroundPatrol : MonoBehaviour
     {
         if (state == State.Dead)
         {
-            /*  var damage = GetComponentInChildren<EnemyTrigger>();
+             var damage = GetComponentInChildren<EnemyTrigger>();
               if (damage != null)
               {
                  damage.damage = 0;
-              }*/
-           GetComponentInChildren<EnemyTrigger>().DestroyOjectDamage();
+              }
+           //GetComponentInChildren<EnemyTrigger>().DestroyOjectDamage();
            Invoke("DestroyMe", 1f);
         }
     }

@@ -21,18 +21,17 @@ public class Player : MonoBehaviour
     /// </summary>
     public bool isMovement = false;
     public bool isSoundRunPlay = false;
+
     /// /// <summary>
     /// Режим бессмертия
     /// </summary>
     [SerializeField]
     private bool isGodMod = false;
 
-
     /// <summary>
     /// Время одного мигания в мс
     /// </summary>
     [SerializeField]
-    
     private float timeOfOneBlink = 15f;
 
     /// <summary>
@@ -93,6 +92,8 @@ public class Player : MonoBehaviour
     /// </summary>
     [SerializeField]
     Transform groundCheck;
+    public float CheckRadius;
+
 
     public enum State
     {
