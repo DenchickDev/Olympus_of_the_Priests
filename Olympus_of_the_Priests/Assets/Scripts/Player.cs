@@ -11,9 +11,13 @@ public class Player : MonoBehaviour
     bool onRollover = false;
     ///<summary>
     /// Звуковой менеджер
+    /// Источник звука
+    /// Массив звука бега
     /// </summary>
     [SerializeField]
     public SoundManager soundManager;
+    public AudioSource audioSource;
+    public AudioClip[] soundsRun;
 
     /// <summary>
     /// Игрок бежит 
@@ -172,6 +176,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         collider = GetComponent<Collider2D>();
+
         life = MaxLife;
         
     }
@@ -518,7 +523,12 @@ public class Player : MonoBehaviour
             state = State.Idle;
         }
     }
-    
+    //Метод вызова звука бега при срабаывании события на анимации
+    private void soundsRunControl()
+    {
+        int randomInt = Random.Range(0, soundsRun.Length);
+        audioSource.PlayOneShot(soundsRun[randomInt]);
+    }
 }
 
 

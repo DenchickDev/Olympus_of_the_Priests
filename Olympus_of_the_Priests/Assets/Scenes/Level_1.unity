@@ -4942,7 +4942,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.08, y: -0.3}
+  m_AnchoredPosition: {x: 0.18, y: -0.1}
   m_SizeDelta: {x: 1920.0001, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &298688695
@@ -45191,7 +45191,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071362812}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.24, y: -1.1, z: -1}
+  m_LocalPosition: {x: 4.645, y: -0.847, z: -1}
   m_LocalScale: {x: 0.74856156, y: 0.7532026, z: 0.74856156}
   m_Children:
   - {fileID: 15401728}
@@ -45219,6 +45219,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   main: {fileID: 519420033}
   soundManager: {fileID: 519420036}
+  audioSource: {fileID: 1686930414}
+  soundsRun:
+  - {fileID: 8300000, guid: 56a00de8d78582a4980fa670bc52ffca, type: 3}
+  - {fileID: 8300000, guid: de700f8017798574f928090b5f8e9312, type: 3}
+  - {fileID: 8300000, guid: 6137021193ef50d4bb68cf5735878362, type: 3}
+  - {fileID: 8300000, guid: a6a70c557ddd1b04badb3ac710199121, type: 3}
+  - {fileID: 8300000, guid: efda4c081f1cdd64690802bad6183cd6, type: 3}
+  - {fileID: 8300000, guid: f66f6f27a674f034cbc47307802a06be, type: 3}
+  - {fileID: 8300000, guid: dd5a664aac6eeb44aa962db138c6a148, type: 3}
+  - {fileID: 8300000, guid: e7862456af3857c4185bcb911a3233d7, type: 3}
   isMovement: 0
   isSoundRunPlay: 0
   isGodMod: 0
