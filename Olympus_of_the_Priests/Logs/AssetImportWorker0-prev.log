@@ -1,0 +1,362 @@
+Using pre-set license
+Built from '2020.2/staging' branch; Version is '2020.2.7f1 (c53830e277f1) revision 12924976'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19043.1110; Version 2009; 64bit' Language: 'ru' Physical Memory: 32677 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/Development/GitRepozitoriy/OotP/Olympus_of_the_Priests/Olympus_of_the_Priests
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+50851
+Successfully changed project path to: D:/Development/GitRepozitoriy/OotP/Olympus_of_the_Priests/Olympus_of_the_Priests
+D:/Development/GitRepozitoriy/OotP/Olympus_of_the_Priests/Olympus_of_the_Priests
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 36.08 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.2.7f1 (c53830e277f1)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Development/GitRepozitoriy/OotP/Olympus_of_the_Priests/Olympus_of_the_Priests/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GT 630 (ID=0xf00)
+    Vendor:   
+    VRAM:     979 MB
+    Driver:   23.21.13.8813
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56748
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001814 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 31.94 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.908 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.000626 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 35.58 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.829 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.36 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1830 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 86.8 MB.
+System memory in use after: 86.8 MB.
+
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 2280.
+Total: 1.945900 ms (FindLiveObjects: 0.187400 ms CreateObjectMapping: 0.071400 ms MarkObjects: 1.598100 ms  DeleteObjects: 0.088100 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Scripts/Player.cs
+  artifactKey: Guid(d410ce608712e044eb7fe3e5940504d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player.cs using Guid(d410ce608712e044eb7fe3e5940504d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '548fc8cf51d4bd6ab0cb989574c51b27') in 0.013486 seconds
+  Import took 0.016074 seconds .
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 1.12 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 9 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 50.1 MB.
+System memory in use after: 50.1 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 2280.
+Total: 2.186500 ms (FindLiveObjects: 0.174300 ms CreateObjectMapping: 0.055400 ms MarkObjects: 1.886400 ms  DeleteObjects: 0.069800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000621 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.720 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.37 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1824 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 86.7 MB.
+System memory in use after: 86.7 MB.
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 2284.
+Total: 1.651200 ms (FindLiveObjects: 0.175800 ms CreateObjectMapping: 0.057600 ms MarkObjects: 1.346800 ms  DeleteObjects: 0.070200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1805.771852 seconds.
+  path: Assets/Scripts/Player.cs
+  artifactKey: Guid(d410ce608712e044eb7fe3e5940504d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Player.cs using Guid(d410ce608712e044eb7fe3e5940504d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '576f8a61085457cecad976132c25f3b8') in 0.004448 seconds
+  Import took 0.006879 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.944057 seconds.
+  path: Assets/Assets_Reaper/Souls and lives
+  artifactKey: Guid(8925584b5b355004b92f8d429d14be5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets_Reaper/Souls and lives using Guid(8925584b5b355004b92f8d429d14be5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c9ace478749f287a910fd15dbf72986') in 0.008873 seconds
+  Import took 0.012345 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000890 seconds.
+  path: Assets/Assets_Reaper/Souls and lives
+  artifactKey: Guid(8925584b5b355004b92f8d429d14be5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets_Reaper/Souls and lives using Guid(8925584b5b355004b92f8d429d14be5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c9ace478749f287a910fd15dbf72986') in 0.001991 seconds
+  Import took 0.005172 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.039301 seconds.
+  path: Assets/Assets_Reaper/Souls and lives/Souls.png
+  artifactKey: Guid(590f1811bee8d9446834e2900043a8f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets_Reaper/Souls and lives/Souls.png using Guid(590f1811bee8d9446834e2900043a8f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fc9b9c93fbd81ab0bea58a934e7e508') in 0.074279 seconds
+  Import took 0.076962 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.009610 seconds.
+  path: Assets/Assets_Reaper/Sounds
+  artifactKey: Guid(b70219662227e3a40a2e698276dae046) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets_Reaper/Sounds using Guid(b70219662227e3a40a2e698276dae046) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c4ac3a0331aecdd307b8bfd7c612f5b') in 0.006705 seconds
+  Import took 0.009571 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.749287 seconds.
+  path: Assets/Assets_Reaper/Sounds/SoundsRun
+  artifactKey: Guid(80c667a13f6095d419781f7beb4146f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets_Reaper/Sounds/SoundsRun using Guid(80c667a13f6095d419781f7beb4146f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '192df03b73e73e5716e3a0ee13070420') in 0.001937 seconds
+  Import took 0.005028 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.058655 seconds.
+  path: Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_1.mp3
+  artifactKey: Guid(56a00de8d78582a4980fa670bc52ffca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_1.mp3 using Guid(56a00de8d78582a4980fa670bc52ffca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfec6fed6aa914d591e326082861496b') in 0.021061 seconds
+  Import took 0.023659 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000174 seconds.
+  path: Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_6.mp3
+  artifactKey: Guid(f66f6f27a674f034cbc47307802a06be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_6.mp3 using Guid(f66f6f27a674f034cbc47307802a06be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75d22bbfbd080698a98d5252ef1b6c8b') in 0.014401 seconds
+  Import took 0.016918 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000219 seconds.
+  path: Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_3.mp3
+  artifactKey: Guid(6137021193ef50d4bb68cf5735878362) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_3.mp3 using Guid(6137021193ef50d4bb68cf5735878362) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7df698d0e004379a9c4b8f7bca929bb6') in 0.007366 seconds
+  Import took 0.010282 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_5.mp3
+  artifactKey: Guid(efda4c081f1cdd64690802bad6183cd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_5.mp3 using Guid(efda4c081f1cdd64690802bad6183cd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac569bb4420a1eb28ace2cb112bb351a') in 0.018210 seconds
+  Import took 0.021121 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000168 seconds.
+  path: Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_8.mp3
+  artifactKey: Guid(e7862456af3857c4185bcb911a3233d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_8.mp3 using Guid(e7862456af3857c4185bcb911a3233d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3daff1e4b7c50803ded5ba2e94286bb9') in 0.005967 seconds
+  Import took 0.008476 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_4.mp3
+  artifactKey: Guid(a6a70c557ddd1b04badb3ac710199121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_4.mp3 using Guid(a6a70c557ddd1b04badb3ac710199121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5281cc73e05991b5bc804aa738c1db63') in 0.011441 seconds
+  Import took 0.014068 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000187 seconds.
+  path: Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_7.mp3
+  artifactKey: Guid(dd5a664aac6eeb44aa962db138c6a148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_7.mp3 using Guid(dd5a664aac6eeb44aa962db138c6a148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cf87bd637d7113160a145e3268a5aa4') in 0.008430 seconds
+  Import took 0.010911 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000167 seconds.
+  path: Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_2.mp3
+  artifactKey: Guid(de700f8017798574f928090b5f8e9312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_2.mp3 using Guid(de700f8017798574f928090b5f8e9312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a15b293c7ef92404beafc6fe8412e37') in 0.005262 seconds
+  Import took 0.007634 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000905 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.40 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.688 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.36 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1824 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.9 MB.
+System memory in use after: 89.9 MB.
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 2305.
+Total: 1.713800 ms (FindLiveObjects: 0.159600 ms CreateObjectMapping: 0.054500 ms MarkObjects: 1.428200 ms  DeleteObjects: 0.070900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 168.629471 seconds.
+  path: Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_1.mp3
+  artifactKey: Guid(56a00de8d78582a4980fa670bc52ffca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_1.mp3 using Guid(56a00de8d78582a4980fa670bc52ffca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '183e884fa8c47b20cb7c0c16bd645b85') in 0.036883 seconds
+  Import took 0.039571 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_6.mp3
+  artifactKey: Guid(f66f6f27a674f034cbc47307802a06be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_6.mp3 using Guid(f66f6f27a674f034cbc47307802a06be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b074cf28908281ac734c246ee208705') in 0.008591 seconds
+  Import took 0.010981 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000141 seconds.
+  path: Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_3.mp3
+  artifactKey: Guid(6137021193ef50d4bb68cf5735878362) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_3.mp3 using Guid(6137021193ef50d4bb68cf5735878362) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6093fb0bb916470fb2d676cf738bbc6') in 0.004705 seconds
+  Import took 0.007202 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000117 seconds.
+  path: Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_5.mp3
+  artifactKey: Guid(efda4c081f1cdd64690802bad6183cd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_5.mp3 using Guid(efda4c081f1cdd64690802bad6183cd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b60f522afdef202cad2ae08bf9e89dfe') in 0.004813 seconds
+  Import took 0.007215 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000169 seconds.
+  path: Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_8.mp3
+  artifactKey: Guid(e7862456af3857c4185bcb911a3233d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_8.mp3 using Guid(e7862456af3857c4185bcb911a3233d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4613d42828ec8c2f9324bb6130677bdb') in 0.011188 seconds
+  Import took 0.013572 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000117 seconds.
+  path: Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_4.mp3
+  artifactKey: Guid(a6a70c557ddd1b04badb3ac710199121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_4.mp3 using Guid(a6a70c557ddd1b04badb3ac710199121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6e966c5f76d1875d7bfef733a6e40b7') in 0.005141 seconds
+  Import took 0.007457 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000161 seconds.
+  path: Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_7.mp3
+  artifactKey: Guid(dd5a664aac6eeb44aa962db138c6a148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_7.mp3 using Guid(dd5a664aac6eeb44aa962db138c6a148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b659b9cc90d1bdb47c8f3907196ff40') in 0.009649 seconds
+  Import took 0.012162 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000160 seconds.
+  path: Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_2.mp3
+  artifactKey: Guid(de700f8017798574f928090b5f8e9312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets_Reaper/Sounds/SoundsRun/SoundRun_2.mp3 using Guid(de700f8017798574f928090b5f8e9312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae78542f456ff898cc0e64c3a9b4b2e0') in 0.005471 seconds
+  Import took 0.007831 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000607 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.36 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.708 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.36 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1824 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.9 MB.
+System memory in use after: 90.0 MB.
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 2310.
+Total: 1.856600 ms (FindLiveObjects: 0.206500 ms CreateObjectMapping: 0.072200 ms MarkObjects: 1.497100 ms  DeleteObjects: 0.080000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000562 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.42 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.682 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.39 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1824 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.9 MB.
+System memory in use after: 90.0 MB.
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 2314.
+Total: 1.847000 ms (FindLiveObjects: 0.173000 ms CreateObjectMapping: 0.054200 ms MarkObjects: 1.528800 ms  DeleteObjects: 0.090300 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
