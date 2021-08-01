@@ -345,6 +345,15 @@ public class Player : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Нанести персу урон
+    /// </summary>
+    /// <param name="damage">количество урона</param>
+    public void SetDamage(int damage)
+    {
+        this.RecountLife(-damage);
+    }
+
     private void TurnOffGodeMode()
     {
         isGodMod = false;
@@ -384,17 +393,18 @@ public class Player : MonoBehaviour
 
         }
     }
+
     //Метод вызова моментальной смерти через тег 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Lava")
         {
-            isDead();
+            KillPerson();
             state = State.Combustion;
         }
         if(collision.gameObject.tag == "Saw")
         {
-            isDead();
+            KillPerson();
             if (state == State.Rollover)
             {
                 state = State.SawingInRollover;
@@ -406,22 +416,20 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.tag == "Rock" && isGrounded)
         {
-            isDead();
+            KillPerson();
              state = State.Crushed;
         }
         if (collision.gameObject.tag == "PitWithSpikes")
         {
-            isDead();
+            KillPerson();
             state = State.PitWithSpikes;
         }
 
     }
     //Метод моментальной смерти
-    public void isDead()
+    public void KillPerson()
     {
-        SetDamageWithGodMode(life);
-        GetComponent<Rigidbody2D>().simulated = false;
-        Invoke("Lose", 2f);
+        SetDamage(life);
     }
     //Корутина изменения звета при получении урона игроком
     IEnumerator Blink()
