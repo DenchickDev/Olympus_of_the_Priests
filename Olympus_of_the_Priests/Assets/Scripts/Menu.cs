@@ -53,7 +53,8 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
         Time.timeScale = 1f;
-        DontSavingBGMusic();
+        if (SceneManager.GetActiveScene().name != ("Disclamer") & SceneManager.GetActiveScene().name != ("MainMenu"))
+            DontSavingBGMusic();
     }
     public void OpenSceneMenu()
     {
