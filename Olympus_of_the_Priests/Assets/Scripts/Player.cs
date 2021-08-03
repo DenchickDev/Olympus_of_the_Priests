@@ -5,7 +5,6 @@ public class Player : MonoBehaviour
 {
     Rigidbody2D rb;
     Animator anim;
-    bool isHit = false;
     public Main main;
     int soulsCount = 0;
     bool onRollover = false;
@@ -26,39 +25,46 @@ public class Player : MonoBehaviour
     public bool isMovement = false;
     public bool isSoundRunPlay = false;
 
-    /// /// <summary>
-    /// Режим бессмертия
-    /// </summary>
-    [SerializeField]
-    private bool isGodMod = false;
-
-    /// <summary>
-    /// Время одного мигания в мс
-    /// </summary>
-    [SerializeField]
-    private float timeOfOneBlink = 15f;
-
     /// <summary>
     /// Время прибывания в перекатеи
     /// </summary>
     [SerializeField]
     public float timeRollover = 1;
+
     /// <summary>
     /// Значение повышения скорости движения в перекате 
     /// </summary>
     [SerializeField]
     public float speedRollover = 1;
+
     /// <summary>
-    /// Кол-во миганий
+    /// Продолжительность одного мигания в мс
     /// </summary>
-    [SerializeField]
-    private int CountBlinks = 3;
+    private float timeOfOneBlink = 15f;
 
     /// <summary>
     /// Кол-во миганий
     /// </summary>
     [SerializeField]
-    private int CurrentCountBlinks = 0;
+    private int CountBlinks = 4;
+
+    /// <summary>
+    /// Продолжительность мигания в сек
+    /// </summary>
+    [SerializeField]
+    private float timeBlinking = 2f;
+
+    /// <summary>
+    /// Продолжительность год мода в сек
+    /// </summary>
+    [SerializeField]
+    private float timeGodMode = 2f;
+
+    /// /// <summary>
+    /// Режим бессмертия
+    /// </summary>
+    [SerializeField]
+    private bool isGodMod = false;
 
     /// <summary>
     /// Скорость передвижения
@@ -78,6 +84,7 @@ public class Player : MonoBehaviour
     /// </summary>
     [SerializeField]
     public int life;
+
     /// <summary>
     ///  Максимальное кол-во жизней 
     /// </summary>
@@ -178,7 +185,8 @@ public class Player : MonoBehaviour
         collider = GetComponent<Collider2D>();
 
         life = MaxLife;
-        
+        timeOfOneBlink = timeBlinking / CountBlinks;
+        //Application.targetFrameRate = 7;
     }
 
     // Update is called once per frame
@@ -201,7 +209,6 @@ public class Player : MonoBehaviour
         {
             Movement();
         }
-
         CalculateState();
         anim.SetInteger("stateAnim", (int)state);
         //Debug.Log("ddddd");
@@ -339,9 +346,10 @@ public class Player : MonoBehaviour
     {
         if (!isGodMod)
         {
+            StartBlinking();
             this.RecountLife(-deltaLife);
             isGodMod = true;
-            Invoke("TurnOffGodeMode", 2f);
+            Invoke("TurnOffGodeMode", timeGodMode);
         }
     }
 
@@ -375,16 +383,6 @@ public class Player : MonoBehaviour
             life = life + deltaLife;
         }
         //print(life);
-        if (deltaLife < 0)
-        {
-            if (CurrentCountBlinks <= 0)
-            {
-                StopCoroutine(Blink());
-                isHit = true;
-                CurrentCountBlinks = CountBlinks;
-                StartCoroutine(Blink());
-            }
-        }
         if (life <= 0)
         {
             GetComponent<Rigidbody2D>().simulated = false;
@@ -431,36 +429,63 @@ public class Player : MonoBehaviour
     {
         SetDamage(life);
     }
-    //Корутина изменения звета при получении урона игроком
-    IEnumerator Blink()
+
+    /// <summary>
+    /// Запускает мигание (отменяет существующее мигание)
+    /// </summary>
+    void StartBlinking()
     {
-        float deltaAlpha = 4f / timeOfOneBlink;
-        if (isHit)
-        {
-            GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, GetComponent<SpriteRenderer>().color.a - deltaAlpha);
-        }
-        else
-        {
-            GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, GetComponent<SpriteRenderer>().color.a + deltaAlpha);
-        }
-        //print(GetComponent<SpriteRenderer>().color.a);
-        //print(1);
-        if (GetComponent<SpriteRenderer>().color.a >= 1f)
-        {
-            isHit = true;
-            CurrentCountBlinks--;
-        }
-        else if (GetComponent<SpriteRenderer>().color.a <= 0)
-        {
-            isHit = false;
-        }
-        if (CurrentCountBlinks <= 0)
-        {
-            yield break;
-        }
-        yield return new WaitForSeconds(0.02f);
-        StartCoroutine(Blink());
+        StopCoroutine("Blinking");
+        StartCoroutine("Blinking");
     }
+
+    /// <summary>
+    /// Корутина с миганием
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator Blinking()
+    {
+        float time = timeOfOneBlink / 2.0f; //Время на смену цвета секундах (от альфа 1 до афльфа 0 и наоборот)
+        float rate = 1.0f / time;
+        Color defaultColor = GetComponent<SpriteRenderer>().color;
+        Color current = defaultColor;
+        current.a = 0;
+        Color next = defaultColor;
+        next.a = 1;
+
+        //Одно мигание состоит из двух частей:
+        //убрать альфа канал, потом добавить его, поэтому *2
+        int countAllBlinks = CountBlinks * 2;
+
+        for (int curBlik = 0; curBlik < countAllBlinks; curBlik++)
+        {
+            SwapColors(ref current, ref next);
+            float i = 0.0f;
+            while (i < 1.0f)
+            {
+                i += Time.fixedDeltaTime * rate;
+                GetComponent<SpriteRenderer>().color = Color.Lerp(current, next, i);
+                yield return new WaitForFixedUpdate();
+            }
+        }
+        //Железно установим, что под конец альфа канал равен 1
+        GetComponent<SpriteRenderer>().color = defaultColor;
+        yield break;
+    }
+
+    /// <summary>
+    /// Поменять местами color1 и color2
+    /// </summary>
+    /// <param name="color1">Первый цвет</param>
+    /// <param name="color2">Второй цвет</param>
+    void SwapColors(ref Color color1, ref Color color2)
+    {
+        Color temp;
+        temp = color1;
+        color1 = color2;
+        color2 = temp;
+    }
+
     //Метод перезапуска сцены 
     public void Lose()
     {
