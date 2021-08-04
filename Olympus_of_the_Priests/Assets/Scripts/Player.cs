@@ -448,10 +448,10 @@ public class Player : MonoBehaviour
         float time = timeOfOneBlink / 2.0f; //Время на смену цвета секундах (от альфа 1 до афльфа 0 и наоборот)
         float rate = 1.0f / time;
         Color defaultColor = GetComponent<SpriteRenderer>().color;
+        defaultColor.a = 1;
+        Color next = defaultColor;
         Color current = defaultColor;
         current.a = 0;
-        Color next = defaultColor;
-        next.a = 1;
 
         //Одно мигание состоит из двух частей:
         //убрать альфа канал, потом добавить его, поэтому *2
