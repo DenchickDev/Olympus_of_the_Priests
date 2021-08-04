@@ -23,6 +23,9 @@ public class EnemyTrigger : MonoBehaviour
         Destroy(this.gameObject);
     }
 
+    /// <summary>
+    /// Перестать наносить урон
+    /// </summary>
     public void MakeNoDamaging()
     {
         noDamage = true;
