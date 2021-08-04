@@ -555,6 +555,10 @@ public class Player : MonoBehaviour
         {
             state = State.Idle;
         }
+        if(!isGrounded)
+        {
+            state = State.Falling;
+        }
     }
     //Метод вызова звука бега при срабаывании события на анимации
     private void soundsRunControl()
