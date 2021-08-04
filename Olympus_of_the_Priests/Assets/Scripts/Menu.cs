@@ -11,7 +11,7 @@ public class Menu : MonoBehaviour
     public GameObject ButtonMusicOff;
     public GameObject ButtonMusicOn;
     public GameObject BackgoungMusic;
-    private bool CheckMusicMute = false;
+    private static bool CheckMusicMute = false;
     private bool ChoicePanelOn = false;
     public Button [] lvls;
     public Button ResumeButton;
@@ -20,6 +20,17 @@ public class Menu : MonoBehaviour
     
     private void Start()
     {
+        if (CheckMusicMute == false)
+        {
+            ButtonMusicOff.SetActive(true);
+            ButtonMusicOn.SetActive(false);
+          
+        }
+        else
+        {
+            ButtonMusicOff.SetActive(false);
+            ButtonMusicOn.SetActive(true);
+        }
         if (saveMode == true)
         {
             if (PlayerPrefs.HasKey("Lvl"))
@@ -93,7 +104,7 @@ public class Menu : MonoBehaviour
         } 
             
     }
-    public void ButtonMusicMute ()
+    public  void ButtonMusicMute ()
     {
         if (CheckMusicMute == false)
         {
