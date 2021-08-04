@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Reaper : MonoBehaviour
+public class Reaper : MonoBehaviour, IKillable
 {
 
     Animator anim;
@@ -58,7 +58,7 @@ public class Reaper : MonoBehaviour
         
     }
 
-    public void KillMe(GameObject player)
+    public void KillMe()
     {
         rb.simulated = false;
         isRuning = false;

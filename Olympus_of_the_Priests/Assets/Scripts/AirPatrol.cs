@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AirPatrol : MonoBehaviour
+public class AirPatrol : MonoBehaviour, IKillable
 {
     /// <summary>
     /// Первая точка патруля
@@ -103,7 +103,6 @@ public class AirPatrol : MonoBehaviour
         }
         CalculateState();
         anim.SetInteger("stateAnim", (int)state);
-        CheckDead();
     }
 
     /// <summary>
@@ -134,17 +133,16 @@ public class AirPatrol : MonoBehaviour
         }
 
     }
-    private void CheckDead()
+
+    public void KillMe()
     {
-        if (state == State.Dead)
+        state = State.Dead;
+        var enemyTrigger = GetComponentInChildren<EnemyTrigger>();
+        if (enemyTrigger != null)
         {
-            var damage = GetComponentInChildren<EnemyTrigger>();
-            if (damage != null)
-            {
-                damage.damage = 0;
-            }
-            Invoke("DestroyMe", 1f);
+            enemyTrigger.MakeNoDamaging();
         }
+        Invoke("DestroyMe", 1f);
     }
 
     private void DestroyMe()

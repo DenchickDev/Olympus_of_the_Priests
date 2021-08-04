@@ -237,18 +237,10 @@ public class Player : MonoBehaviour
             var nameMask = LayerMask.LayerToName(enemies[i].gameObject.layer);
             if (nameMask.Contains("Enemy"))
             {
-                //enemies[i].GetComponent<Enemy>().TakeDamage(gameObject);
-                if (enemies[i].GetComponent<AirPatrol>())
+                var killableEnemy = enemies[i].GetComponent<IKillable>();
+                if (killableEnemy != null)
                 {
-                    enemies[i].GetComponent<AirPatrol>().state = AirPatrol.State.Dead;
-                }
-                else if(enemies[i].GetComponent<GroundPatrol>())
-                {
-                    enemies[i].GetComponent<GroundPatrol>().state = GroundPatrol.State.Dead;
-                }
-                else
-                {
-                    enemies[i].GetComponent<Reaper>().KillMe(gameObject);
+                    killableEnemy.KillMe();
                 }
             }
         }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GroundPatrol : MonoBehaviour
+public class GroundPatrol : MonoBehaviour, IKillable
 {
     /// <summary>
     /// Скорость движения
@@ -96,8 +96,6 @@ public class GroundPatrol : MonoBehaviour
         Chill();
         CalculateState();
         anim.SetInteger("stateAnim", (int)state);
-        //print(rb.velocity.x);
-        CheckDead();
     }
 
 
@@ -178,18 +176,16 @@ public class GroundPatrol : MonoBehaviour
         }
         //Gizmos.DrawWireSphere(point.position, attackRange);
     }
-    private void CheckDead()
+
+    public void KillMe()
     {
-        if (state == State.Dead)
+        state = State.Dead;
+        var enemyTrigger = GetComponentInChildren<EnemyTrigger>();
+        if (enemyTrigger != null)
         {
-             var damage = GetComponentInChildren<EnemyTrigger>();
-              if (damage != null)
-              {
-                 damage.damage = 0;
-              }
-           //GetComponentInChildren<EnemyTrigger>().DestroyOjectDamage();
-           Invoke("DestroyMe", 1f);
+            enemyTrigger.DestroyOjectDamage();
         }
+        Invoke("DestroyMe", 1f);
     }
 
     private void DestroyMe()

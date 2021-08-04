@@ -13,10 +13,7 @@ public class EnemyTrigger : MonoBehaviour
         {
             if (collision.gameObject.tag == "Player")
             {
-                noDamage = true;
-
                 collision.gameObject.GetComponent<Player>().SetDamageWithGodMode(damage);
-                Invoke("SetDamage",2f);
 
             }
         }
@@ -25,8 +22,9 @@ public class EnemyTrigger : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
-    void SetDamage()
+
+    public void MakeNoDamaging()
     {
-        noDamage = false;
+        noDamage = true;
     }
 }
