@@ -12193,11 +12193,10 @@ GameObject:
   - component: {fileID: 593759875}
   - component: {fileID: 593759874}
   - component: {fileID: 593759873}
-  - component: {fileID: 593759872}
   - component: {fileID: 593759871}
   m_Layer: 0
   m_Name: Cell (1)
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12235,19 +12234,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &593759872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 593759869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16d3603d8ef2f0f46b3d54133d381006, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 20
 --- !u!50 &593759873
 Rigidbody2D:
   serializedVersion: 4
@@ -34200,11 +34186,10 @@ GameObject:
   - component: {fileID: 1554938444}
   - component: {fileID: 1554938443}
   - component: {fileID: 1554938442}
-  - component: {fileID: 1554938445}
   - component: {fileID: 1554938446}
   m_Layer: 0
   m_Name: Cell (1)
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34333,19 +34318,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.5830455, y: 4.783677}
   m_EdgeRadius: 0
---- !u!114 &1554938445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1554938439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16d3603d8ef2f0f46b3d54133d381006, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 20
 --- !u!95 &1554938446
 Animator:
   serializedVersion: 3
@@ -45231,12 +45203,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e7862456af3857c4185bcb911a3233d7, type: 3}
   isMovement: 0
   isSoundRunPlay: 0
-  isGodMod: 0
-  timeOfOneBlink: 15
   timeRollover: 1
   speedRollover: 8
   CountBlinks: 8
-  CurrentCountBlinks: 0
+  timeBlinking: 2
+  timeGodMode: 2
+  isGodMod: 0
   speed: 15.53
   controlMode: 0
   life: 100
