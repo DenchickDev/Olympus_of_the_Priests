@@ -184,7 +184,7 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         collider = GetComponent<Collider2D>();
 
-        life = MaxLife;
+        //life = MaxLife;
         timeOfOneBlink = timeBlinking / CountBlinks;
         //Application.targetFrameRate = 7;
     }
@@ -192,7 +192,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !Input.GetKeyDown(KeyCode.S) && isGrounded && onRollover == false && state != State.Rollover && state != State.Crushed && state != State.SawingInRollover && state != State.PitWithSpikes)
+        if (Input.GetKeyDown(KeyCode.Space) && !Input.GetKeyDown(KeyCode.S) && isGrounded && onRollover == false && state !=State.Dead && state != State.Rollover && state != State.Crushed && state != State.SawingInRollover && state != State.PitWithSpikes)
         {
             Jump();
         }
@@ -221,7 +221,7 @@ public class Player : MonoBehaviour
     //Метод срабатывает сразу же после полного срабатывания метода Update
     private void LateUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.S) && isGrounded && state !=State.PitWithSpikes && !Input.GetKeyDown(KeyCode.Space) &&  state != State.Crushed && state != State.SawingInRollover)
+        if (Input.GetKeyDown(KeyCode.S) && isGrounded && state != State.Dead && state !=State.PitWithSpikes && !Input.GetKeyDown(KeyCode.Space) &&  state != State.Crushed && state != State.SawingInRollover)
         {
             OnRollover();
         }
@@ -551,7 +551,7 @@ public class Player : MonoBehaviour
         GetComponent<CapsuleCollider2D>().enabled = false;
         //state = State.Idle;
         onRollover = false;
-        if (isGrounded && state != State.Crushed && state != State.SawingInRollover)
+        if (isGrounded && state != State.Crushed && state != State.Dead && state != State.SawingInRollover)
         {
             state = State.Idle;
         }
