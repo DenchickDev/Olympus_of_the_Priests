@@ -4,17 +4,33 @@ using UnityEngine;
 
 public class SoulGuide : MonoBehaviour
 { 
-        public Transform soulCount;
-        public Transform lifeCount;
-        public Transform reaper;
-        public float speed;
-        //Проверка на движение 
-        private bool soulStartToCount = false;
-        public bool lifeStartToCount = false;
-        public bool ReperRun = false;
-        public Player player;
-        
-     
+    public Transform soulCount;
+    public Transform lifeCount;
+    public Transform reaper;
+    public float speed;
+    //Проверка на движение 
+    private bool soulStartToCount = false;
+    public bool lifeStartToCount = false;
+    public bool ReperRun = false;
+    public Player player;
+    //Точки лимита
+    public Transform limit;
+    private float limit_x;
+    private float limit_y;
+    private void Update()
+    {
+        limit_x = limit.GetComponent<Transform>().position.x;
+        limit_y = limit.GetComponent<Transform>().position.y;
+        if (soulStartToCount == true)
+            if (this.gameObject.transform.position.x < limit_x)
+            {
+                this.gameObject.transform.position = new Vector2(transform.position.x + 0.3f, transform.position.y);
+            }
+        if (this.gameObject.transform.position.y > limit_y)
+        {
+            this.gameObject.transform.position = new Vector2(transform.position.x, transform.position.y - 0.3f);
+        }
+    }
     //Метод на проверку косания 
     public void OnTriggerEnter2D(Collider2D collision)
     {   //Косание души с игроком 
@@ -58,11 +74,9 @@ public class SoulGuide : MonoBehaviour
     {
        lifeStartToCount = true;
        ReperRun = false;
-       
     }
    public void destroySoul()
     {
         Destroy(gameObject);
     }
-    
 }

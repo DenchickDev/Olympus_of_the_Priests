@@ -1009,6 +1009,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &32889678
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1456,6 +1457,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &56882669
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2362,6 +2364,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &117915560
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3301,6 +3304,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &218577845
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4015,6 +4019,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &253651577
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4564,6 +4569,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &279831781
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4937,6 +4943,7 @@ RectTransform:
   - {fileID: 764794944}
   - {fileID: 1292844273}
   - {fileID: 1400669243}
+  - {fileID: 572271440}
   m_Father: {fileID: 519420032}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5268,6 +5275,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &316237458
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6790,10 +6798,11 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 75
+  speed: 25
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &373284310
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8619,6 +8628,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &474046271
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9088,6 +9098,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &496738408
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10349,6 +10360,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &539056031
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10627,6 +10639,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &549089530
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10766,6 +10779,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &549839637
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11651,6 +11665,36 @@ Transform:
   m_Father: {fileID: 973569959}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &572271439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 572271440}
+  m_Layer: 0
+  m_Name: LimitSoulsAndLifeOrbs
+  m_TagString: Untagged
+  m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &572271440
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572271439}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -943.3, y: 519.7, z: -111202.26}
+  m_LocalScale: {x: 32.468502, y: 32.268436, z: 32.468502}
+  m_Children: []
+  m_Father: {fileID: 298688694}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &575387502
 GameObject:
   m_ObjectHideFlags: 0
@@ -11771,6 +11815,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &583635565
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13537,6 +13582,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &636374768
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14205,6 +14251,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &655081637
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14797,6 +14844,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &666546580
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15448,6 +15496,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &731900382
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16916,10 +16965,11 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 75
+  speed: 25
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &818257795
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17449,6 +17499,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &826607548
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17916,6 +17967,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &837183232
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18055,6 +18107,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &837706288
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19426,6 +19479,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &890978729
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19830,10 +19884,11 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 75
+  speed: 25
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &908236826
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19973,6 +20028,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &912874861
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21041,6 +21097,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &993344094
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22432,6 +22489,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1065038326
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23322,6 +23380,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1094294420
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23713,6 +23772,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1114527958
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24432,6 +24492,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1138432363
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25308,6 +25369,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1167378163
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25447,6 +25509,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1168368041
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25618,6 +25681,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1174232722
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25757,6 +25821,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1178023451
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27050,6 +27115,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!1 &1262957315
 GameObject:
   m_ObjectHideFlags: 0
@@ -27236,10 +27302,11 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 75
+  speed: 25
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1265934793
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29012,6 +29079,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1333289080
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29523,6 +29591,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1338756402
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29785,6 +29854,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1341887109
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -32185,6 +32255,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1438389401
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -32469,6 +32540,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1457890287
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -32608,6 +32680,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1461362206
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -32829,6 +32902,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1467628105
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34953,6 +35027,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1602526114
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35092,6 +35167,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1609600391
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35231,6 +35307,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1611352858
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35554,6 +35631,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1616720411
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35925,6 +36003,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1625962933
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -36064,6 +36143,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1627167577
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -37211,6 +37291,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1711368092
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -37605,6 +37686,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1740521539
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -37978,6 +38060,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1770604738
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -38332,6 +38415,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1798432013
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -38743,6 +38827,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1830296248
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -38914,6 +38999,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1843627203
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -40337,10 +40423,11 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 75
+  speed: 25
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1897319977
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -41100,6 +41187,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1953605979
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -41626,6 +41714,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &1955081618
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -42678,6 +42767,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &2003008765
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -43371,6 +43461,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &2018246371
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -44245,10 +44336,11 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 75
+  speed: 25
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &2049213758
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -46617,6 +46709,7 @@ MonoBehaviour:
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &2130767754
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -46844,10 +46937,11 @@ MonoBehaviour:
   soulCount: {fileID: 2139410009}
   lifeCount: {fileID: 0}
   reaper: {fileID: 0}
-  speed: 75
+  speed: 25
   lifeStartToCount: 0
   ReperRun: 0
   player: {fileID: 2071362816}
+  limit: {fileID: 572271440}
 --- !u!212 &2142810857
 SpriteRenderer:
   m_ObjectHideFlags: 0

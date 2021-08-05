@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\FallPlatform.cs" />
     <Compile Include="Assets\Scripts\Lava.cs" />
+    <Compile Include="Assets\Scripts\IKillable.cs" />
     <Compile Include="Assets\Scripts\FinalPlatform.cs" />
     <Compile Include="Assets\Scripts\PulloutY_axisTrap.cs" />
     <Compile Include="Assets\Scripts\ExitButton.cs" />
