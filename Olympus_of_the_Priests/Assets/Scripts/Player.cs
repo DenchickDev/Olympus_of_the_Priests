@@ -543,11 +543,11 @@ public class Player : MonoBehaviour
         GetComponent<CapsuleCollider2D>().enabled = false;
         //state = State.Idle;
         onRollover = false;
-        if (isGrounded && state != State.Crushed && state != State.Dead && state != State.SawingInRollover)
+        if (isGrounded && state != State.Crushed && state != State.Dead && state != State.SawingInRollover && state != State.Stab)
         {
             state = State.Idle;
         }
-        if(!isGrounded)
+        if(!isGrounded && state !=State.Combustion)
         {
             state = State.Falling;
         }
