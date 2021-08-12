@@ -177,6 +177,8 @@ public class Player : MonoBehaviour
     /// </summary>
     public float attackRange;
 
+    private ActionButtonsPlayer actionPlayer = new ActionButtonsPlayer();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -187,28 +189,31 @@ public class Player : MonoBehaviour
         //life = MaxLife;
         timeOfOneBlink = timeBlinking / CountBlinks;
         //Application.targetFrameRate = 7;
+        EnablePlayerControl();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !Input.GetKeyDown(KeyCode.S) && isGrounded && onRollover == false && state !=State.Dead && state != State.Rollover && state != State.Crushed && state != State.SawingInRollover && state != State.PitWithSpikes)
-        {
-            Jump();
-        }
-        else if (state != State.Dead && state != State.Combustion && state !=State.Sawing && Input.GetMouseButtonDown(0) && onRollover == false && state != State.PitWithSpikes && state !=State.Stab && state !=State.Crushed)
-        {
-            state = State.Stab;
-            soundManager.PlayHitSound();
-        }
-        if (controlMode)
-        {
-            rb.velocity = new Vector2(speed, rb.velocity.y);
-        }
-        else
-        {
-            Movement();
-        }
+        //if (Input.GetKeyDown(KeyCode.Space) && !Input.GetKeyDown(KeyCode.S) && isGrounded && onRollover == false && state !=State.Dead && state != State.Rollover && state != State.Crushed && state != State.SawingInRollover && state != State.PitWithSpikes)
+        //{
+        //    Jump();
+        //}
+        //else if (state != State.Dead && state != State.Combustion && state !=State.Sawing && Input.GetMouseButtonDown(0) && onRollover == false && state != State.PitWithSpikes && state !=State.Stab && state !=State.Crushed)
+        //{
+        //    state = State.Stab;
+        //    soundManager.PlayHitSound();
+        //}
+        //if (controlMode)
+        //{
+        //    rb.velocity = new Vector2(speed, rb.velocity.y);
+        //}
+        //else
+        //{
+        //    Movement();
+        //}
+        actionPlayer.DoActionsIfKeyPressed(this);
+
         CalculateState();
         anim.SetInteger("stateAnim", (int)state);
         //Debug.Log("ddddd");
@@ -221,11 +226,29 @@ public class Player : MonoBehaviour
     //Метод срабатывает сразу же после полного срабатывания метода Update
     private void LateUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.S) && isGrounded && state != State.Dead && state !=State.PitWithSpikes && !Input.GetKeyDown(KeyCode.Space) &&  state != State.Crushed && state != State.SawingInRollover)
-        {
-            OnRollover();
-        }
+        //if (Input.GetKeyDown(KeyCode.S) && isGrounded && state != State.Dead && state !=State.PitWithSpikes && !Input.GetKeyDown(KeyCode.Space) &&  state != State.Crushed && state != State.SawingInRollover)
+        //{
+        //    OnRollover();
+        //}
     }
+    public void DisablePlayerControl()
+    {
+        actionPlayer.DisableAll();
+    }
+    public void EnablePlayerControl()
+    {
+        actionPlayer.ResetActions();
+    }
+    public void DisableJump()
+    {
+        actionPlayer.Disable(Action.Jump);
+    }
+    public void EnableJump()
+    {
+        actionPlayer.Enable(Action.Jump);
+    }
+
+
     public void OnAttak()
     {
         //собсна атака
@@ -274,7 +297,7 @@ public class Player : MonoBehaviour
     /// <summary>
     /// Метод считывает нажатую клавишу движения в сторону
     /// </summary>
-    void Movement()
+    public void Movement()
     {
         if (Input.GetAxis("Horizontal") != 0)
         {
@@ -291,11 +314,24 @@ public class Player : MonoBehaviour
 
     }
 
-    //Метод обрабатывает прыжок
-    void Jump()
+    /// <summary>
+    /// Метод считывает нажатую клавишу движения в сторону
+    /// </summary>
+    public void StopMovement()
     {
-        rb.AddForce(transform.up * 8f, ForceMode2D.Impulse);
-        soundManager.PlayJumpSound();
+        rb.velocity = new Vector2(0, rb.velocity.y);
+        isMovement = false;
+
+    }
+
+    //Метод обрабатывает прыжок
+    public void Jump()
+    {
+        if(!Input.GetKeyDown(KeyCode.S) && isGrounded && onRollover == false && state != State.Dead && state != State.Rollover && state != State.Crushed && state != State.SawingInRollover && state != State.PitWithSpikes)
+        {
+            rb.AddForce(transform.up * 8f, ForceMode2D.Impulse);
+            soundManager.PlayJumpSound();
+        }
     }
 
     /// <summary>
@@ -522,9 +558,15 @@ public class Player : MonoBehaviour
         //return life;
     }
     //Метод включения подката
-    private void OnRollover()
+    public void OnRollover()
     {
-      if(onRollover == false)
+      if(onRollover == false &&
+        isGrounded &&
+        state != State.Dead &&
+        state != State.PitWithSpikes &&
+        !Input.GetKeyDown(KeyCode.Space) &&
+        state != State.Crushed &&
+        state != State.SawingInRollover)
       {
         speed += speedRollover;
         GetComponent<BoxCollider2D>().enabled = false;
