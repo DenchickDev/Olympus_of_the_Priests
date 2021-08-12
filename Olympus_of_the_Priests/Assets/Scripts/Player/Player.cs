@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public ActionButtonsPlayer actionButtons;
     Rigidbody2D rb;
     Animator anim;
     public Main main;
@@ -183,6 +184,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         collider = GetComponent<Collider2D>();
+        actionButtons = new ActionButtonsPlayer();
 
         //life = MaxLife;
         timeOfOneBlink = timeBlinking / CountBlinks;
@@ -192,11 +194,19 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !Input.GetKeyDown(KeyCode.S) && isGrounded && onRollover == false && state !=State.Dead && state != State.Rollover && state != State.Crushed && state != State.SawingInRollover && state != State.PitWithSpikes)
+        if (actionButtons.CheckJump() && 
+            !actionButtons.CheckRollover() && 
+            isGrounded && 
+            onRollover == false && 
+            state !=State.Dead && 
+            state != State.Rollover && 
+            state != State.Crushed && 
+            state != State.SawingInRollover && 
+            state != State.PitWithSpikes)
         {
             Jump();
         }
-        else if (state != State.Dead && state != State.Combustion && state !=State.Sawing && Input.GetMouseButtonDown(0) && onRollover == false && state != State.PitWithSpikes && state !=State.Stab && state !=State.Crushed)
+        else if (state != State.Dead && state != State.Combustion && state !=State.Sawing && actionButtons.CheckAttack() && onRollover == false && state != State.PitWithSpikes && state !=State.Stab && state !=State.Crushed)
         {
             state = State.Stab;
             soundManager.PlayHitSound();
@@ -226,6 +236,36 @@ public class Player : MonoBehaviour
             OnRollover();
         }
     }
+    public void OnControl()
+    {
+        actionButtons.SetEnableAllLite(true);
+    }
+    public void OffControl()
+    {
+        actionButtons.SetEnableAllLite(false);
+    }
+
+    public void EnableJump()
+    {
+        actionButtons.SetEnableJump(true);
+    }
+
+    public void DisableJump()
+    {
+        actionButtons.SetEnableJump(false);
+    }
+
+    public void OffControlHard()
+    {
+        actionButtons.enableAllHard = false;
+    }
+
+    public void OnControlHard()
+    {
+        actionButtons.enableAllHard = true;
+        actionButtons.SetEnableAllLite(true);
+    }
+
     public void OnAttak()
     {
         //собсна атака
@@ -276,9 +316,9 @@ public class Player : MonoBehaviour
     /// </summary>
     void Movement()
     {
-        if (Input.GetAxis("Horizontal") != 0)
+        if (actionButtons.CheckMove())
         {
-            rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
+            rb.velocity = new Vector2(actionButtons.GetMove() * speed, rb.velocity.y);
             isMovement = true;
             PlayRunSound();
 
