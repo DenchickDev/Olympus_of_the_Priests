@@ -43,6 +43,10 @@ public class ActionButtonsPlayer
     {
         return enableAllHard ? jump.isKeyDownButtons() : false;
     }
+    public bool isEnableJump()
+    {
+        return enableAllHard ? jump.enable : false;
+    }
 
     public void SetEnableAattack(bool val)
     {
@@ -56,6 +60,10 @@ public class ActionButtonsPlayer
     {
         return enableAllHard ? attack.isKeyDownButtons() : false;
     }
+    public bool isEnableAttack()
+    {
+        return enableAllHard ? attack.enable : false;
+    }
 
     public void SetEnableRollover(bool val)
     {
@@ -68,6 +76,10 @@ public class ActionButtonsPlayer
     public bool CheckRollover()
     {
         return enableAllHard ? rollover.isKeyDownButtons() : false;
+    }
+    public bool isEnableRollover()
+    {
+        return enableAllHard ? rollover.enable : false;
     }
 
     public void SetEnableMove(bool val)
@@ -86,5 +98,9 @@ public class ActionButtonsPlayer
     public float GetMove()
     {
         return enableAllHard ? move.GetAxis() : 0f;
+    }
+    public bool isEnableMove()
+    {
+        return enableAllHard ? move.enable : false;
     }
 }

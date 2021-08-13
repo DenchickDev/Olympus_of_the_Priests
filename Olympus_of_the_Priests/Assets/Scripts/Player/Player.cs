@@ -214,7 +214,7 @@ public class Player : MonoBehaviour
             state = State.Stab;
             soundManager.PlayHitSound();
         }
-        if (controlMode)
+        if (controlMode && actionButtons.isEnableMove())
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
         }
@@ -234,7 +234,7 @@ public class Player : MonoBehaviour
     //Метод срабатывает сразу же после полного срабатывания метода Update
     private void LateUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.S) && isGrounded && state != State.Dead && state !=State.PitWithSpikes && !Input.GetKeyDown(KeyCode.Space) &&  state != State.Crushed && state != State.SawingInRollover)
+        if (actionButtons.CheckRollover() && isGrounded && state != State.Dead && state !=State.PitWithSpikes && !Input.GetKeyDown(KeyCode.Space) &&  state != State.Crushed && state != State.SawingInRollover)
         {
             OnRollover();
         }
