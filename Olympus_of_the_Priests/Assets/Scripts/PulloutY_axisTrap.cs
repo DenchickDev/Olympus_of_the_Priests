@@ -6,7 +6,7 @@ public class PulloutY_axisTrap : MonoBehaviour
 {
     public float speed = 4f;
     bool isWait = false;
-    bool isHidden = false;
+    private bool isHidden = false;
     public float waitTime = 4f;
     public Transform point;
     [SerializeField]
@@ -47,7 +47,8 @@ public class PulloutY_axisTrap : MonoBehaviour
                     isHidden = true;
                 }
                 isWait = true;
-                StartCoroutine(Waiting());
+                Invoke("waited",waitTime);
+                //StartCoroutine(Waiting());
             }
         }
         else
@@ -67,16 +68,21 @@ public class PulloutY_axisTrap : MonoBehaviour
                     isHidden = true;
                 }
                 isWait = true;
-                StartCoroutine(Waiting());
+                Invoke("waited", waitTime); 
+                //StartCoroutine(Waiting());
             }
 
         }
     }
-    IEnumerator Waiting()
+    private void waited()
+    {
+        isWait = false;
+    }    
+   /* IEnumerator Waiting()
     {
         yield return new WaitForSeconds(waitTime);
         isWait = false;
-    }
+    }*/
 
 }
 
