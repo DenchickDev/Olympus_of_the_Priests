@@ -214,14 +214,22 @@ public class Player : MonoBehaviour
             state = State.Stab;
             soundManager.PlayHitSound();
         }
-        if (controlMode && actionButtons.isEnableMove())
+        if (controlMode)
         {
-            rb.velocity = new Vector2(speed, rb.velocity.y);
+            if (actionButtons.isEnableMoveForever())
+            {
+                rb.velocity = new Vector2(speed, rb.velocity.y);
+            }
+            else
+            {
+                rb.velocity = new Vector2(0, rb.velocity.y);
+            }
         }
         else
         {
             Movement();
         }
+
         CalculateState();
         anim.SetInteger("stateAnim", (int)state);
         //Debug.Log("ddddd");

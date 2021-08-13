@@ -17,7 +17,7 @@ public class TriggerCheckPoint : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<Player>().OffControl();
-
+            print("отключил");
             Invoke("EnableJump", 5);
             Invoke("EnableAll", 10);
 

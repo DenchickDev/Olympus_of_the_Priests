@@ -8,6 +8,7 @@ public class ActionButtonsPlayer
     private ActionButtons attack;
     private ActionButtons rollover;
     private ActionAxis move;
+    private ActionVoid moveForever;
 
     public bool enableAllHard;
 
@@ -19,6 +20,7 @@ public class ActionButtonsPlayer
             attack.enable = val;
             rollover.enable = val;
             move.enable = val;
+            moveForever.enable = val;
         }
     }
 
@@ -29,6 +31,7 @@ public class ActionButtonsPlayer
         attack = new ActionButtons(new KeyCode[] { KeyCode.Mouse0 });
         rollover = new ActionButtons(new KeyCode[] { KeyCode.S });
         move = new ActionAxis("Horizontal");
+        moveForever = new ActionVoid();
     }
 
     public void SetEnableJump(bool val)
@@ -102,5 +105,17 @@ public class ActionButtonsPlayer
     public bool isEnableMove()
     {
         return enableAllHard ? move.enable : false;
+    }
+
+    public void SetEnableMoveForever(bool val)
+    {
+        if (enableAllHard)
+        {
+            moveForever.enable = val;
+        }
+    }
+    public bool isEnableMoveForever()
+    {
+        return enableAllHard ? moveForever.enable : false;
     }
 }

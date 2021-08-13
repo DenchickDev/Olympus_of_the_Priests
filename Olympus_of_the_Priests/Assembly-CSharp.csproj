@@ -58,14 +58,17 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\FallPlatform.cs" />
     <Compile Include="Assets\Scripts\Lava.cs" />
+    <Compile Include="Assets\Scripts\Player\ActionAxis.cs" />
     <Compile Include="Assets\Scripts\IKillable.cs" />
     <Compile Include="Assets\Scripts\FinalPlatform.cs" />
     <Compile Include="Assets\Scripts\PulloutY_axisTrap.cs" />
     <Compile Include="Assets\Scripts\ExitButton.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyTrigger.cs" />
+    <Compile Include="Assets\Scripts\Player\ActionButtons.cs" />
     <Compile Include="Assets\Scripts\PulloutX_axisTrap.cs" />
     <Compile Include="Assets\Scripts\Trap.cs" />
     <Compile Include="Assets\Scripts\GroundPatrol.cs" />
+    <Compile Include="Assets\Scripts\Player\ActionButtonsPlayer.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyCollision.cs" />
     <Compile Include="Assets\Scripts\LogoScript.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
@@ -73,6 +76,7 @@
     <Compile Include="Assets\Scripts\SoulGuide.cs" />
     <Compile Include="Assets\Scripts\Parallax.cs" />
     <Compile Include="Assets\Scripts\Reaper\Reaper.cs" />
+    <Compile Include="Assets\Scripts\Triggers\TriggerCheckPoint.cs" />
     <Compile Include="Assets\Scripts\StartingRockOnChain.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Rock\RockStarting.cs" />
@@ -81,10 +85,7 @@
     <Compile Include="Assets\Scripts\AirPatrol.cs" />
     <Compile Include="Assets\Scripts\Main.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
-    <Compile Include="Assets\Scripts\Player\ActionButtonsPlayer.cs" />
-    <Compile Include="Assets\Scripts\Player\ActionButtons.cs" />
-    <Compile Include="Assets\Scripts\Player\ActionAxis.cs" />
-    <Compile Include="Assets\Scripts\Triggers\TriggerCheckPoint.cs" />
+    <Compile Include="Assets\Scripts\Player\ActionVoid.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
