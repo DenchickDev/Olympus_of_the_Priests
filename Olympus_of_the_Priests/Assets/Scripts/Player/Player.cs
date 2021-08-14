@@ -1,12 +1,69 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public enum State
+{
+    /// <summary>
+    /// Состояние покоя
+    /// </summary>
+    Idle,
+    /// <summary>
+    /// Бег
+    /// </summary>
+    Running,
+    /// <summary>
+    /// Прыжок
+    /// </summary>
+    Jumping,
+    /// <summary>
+    /// Падение
+    /// </summary>
+    Falling,
+    /// <summary>
+    /// Смерть
+    /// </summary>
+    Dead,
+    /// <summary>
+    /// Ранение
+    /// </summary>
+    Hurt,
+    /// <summary>
+    /// Сгорание
+    /// </summary>
+    Combustion,
+    /// <summary>
+    /// Удар
+    /// </summary>
+    Stab,
+    /// <summary>
+    /// перекат
+    /// </summary>
+    Rollover,
+    /// <summary>
+    /// распиливание 
+    /// </summary>
+    Sawing,
+    /// <summary>
+    /// распиливание 
+    /// </summary>
+    Crushed,
+    /// <summary>
+    /// распиливание 
+    /// </summary>
+    SawingInRollover,
+    /// <summary>
+    /// Падение в яму с шипами
+    /// </summary>
+    PitWithSpikes
+}
 
 public class Player : MonoBehaviour
 {
     Rigidbody2D rb;
     Animator anim;
     public Main main;
-    int soulsCount = 0;
+    public int soulsCount = 0;
     bool onRollover = false;
     ///<summary>
     /// Звуковой менеджер
@@ -106,62 +163,6 @@ public class Player : MonoBehaviour
     public float CheckRadius;
 
 
-    public enum State
-    {
-        /// <summary>
-        /// Состояние покоя
-        /// </summary>
-        Idle,
-        /// <summary>
-        /// Бег
-        /// </summary>
-        Running,
-        /// <summary>
-        /// Прыжок
-        /// </summary>
-        Jumping,
-        /// <summary>
-        /// Падение
-        /// </summary>
-        Falling,
-        /// <summary>
-        /// Смерть
-        /// </summary>
-        Dead,
-        /// <summary>
-        /// Ранение
-        /// </summary>
-        Hurt,
-        /// <summary>
-        /// Сгорание
-        /// </summary>
-        Combustion,
-        /// <summary>
-        /// Удар
-        /// </summary>
-        Stab,
-        /// <summary>
-        /// перекат
-        /// </summary>
-        Rollover,
-        /// <summary>
-        /// распиливание 
-        /// </summary>
-        Sawing,
-        /// <summary>
-        /// распиливание 
-        /// </summary>
-        Crushed,
-        /// <summary>
-        /// распиливание 
-        /// </summary>
-        SawingInRollover,
-        /// <summary>
-        /// Падение в яму с шипами
-        /// </summary>
-        PitWithSpikes
-    }
-
     /// <summary>
     /// Текущее состояние персонажа
     /// </summary>
@@ -233,8 +234,8 @@ public class Player : MonoBehaviour
         CalculateState();
         anim.SetInteger("stateAnim", (int)state);
         //Debug.Log("ddddd");
-        if (state == State.Combustion || state == State.Jumping)
-            print(state.ToString());
+        //if (state == State.Combustion || state == State.Jumping)
+        //    print(state.ToString());
         //print(GetComponent<SpriteRenderer>().color.g);
         //Debug.DrawLine(transform.position, new Vector3(transform.position.x + 100, transform.position.y, transform.position.z));
         
@@ -427,42 +428,78 @@ public class Player : MonoBehaviour
         //print(life);
         if (life <= 0)
         {
-            GetComponent<Rigidbody2D>().simulated = false;
+            //GetComponent<Rigidbody2D>().simulated = false;
+            actionButtons.enableAllHard = false;
             Invoke("Lose", 2f);
             state = State.Dead;
 
         }
     }
 
+    /// <summary>
+    /// Загрузить данные по игроку
+    /// из файла
+    /// </summary>
+    /// <returns>Удалось ли загрузить данные</returns>
+    public bool LoadCharacter()
+    {
+        SaveData data = SaveLoad.LoadGame(); //Получение данных
+
+        if (!data.Equals(null)) //Если данные есть
+        {
+            string sceneName = SceneManager.GetActiveScene().name;
+
+            //Данные относятся к текущей сцене?
+            if (sceneName != data.sceneName)
+            {
+                return false;
+            }
+
+            life = data.life;
+            soulsCount = data.soulsCount;
+            actionButtons.enableAllHard = true;
+            state = State.Idle;
+
+            transform.position = new Vector3(data.positionPlayer[0], data.positionPlayer[1], data.positionPlayer[2]);
+            return true;
+        }
+
+        return false;
+    }
+
     //Метод вызова моментальной смерти через тег 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Lava")
+        if(state != State.Sawing && state != State.Combustion &&
+            state != State.Crushed && state != State.PitWithSpikes && state != State.Dead)
         {
-            KillPerson();
-            state = State.Combustion;
-        }
-        if(collision.gameObject.tag == "Saw")
-        {
-            KillPerson();
-            if (state == State.Rollover)
+            if (collision.gameObject.tag == "Lava")
             {
-                state = State.SawingInRollover;
+                KillPerson();
+                state = State.Combustion;
             }
-            else
+            if (collision.gameObject.tag == "Saw")
             {
-                state = State.Sawing;
-            }   
-        }
-        if (collision.gameObject.tag == "Rock" && isGrounded)
-        {
-            KillPerson();
-             state = State.Crushed;
-        }
-        if (collision.gameObject.tag == "PitWithSpikes")
-        {
-            KillPerson();
-            state = State.PitWithSpikes;
+                KillPerson();
+                if (state == State.Rollover)
+                {
+                    state = State.SawingInRollover;
+                }
+                else
+                {
+                    state = State.Sawing;
+                }
+            }
+            if (collision.gameObject.tag == "Rock" && isGrounded)
+            {
+                KillPerson();
+                state = State.Crushed;
+            }
+            if (collision.gameObject.tag == "PitWithSpikes")
+            {
+                KillPerson();
+                state = State.PitWithSpikes;
+            }
         }
 
     }
@@ -531,7 +568,11 @@ public class Player : MonoBehaviour
     //Метод перезапуска сцены 
     public void Lose()
     {
-        main.gameObject.GetComponent<Main>().Lose();
+        bool isLoad = LoadCharacter();
+        if (!isLoad)
+        {
+            main.gameObject.GetComponent<Main>().Lose();
+        }
     }
     //Метод сбора души с звуком 
     public void SoulCount()

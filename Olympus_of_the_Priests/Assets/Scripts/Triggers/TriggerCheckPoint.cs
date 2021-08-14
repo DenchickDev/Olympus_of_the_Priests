@@ -16,23 +16,29 @@ public class TriggerCheckPoint : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<Player>().OffControl();
-            print("отключил");
-            Invoke("EnableJump", 5);
-            Invoke("EnableAll", 10);
+            Player player = collision.gameObject.GetComponent<Player>();
+            player.OffControl();
+
+            SaveData data = new SaveData(player);
+            data.positionPlayer[0] -= 3f;
+            SaveLoad.SaveGame(data); //Сохраняем игру
+
+            //print("отключил");
+            Invoke("EnableJump", 1);
+            Invoke("EnableAll", 1);
 
         }
     }
 
     private void EnableJump()
     {
-        print("Можешь прыгать");
+        //print("Можешь прыгать");
         player.GetComponent<Player>().EnableJump();
     }
 
     private void EnableAll()
     {
-        print("Можешь ВСЁ");
+        //print("Можешь ВСЁ");
         player.GetComponent<Player>().OnControl();
     }
 }
