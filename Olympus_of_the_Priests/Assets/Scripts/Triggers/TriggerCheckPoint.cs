@@ -24,8 +24,8 @@ public class TriggerCheckPoint : MonoBehaviour
             SaveLoad.SaveGame(data); //Сохраняем игру
 
             //print("отключил");
-            Invoke("EnableJump", 1);
-            Invoke("EnableAll", 1);
+            EnableJump();
+            
 
         }
     }

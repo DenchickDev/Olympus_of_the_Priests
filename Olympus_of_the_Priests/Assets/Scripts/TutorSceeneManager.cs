@@ -7,7 +7,12 @@ public class TutorSceeneManager : MonoBehaviour
 {
     public GameObject TutorScreen;
     public GameObject ButtonOk;
+    GameObject player;
 
+    private void Start()
+    {
+        player = GameObject.FindWithTag("Player");
+    }
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -18,6 +23,7 @@ public class TutorSceeneManager : MonoBehaviour
     public void offTutorScreen()
     {
         TutorScreen.SetActive(false);
+        player.GetComponent<Player>().OnControl();
     }
     public void onTutorScreen()
     {
