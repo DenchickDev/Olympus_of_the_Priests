@@ -62,6 +62,9 @@ public class Player : MonoBehaviour
 {
     Rigidbody2D rb;
     Animator anim;
+    SpriteRenderer spriteRenderer;
+    BoxCollider2D boxCollider2D;
+    CapsuleCollider2D capsuleCollider2D;
     public Main main;
     public int soulsCount = 0;
     bool onRollover = false;
@@ -186,6 +189,9 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         collider = GetComponent<Collider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        boxCollider2D = GetComponent<BoxCollider2D>();
+        capsuleCollider2D = GetComponent<CapsuleCollider2D>();
 
         //life = MaxLife;
         timeOfOneBlink = timeBlinking / CountBlinks;
@@ -526,7 +532,7 @@ public class Player : MonoBehaviour
     {
         float time = timeOfOneBlink / 2.0f; //Время на смену цвета секундах (от альфа 1 до афльфа 0 и наоборот)
         float rate = 1.0f / time;
-        Color defaultColor = GetComponent<SpriteRenderer>().color;
+        Color defaultColor = spriteRenderer.color;
         defaultColor.a = 1;
         Color next = defaultColor;
         Color current = defaultColor;
@@ -543,12 +549,12 @@ public class Player : MonoBehaviour
             while (i < 1.0f)
             {
                 i += Time.fixedDeltaTime * rate;
-                GetComponent<SpriteRenderer>().color = Color.Lerp(current, next, i);
+                spriteRenderer.color = Color.Lerp(current, next, i);
                 yield return new WaitForFixedUpdate();
             }
         }
         //Железно установим, что под конец альфа канал равен 1
-        GetComponent<SpriteRenderer>().color = defaultColor;
+        spriteRenderer.color = defaultColor;
         yield break;
     }
 
@@ -618,8 +624,8 @@ public class Player : MonoBehaviour
       if(onRollover == false)
       {
         speed += speedRollover;
-        GetComponent<BoxCollider2D>().enabled = false;
-        GetComponent<CapsuleCollider2D>().enabled = true;
+        boxCollider2D.enabled = false;
+        capsuleCollider2D.enabled = true;
         state = State.Rollover;
         Invoke("OffRollover", timeRollover);
         onRollover = true;
@@ -630,8 +636,8 @@ public class Player : MonoBehaviour
     private void OffRollover()
     {
         speed -= speedRollover;
-        GetComponent<BoxCollider2D>().enabled = true;
-        GetComponent<CapsuleCollider2D>().enabled = false;
+        boxCollider2D.enabled = true;
+        capsuleCollider2D.enabled = false;
         //state = State.Idle;
         onRollover = false;
         if (isGrounded && state != State.Crushed && state != State.Dead && state != State.SawingInRollover && state != State.Stab)

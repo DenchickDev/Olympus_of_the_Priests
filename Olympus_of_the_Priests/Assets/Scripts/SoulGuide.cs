@@ -17,10 +17,16 @@ public class SoulGuide : MonoBehaviour
     public Transform limit;
     private float limit_x;
     private float limit_y;
+    private Transform limitTransform;
+    private void Start()
+    {
+        limitTransform = limit.GetComponent<Transform>();
+    }
+
     private void Update()
     {
-        limit_x = limit.GetComponent<Transform>().position.x;
-        limit_y = limit.GetComponent<Transform>().position.y;
+        limit_x = limitTransform.position.x;
+        limit_y = limitTransform.position.y;
         if (soulStartToCount == true)
             if (this.gameObject.transform.position.x < limit_x)
             {

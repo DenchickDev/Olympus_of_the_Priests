@@ -5,11 +5,13 @@ using UnityEngine;
 public class Rock : MonoBehaviour
 {
     Animator anim;
+    Rigidbody2D rigidbody2D;
     //private bool isDestroyed = false;
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        rigidbody2D = GetComponent<Rigidbody2D>();
 
     }
 
@@ -21,7 +23,7 @@ public class Rock : MonoBehaviour
 
     public void ChangeSimulated(bool _simulate)
     {
-        GetComponent<Rigidbody2D>().simulated = _simulate;
+        rigidbody2D.simulated = _simulate;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
