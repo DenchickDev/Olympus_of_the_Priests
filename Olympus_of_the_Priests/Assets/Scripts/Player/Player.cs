@@ -378,7 +378,7 @@ public class Player : MonoBehaviour
             //GetComponent<Rigidbody2D>().simulated = false;
             actionButtons.enableAllHard = false;
             Invoke("Lose", 2f);
-            //stateSystem.state = State.Dead;
+            stateSystem.state = State.Dead;
 
         }
     }
@@ -421,12 +421,11 @@ public class Player : MonoBehaviour
         {
             if (collision.gameObject.tag == "Lava")
             {
-                KillPerson();
                 stateSystem.state = State.Combustion;
+                KillPerson();
             }
             if (collision.gameObject.tag == "Saw")
             {
-                KillPerson();
                 if (stateSystem.state == State.Rollover)
                 {
                     stateSystem.state = State.SawingInRollover;
@@ -435,16 +434,17 @@ public class Player : MonoBehaviour
                 {
                     stateSystem.state = State.Sawing;
                 }
+                KillPerson();
             }
             if (collision.gameObject.tag == "Rock" && isGrounded)
             {
-                KillPerson();
                 stateSystem.state = State.Crushed;
+                KillPerson();
             }
             if (collision.gameObject.tag == "PitWithSpikes")
             {
-                KillPerson();
                 stateSystem.state = State.PitWithSpikes;
+                KillPerson();
             }
         }
 
