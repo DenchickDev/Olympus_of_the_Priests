@@ -89,6 +89,7 @@
     <Compile Include="Assets\Scripts\Main.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
     <Compile Include="Assets\Scripts\TutorSceeneManager.cs" />
+    <Compile Include="Assets\Scripts\Player\StateSystem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

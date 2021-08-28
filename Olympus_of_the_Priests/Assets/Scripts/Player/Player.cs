@@ -2,62 +2,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum State
-{
-    /// <summary>
-    /// Состояние покоя
-    /// </summary>
-    Idle,
-    /// <summary>
-    /// Бег
-    /// </summary>
-    Running,
-    /// <summary>
-    /// Прыжок
-    /// </summary>
-    Jumping,
-    /// <summary>
-    /// Падение
-    /// </summary>
-    Falling,
-    /// <summary>
-    /// Смерть
-    /// </summary>
-    Dead,
-    /// <summary>
-    /// Ранение
-    /// </summary>
-    Hurt,
-    /// <summary>
-    /// Сгорание
-    /// </summary>
-    Combustion,
-    /// <summary>
-    /// Удар
-    /// </summary>
-    Stab,
-    /// <summary>
-    /// перекат
-    /// </summary>
-    Rollover,
-    /// <summary>
-    /// распиливание 
-    /// </summary>
-    Sawing,
-    /// <summary>
-    /// распиливание 
-    /// </summary>
-    Crushed,
-    /// <summary>
-    /// распиливание 
-    /// </summary>
-    SawingInRollover,
-    /// <summary>
-    /// Падение в яму с шипами
-    /// </summary>
-    PitWithSpikes
-}
-
 public class Player : MonoBehaviour
 {
     Rigidbody2D rb;
@@ -182,6 +126,7 @@ public class Player : MonoBehaviour
     public float attackRange;
 
     public ActionButtonsPlayer actionButtons;
+    public StateSystem stateSystem;
 
     // Start is called before the first frame update
     void Start()
@@ -198,28 +143,24 @@ public class Player : MonoBehaviour
         //Application.targetFrameRate = 7;
 
         actionButtons = new ActionButtonsPlayer();
+        stateSystem = new StateSystem();
     }
 
     // Update is called once per frame
     void Update()
     {
         //if (Input.GetKeyDown(KeyCode.Space) && !Input.GetKeyDown(KeyCode.S) && isGrounded && onRollover == false && state !=State.Dead && state != State.Rollover && state != State.Crushed && state != State.SawingInRollover && state != State.PitWithSpikes)
-        if (actionButtons.CheckJump() &&
-            !actionButtons.CheckRollover() &&
-            isGrounded &&
-            onRollover == false &&
-            state != State.Dead &&
-            state != State.Rollover &&
-            state != State.Crushed &&
-            state != State.SawingInRollover &&
-            state != State.PitWithSpikes)
+        if(stateSystem.isActiveSetState && onRollover == false)
         {
-            Jump();
-        }
-        else if (state != State.Dead && state != State.Combustion && state !=State.Sawing && actionButtons.CheckAttack() && onRollover == false && state != State.PitWithSpikes && state !=State.Stab && state !=State.Crushed)
-        {
-            state = State.Stab;
-            soundManager.PlayHitSound();
+            if (actionButtons.CheckJump() && isGrounded)
+            {
+                Jump();
+            }
+            else if (actionButtons.CheckAttack() && stateSystem.state != State.Stab)
+            {
+                stateSystem.state = State.Stab;
+                soundManager.PlayHitSound();
+            }
         }
         if (controlMode)
         {
@@ -236,9 +177,9 @@ public class Player : MonoBehaviour
         {
             Movement();
         }
-
+        print(stateSystem.state.ToString());
         CalculateState();
-        anim.SetInteger("stateAnim", (int)state);
+        anim.SetInteger("stateAnim", (int)stateSystem.state);
         //Debug.Log("ddddd");
         //if (state == State.Combustion || state == State.Jumping)
         //    print(state.ToString());
@@ -249,7 +190,7 @@ public class Player : MonoBehaviour
     //Метод срабатывает сразу же после полного срабатывания метода Update
     private void LateUpdate()
     {
-        if (actionButtons.CheckRollover() && isGrounded && state != State.Dead && state !=State.PitWithSpikes && !Input.GetKeyDown(KeyCode.Space) &&  state != State.Crushed && state != State.SawingInRollover)
+        if (actionButtons.CheckRollover() && isGrounded && stateSystem.isActiveSetState && !actionButtons.CheckJump())
         {
             OnRollover();
         }
@@ -305,7 +246,7 @@ public class Player : MonoBehaviour
 
     public void SetDefaultState()
     {
-        state = State.Idle;
+        stateSystem.state = State.Idle;
     }
 
     /// <summary>
@@ -363,30 +304,30 @@ public class Player : MonoBehaviour
         //if (state == State.Jumping)
         //{
         //}
-        if ( state != State.SawingInRollover && state != State.PitWithSpikes && state != State.Dead && state != State.Combustion  && state != State.Sawing && state != State.Crushed && state != State.Stab && state != State.Rollover)
+        if (stateSystem.isActiveSetState && stateSystem.state != State.Stab && stateSystem.state != State.Rollover)
         {
-            if ( rb.velocity.y < -.1f && state != State.Crushed && !isGrounded )
+            if ( rb.velocity.y < -.1f && !isGrounded )
             {
-                state = State.Falling;
+                stateSystem.state = State.Falling;
             }
-            else if (rb.velocity.y >.1f  && state != State.Crushed)
+            else if (rb.velocity.y >.1f  && stateSystem.state != State.Crushed)
             {
-                state = State.Jumping;
+                stateSystem.state = State.Jumping;
             }
-            else if (state == State.Falling)
+            else if (stateSystem.state == State.Falling)
             {
                 if (rb.velocity.y >= -.1f)
                 {
-                    state = State.Idle;
+                    stateSystem.state = State.Idle;
                 }
             }
             else if (Mathf.Abs(rb.velocity.x) > 2f)
             {
-                state = State.Running;
+                stateSystem.state = State.Running;
             }
             else 
             {
-                state = State.Idle;
+                stateSystem.state = State.Idle;
             }
         }
     }
@@ -437,7 +378,7 @@ public class Player : MonoBehaviour
             //GetComponent<Rigidbody2D>().simulated = false;
             actionButtons.enableAllHard = false;
             Invoke("Lose", 2f);
-            state = State.Dead;
+            //stateSystem.state = State.Dead;
 
         }
     }
@@ -464,7 +405,7 @@ public class Player : MonoBehaviour
             life = data.life;
             soulsCount = data.soulsCount;
             actionButtons.enableAllHard = true;
-            state = State.Idle;
+            stateSystem.state = State.Idle;
 
             transform.position = new Vector3(data.positionPlayer[0], data.positionPlayer[1], data.positionPlayer[2]);
             return true;
@@ -476,35 +417,34 @@ public class Player : MonoBehaviour
     //Метод вызова моментальной смерти через тег 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(state != State.Sawing && state != State.Combustion &&
-            state != State.Crushed && state != State.PitWithSpikes && state != State.Dead)
+        if(stateSystem.isActiveSetState)
         {
             if (collision.gameObject.tag == "Lava")
             {
                 KillPerson();
-                state = State.Combustion;
+                stateSystem.state = State.Combustion;
             }
             if (collision.gameObject.tag == "Saw")
             {
                 KillPerson();
-                if (state == State.Rollover)
+                if (stateSystem.state == State.Rollover)
                 {
-                    state = State.SawingInRollover;
+                    stateSystem.state = State.SawingInRollover;
                 }
                 else
                 {
-                    state = State.Sawing;
+                    stateSystem.state = State.Sawing;
                 }
             }
             if (collision.gameObject.tag == "Rock" && isGrounded)
             {
                 KillPerson();
-                state = State.Crushed;
+                stateSystem.state = State.Crushed;
             }
             if (collision.gameObject.tag == "PitWithSpikes")
             {
                 KillPerson();
-                state = State.PitWithSpikes;
+                stateSystem.state = State.PitWithSpikes;
             }
         }
 
@@ -596,7 +536,7 @@ public class Player : MonoBehaviour
     private void PlayRunSound()
     {
 
-        if (isGrounded && onRollover == false && state != State.Rollover && state != State.Jumping )
+        if (isGrounded && onRollover == false && stateSystem.state != State.Rollover && stateSystem.state != State.Jumping )
         {
             if (isMovement == true && isSoundRunPlay == false)
             {
@@ -626,7 +566,7 @@ public class Player : MonoBehaviour
         speed += speedRollover;
         boxCollider2D.enabled = false;
         capsuleCollider2D.enabled = true;
-        state = State.Rollover;
+        stateSystem.state = State.Rollover;
         Invoke("OffRollover", timeRollover);
         onRollover = true;
         soundManager.PlayWoundSound();
@@ -640,13 +580,13 @@ public class Player : MonoBehaviour
         capsuleCollider2D.enabled = false;
         //state = State.Idle;
         onRollover = false;
-        if (isGrounded && state != State.Crushed && state != State.Dead && state != State.SawingInRollover && state != State.Stab)
+        if (isGrounded && stateSystem.isActiveSetState && stateSystem.state != State.Stab)
         {
-            state = State.Idle;
+            stateSystem.state = State.Idle;
         }
-        if(!isGrounded && state !=State.Combustion)
+        if(!isGrounded && stateSystem.state != State.Combustion)
         {
-            state = State.Falling;
+            stateSystem.state = State.Falling;
         }
     }
     //Метод вызова звука бега при срабаывании события на анимации
