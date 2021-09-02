@@ -156,7 +156,7 @@ public class Player : MonoBehaviour
             {
                 Jump();
             }
-            else if (actionButtons.CheckAttack() && stateSystem.state != State.Stab)
+            else if (actionButtons.CheckAttack())
             {
                 stateSystem.state = State.Stab;
                 soundManager.PlayHitSound();
@@ -246,7 +246,7 @@ public class Player : MonoBehaviour
 
     public void SetDefaultState()
     {
-        stateSystem.state = State.Idle;
+        stateSystem.SetDefaultState();
     }
 
     /// <summary>
@@ -304,31 +304,28 @@ public class Player : MonoBehaviour
         //if (state == State.Jumping)
         //{
         //}
-        if (stateSystem.isActiveSetState && stateSystem.state != State.Stab && stateSystem.state != State.Rollover)
+        if (rb.velocity.y < -.1f && !isGrounded)
         {
-            if ( rb.velocity.y < -.1f && !isGrounded )
-            {
-                stateSystem.state = State.Falling;
-            }
-            else if (rb.velocity.y >.1f  && stateSystem.state != State.Crushed)
-            {
-                stateSystem.state = State.Jumping;
-            }
-            else if (stateSystem.state == State.Falling)
-            {
-                if (rb.velocity.y >= -.1f)
-                {
-                    stateSystem.state = State.Idle;
-                }
-            }
-            else if (Mathf.Abs(rb.velocity.x) > 2f)
-            {
-                stateSystem.state = State.Running;
-            }
-            else 
+            stateSystem.state = State.Falling;
+        }
+        else if (rb.velocity.y > .1f && stateSystem.state != State.Crushed)
+        {
+            stateSystem.state = State.Jumping;
+        }
+        else if (stateSystem.state == State.Falling)
+        {
+            if (rb.velocity.y >= -.1f)
             {
                 stateSystem.state = State.Idle;
             }
+        }
+        else if (Mathf.Abs(rb.velocity.x) > 2f)
+        {
+            stateSystem.state = State.Running;
+        }
+        else
+        {
+            stateSystem.state = State.Idle;
         }
     }
 
@@ -405,13 +402,53 @@ public class Player : MonoBehaviour
             life = data.life;
             soulsCount = data.soulsCount;
             actionButtons.enableAllHard = true;
-            stateSystem.state = State.Idle;
+            stateSystem.SetDefaultState();
 
             transform.position = new Vector3(data.positionPlayer[0], data.positionPlayer[1], data.positionPlayer[2]);
             return true;
         }
 
         return false;
+    }
+
+    /// <summary>
+    /// Распилить персонажа
+    /// </summary>
+    public void SawPlayer()
+    {
+        if (stateSystem.state == State.Rollover)
+        {
+            stateSystem.state = State.SawingInRollover;
+        }
+        else
+        {
+            stateSystem.state = State.Sawing;
+        }
+        KillPerson();
+    }
+
+    /// <summary>
+    /// Раздавить(камнем) персонажа
+    /// </summary>
+    public void CrashWithRockPlayer()
+    {
+        stateSystem.state = State.Crushed;
+        KillPerson();
+    }
+
+    /// <summary>
+    /// Сжечь персонажа
+    /// </summary>
+    public void combustPlayer()
+    {
+        stateSystem.state = State.Combustion;
+        KillPerson();
+    }
+
+    public void KillWithPitWithSpikes()
+    {
+        stateSystem.state = State.PitWithSpikes;
+        KillPerson();
     }
 
     //Метод вызова моментальной смерти через тег 
@@ -421,30 +458,19 @@ public class Player : MonoBehaviour
         {
             if (collision.gameObject.tag == "Lava")
             {
-                stateSystem.state = State.Combustion;
-                KillPerson();
+                combustPlayer();
             }
-            if (collision.gameObject.tag == "Saw")
+            else if (collision.gameObject.tag == "Saw")
             {
-                if (stateSystem.state == State.Rollover)
-                {
-                    stateSystem.state = State.SawingInRollover;
-                }
-                else
-                {
-                    stateSystem.state = State.Sawing;
-                }
-                KillPerson();
+                SawPlayer();
             }
-            if (collision.gameObject.tag == "Rock" && isGrounded)
+            else if (collision.gameObject.tag == "Rock" && isGrounded)
             {
-                stateSystem.state = State.Crushed;
-                KillPerson();
+                CrashWithRockPlayer();
             }
-            if (collision.gameObject.tag == "PitWithSpikes")
+            else if (collision.gameObject.tag == "PitWithSpikes")
             {
-                stateSystem.state = State.PitWithSpikes;
-                KillPerson();
+                KillWithPitWithSpikes();
             }
         }
 
@@ -580,14 +606,15 @@ public class Player : MonoBehaviour
         capsuleCollider2D.enabled = false;
         //state = State.Idle;
         onRollover = false;
-        if (isGrounded && stateSystem.isActiveSetState && stateSystem.state != State.Stab)
+        /*if (isGrounded && stateSystem.isActiveSetState && stateSystem.state != State.Stab)
         {
             stateSystem.state = State.Idle;
         }
         if(!isGrounded && stateSystem.state != State.Combustion)
         {
             stateSystem.state = State.Falling;
-        }
+        }*/
+        stateSystem.SetDefaultState();
     }
     //Метод вызова звука бега при срабаывании события на анимации
     private void soundsRunControl()
