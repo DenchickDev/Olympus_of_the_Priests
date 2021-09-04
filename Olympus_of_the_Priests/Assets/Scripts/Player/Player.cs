@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     CapsuleCollider2D capsuleCollider2D;
     public Main main;
     public int soulsCount = 0;
-    bool onRollover = false;
     ///<summary>
     /// Звуковой менеджер
     /// Источник звука
@@ -149,8 +148,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Space) && !Input.GetKeyDown(KeyCode.S) && isGrounded && onRollover == false && state !=State.Dead && state != State.Rollover && state != State.Crushed && state != State.SawingInRollover && state != State.PitWithSpikes)
-        if(stateSystem.isActiveSetState && onRollover == false)
+        if(stateSystem.isActiveSetState && stateSystem.state != State.Rollover)
         {
             if (actionButtons.CheckJump() && isGrounded)
             {
@@ -562,7 +560,7 @@ public class Player : MonoBehaviour
     private void PlayRunSound()
     {
 
-        if (isGrounded && onRollover == false && stateSystem.state != State.Rollover && stateSystem.state != State.Jumping )
+        if (stateSystem.state == State.Running)
         {
             if (isMovement == true && isSoundRunPlay == false)
             {
@@ -570,10 +568,6 @@ public class Player : MonoBehaviour
                 isSoundRunPlay = true;
                 isMovement = false;
 
-            }
-            else
-            {
-               
             }
         }
     }    
@@ -587,16 +581,15 @@ public class Player : MonoBehaviour
     //Метод включения подката
     private void OnRollover()
     {
-      if(onRollover == false)
-      {
-        speed += speedRollover;
-        boxCollider2D.enabled = false;
-        capsuleCollider2D.enabled = true;
-        stateSystem.state = State.Rollover;
-        Invoke("OffRollover", timeRollover);
-        onRollover = true;
-        soundManager.PlayWoundSound();
-      }
+        if (stateSystem.state != State.Rollover)
+        {
+            speed += speedRollover;
+            boxCollider2D.enabled = false;
+            capsuleCollider2D.enabled = true;
+            stateSystem.state = State.Rollover;
+            Invoke("OffRollover", timeRollover);
+            soundManager.PlayWoundSound();
+        }
     }
     //Метод отключения подката
     private void OffRollover()
@@ -605,7 +598,7 @@ public class Player : MonoBehaviour
         boxCollider2D.enabled = true;
         capsuleCollider2D.enabled = false;
         //state = State.Idle;
-        onRollover = false;
+        //onRollover = false;
         /*if (isGrounded && stateSystem.isActiveSetState && stateSystem.state != State.Stab)
         {
             stateSystem.state = State.Idle;
