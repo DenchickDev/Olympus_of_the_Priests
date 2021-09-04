@@ -127,6 +127,12 @@ public class Player : MonoBehaviour
     public ActionButtonsPlayer actionButtons;
     public StateSystem stateSystem;
 
+    public Player()
+    { 
+        actionButtons = new ActionButtonsPlayer();
+        stateSystem = new StateSystem();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -140,9 +146,6 @@ public class Player : MonoBehaviour
         //life = MaxLife;
         timeOfOneBlink = timeBlinking / CountBlinks;
         //Application.targetFrameRate = 7;
-
-        actionButtons = new ActionButtonsPlayer();
-        stateSystem = new StateSystem();
     }
 
     // Update is called once per frame
