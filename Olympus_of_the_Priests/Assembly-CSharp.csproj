@@ -62,6 +62,7 @@
     <Compile Include="Assets\Scripts\IKillable.cs" />
     <Compile Include="Assets\Scripts\FinalPlatform.cs" />
     <Compile Include="Assets\Scripts\PulloutY_axisTrap.cs" />
+    <Compile Include="Assets\Scripts\TutorSceeneManager.cs" />
     <Compile Include="Assets\Scripts\ExitButton.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyTrigger.cs" />
     <Compile Include="Assets\Scripts\SaveLoad\SaveData.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Assets\Scripts\Reaper\Reaper.cs" />
     <Compile Include="Assets\Scripts\Triggers\TriggerCheckPoint.cs" />
     <Compile Include="Assets\Scripts\StartingRockOnChain.cs" />
+    <Compile Include="Assets\Scripts\Player\StateSystem.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Rock\RockStarting.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
@@ -88,8 +90,6 @@
     <Compile Include="Assets\Scripts\AirPatrol.cs" />
     <Compile Include="Assets\Scripts\Main.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
-    <Compile Include="Assets\Scripts\TutorSceeneManager.cs" />
-    <Compile Include="Assets\Scripts\Player\StateSystem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

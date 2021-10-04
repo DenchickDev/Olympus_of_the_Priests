@@ -45,10 +45,10 @@ public class Reaper : MonoBehaviour, IKillable
     {
         isRuning = true;
         soulGuide.GetComponent<SoulGuide>().ReperRun = true;
-        Invoke("DestroyMe", timeToDestroy);
+        Invoke("DestroyObject", timeToDestroy);
     }
 
-    private void DestroyMe()
+    private void DestroyObject()
     {
         if (isRuning == true)
         { 
@@ -66,6 +66,6 @@ public class Reaper : MonoBehaviour, IKillable
         soulGuide.GetComponent<SoulGuide>().DeadReaper();
         //player.GetComponent<Player>().RecountLife(10);
         //soundManager.PlayHillSound();
-        Invoke("DestroyMe", 1f);
+        
     }
 }
