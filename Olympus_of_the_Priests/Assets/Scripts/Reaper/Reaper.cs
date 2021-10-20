@@ -13,7 +13,8 @@ public class Reaper : MonoBehaviour, IKillable
     /// </summary>
     [SerializeField]
     float speed = 2.3f;
-    public SoundManager soundManager;
+    SoundManager soundManager;
+    GameObject MainCamera;
     public SoulGuide soulGuide;
     public bool soulToDestroy  = false;
     public bool SoulMuve = false;
@@ -28,6 +29,8 @@ public class Reaper : MonoBehaviour, IKillable
     // Start is called before the first frame update
     void Start()
     {
+        MainCamera = GameObject.Find("Main Camera");
+        soundManager = MainCamera.GetComponent<SoundManager>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }

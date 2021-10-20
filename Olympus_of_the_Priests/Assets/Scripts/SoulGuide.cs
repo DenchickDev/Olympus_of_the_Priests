@@ -3,30 +3,57 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SoulGuide : MonoBehaviour
-{ 
-    public Transform soulCount;
-    public Transform lifeCount;
+{    /// <summary>
+     /// игровой объект счетчик душ
+     ///  координаты объекта счетчика душ 
+     /// </summary>
+    GameObject soulCountObject;
+    Transform soulCountPosition;
+    /// <summary>
+    /// игровой объект счетчик здоровья
+    ///  координаты объекта счетчика здоровья 
+    /// </summary>
+    GameObject lifeCountObject;
+    Transform lifeCountPosition;
     public Transform reaper;
     public float speed;
     //Проверка на движение 
     private bool soulStartToCount = false;
     public bool lifeStartToCount = false;
     public bool ReperRun = false;
-    public Player player;
-    //Точки лимита
-    public Transform limit;
+    GameObject PlayerObject;
+    Player PlayerScript;
+    /// <summary>
+    /// точка лимита Х
+    /// точка лимита У
+    /// игровой объект точка лимита
+    /// координаты объекта точка лимита
+    /// </summary> 
     private float limit_x;
     private float limit_y;
-    private Transform limitTransform;
+    GameObject limitObject;
+    Transform limitPosition;
+    private void Awake()
+    {
+        soulCountObject = GameObject.Find("ImageSoul");
+        soulCountPosition = soulCountObject.GetComponent<Transform>();
+        lifeCountObject = GameObject.Find("ImageLife");
+        lifeCountPosition = lifeCountObject.GetComponent<Transform>();
+        limitObject = GameObject.Find("LimitSoulsAndLifeOrbs");
+        limitPosition = limitObject.GetComponent<Transform>();
+        PlayerObject = GameObject.Find("Player");
+        PlayerScript = PlayerObject.GetComponent<Player>();
+
+    }
     private void Start()
     {
-        limitTransform = limit.GetComponent<Transform>();
+       
     }
 
     private void Update()
     {
-        limit_x = limitTransform.position.x;
-        limit_y = limitTransform.position.y;
+        limit_x = limitPosition.position.x;
+        limit_y = limitPosition.position.y;
         if (soulStartToCount == true)
             if (this.gameObject.transform.position.x < limit_x)
             {
@@ -48,29 +75,29 @@ public class SoulGuide : MonoBehaviour
         if (collision.gameObject.tag == "SoulCount")
         {   //добовляет к счетчику +1 душу и вызывает звук
             //разрушает душу при косании о счетчик
-            player.SoulCount();
+            PlayerScript.SoulCount();
             destroySoul();
         }
         //Ксание души о счетчик
         if (collision.gameObject.tag == "LifeCount")
         {   //добовляет к счетчику +1 душу и вызывает звук
             //разрушает душу при косании о счетчик
-            player.GetComponent<Player>().LifeCount();
+            PlayerScript.LifeCount();
             destroySoul();
         }
     }
     //метод движения душы к счетчику и движения за жнецом 
     private void FixedUpdate()
-     {
-      if (soulStartToCount == true)
-      {
-        transform.position = Vector3.MoveTowards(transform.position, soulCount.position, speed * Time.deltaTime);
-      }
+    {
+        if (soulStartToCount == true)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, soulCountPosition.position, speed * Time.deltaTime);
+        }
         if (lifeStartToCount == true)
         {
-            transform.position = Vector3.MoveTowards(transform.position, lifeCount.position, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, lifeCountPosition.position, speed * Time.deltaTime);
         }
-       if (ReperRun == true)
+        if (ReperRun == true)
         {
             transform.position = Vector3.MoveTowards(transform.position, reaper.position, speed * Time.deltaTime);
         }
