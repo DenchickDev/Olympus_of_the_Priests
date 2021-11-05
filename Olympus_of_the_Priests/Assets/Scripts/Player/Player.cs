@@ -390,7 +390,7 @@ public class Player : MonoBehaviour
     {
         SaveData data = SaveLoad.LoadGame(); //Получение данных
 
-        if (!data.Equals(null)) //Если данные есть
+        if (data != null && !data.Equals(null)) //Если данные есть
         {
             string sceneName = SceneManager.GetActiveScene().name;
 

@@ -3,7 +3,6 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - AirPatrol
     - CameraController
-    - EnemyCollision
     - EnemyTrigger
     - ExitButton
     - FallPlatform
@@ -26,6 +25,7 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
@@ -71,19 +71,19 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1486}
+      Script: {instanceID: 1590}
     - Class: 114
-      Script: {instanceID: 2456}
+      Script: {instanceID: 2572}
     - Class: 114
-      Script: {instanceID: 2604}
+      Script: {instanceID: 2720}
     - Class: 114
-      Script: {instanceID: 2774}
+      Script: {instanceID: 2890}
     - Class: 114
-      Script: {instanceID: 2984}
+      Script: {instanceID: 3100}
     - Class: 114
-      Script: {instanceID: 3088}
+      Script: {instanceID: 3206}
     - Class: 114
-      Script: {instanceID: 4920}
+      Script: {instanceID: 5044}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -98,7 +98,28 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
-    Assets/Scenes/Level_1.unity:
+    Assets/Scenes/Lev_1_prototype.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    Assets/Scenes/Level_test.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -140,59 +161,57 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1486}
+      Script: {instanceID: 1590}
     - Class: 114
-      Script: {instanceID: 1494}
+      Script: {instanceID: 1598}
     - Class: 114
-      Script: {instanceID: 2024}
+      Script: {instanceID: 2132}
     - Class: 114
-      Script: {instanceID: 2040}
+      Script: {instanceID: 2148}
     - Class: 114
-      Script: {instanceID: 2080}
+      Script: {instanceID: 2190}
     - Class: 114
-      Script: {instanceID: 2172}
+      Script: {instanceID: 2282}
     - Class: 114
-      Script: {instanceID: 2240}
+      Script: {instanceID: 2350}
     - Class: 114
-      Script: {instanceID: 2456}
+      Script: {instanceID: 2572}
     - Class: 114
-      Script: {instanceID: 2604}
+      Script: {instanceID: 2720}
     - Class: 114
-      Script: {instanceID: 2774}
+      Script: {instanceID: 2890}
     - Class: 114
-      Script: {instanceID: 2984}
+      Script: {instanceID: 3100}
     - Class: 114
-      Script: {instanceID: 3044}
+      Script: {instanceID: 3160}
     - Class: 114
-      Script: {instanceID: 3088}
+      Script: {instanceID: 3206}
     - Class: 114
-      Script: {instanceID: 3240}
+      Script: {instanceID: 3522}
     - Class: 114
-      Script: {instanceID: 3402}
+      Script: {instanceID: 3556}
     - Class: 114
-      Script: {instanceID: 3436}
+      Script: {instanceID: 3614}
     - Class: 114
-      Script: {instanceID: 3494}
+      Script: {instanceID: 3750}
     - Class: 114
-      Script: {instanceID: 3630}
+      Script: {instanceID: 3918}
     - Class: 114
-      Script: {instanceID: 3798}
+      Script: {instanceID: 3964}
     - Class: 114
-      Script: {instanceID: 3842}
+      Script: {instanceID: 4258}
     - Class: 114
-      Script: {instanceID: 4134}
+      Script: {instanceID: 4294}
     - Class: 114
-      Script: {instanceID: 4170}
+      Script: {instanceID: 4328}
     - Class: 114
-      Script: {instanceID: 4204}
+      Script: {instanceID: 4402}
     - Class: 114
-      Script: {instanceID: 4278}
+      Script: {instanceID: 4772}
     - Class: 114
-      Script: {instanceID: 4648}
+      Script: {instanceID: 4818}
     - Class: 114
-      Script: {instanceID: 4694}
-    - Class: 114
-      Script: {instanceID: 4920}
+      Script: {instanceID: 5044}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -229,7 +248,7 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 3274}
+      Script: {instanceID: 3394}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -262,23 +281,23 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1486}
+      Script: {instanceID: 1590}
     - Class: 114
-      Script: {instanceID: 2080}
+      Script: {instanceID: 2190}
     - Class: 114
-      Script: {instanceID: 2172}
+      Script: {instanceID: 2282}
     - Class: 114
-      Script: {instanceID: 2456}
+      Script: {instanceID: 2572}
     - Class: 114
-      Script: {instanceID: 2604}
+      Script: {instanceID: 2720}
     - Class: 114
-      Script: {instanceID: 2774}
+      Script: {instanceID: 2890}
     - Class: 114
-      Script: {instanceID: 2984}
+      Script: {instanceID: 3100}
     - Class: 114
-      Script: {instanceID: 3088}
+      Script: {instanceID: 3206}
     - Class: 114
-      Script: {instanceID: 4920}
+      Script: {instanceID: 5044}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -414,6 +433,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PulloutY_axisTrap
+  - hash:
+      serializedVersion: 2
+      Hash: f5bbbaca635b1ca75eeddf3b8b928aa8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TutorSceeneManager
   - hash:
       serializedVersion: 2
       Hash: d791aa6007fa3640be1164ea75bb087d
@@ -686,7 +711,7 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
-      Hash: 7503702b9499a696fa88a990998b8416
+      Hash: f6bf13303d41d3b58a7dbdbc05c765d5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SoulGuide
@@ -758,10 +783,16 @@ ScriptsOnlyBuild:
     className: Dropdown
   - hash:
       serializedVersion: 2
-      Hash: 8225bb8d3c7bb7996269928e66139b48
+      Hash: 5d2c50bdbfcfc6b5fb41d68d21e49c03
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Reaper
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TriggerCheckPoint
   - hash:
       serializedVersion: 2
       Hash: a5781dc71a671b1ad2b38de19f24b71f
@@ -854,7 +885,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 85c70aef40ec456184ecab1f5b54043b
+      Hash: 00f1f4ea573c61cc0d96239f1572cd56
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -965,5 +996,6 @@ ScriptsOnlyBuild:
   - Assets/Scenes/LogoChameleonGames.unity
   - Assets/Scenes/Disclamer.unity
   - Assets/Scenes/MainMenu.unity
-  - Assets/Scenes/Level_1.unity
-  playerPath: C:/Users/Happy/Desktop/Test/Test.apk
+  - Assets/Scenes/Level_test.unity
+  - Assets/Scenes/Lev_1_prototype.unity
+  playerPath: C:/Users/Happy/Desktop/Test/TestApkReaperTest6.apk
