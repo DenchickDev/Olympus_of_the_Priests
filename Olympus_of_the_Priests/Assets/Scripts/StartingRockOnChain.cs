@@ -8,8 +8,14 @@ public class StartingRockOnChain : MonoBehaviour
     Transform rock;
     //Переменные для звукового сопровождения
     public AudioClip fallingSound;
-    public AudioSource audioSource;
-
+    private GameObject audioSourceGameObject;
+    private AudioSource audioSource;
+    
+    void Start ()
+    {
+        audioSourceGameObject = GameObject.Find("SoundManger");
+        audioSource = audioSourceGameObject.GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
