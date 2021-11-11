@@ -17,9 +17,13 @@ public class Menu : MonoBehaviour
     public Button ResumeButton;
     private int resume;
     public bool saveMode;
+    private GameObject BackgraundMusic;
     
+
+
     private void Start()
     {
+        BackgoungMusic = GameObject.Find("BackgraundMusic");
         if (CheckMusicMute == false)
         {
             ButtonMusicOff.SetActive(true);
@@ -48,10 +52,7 @@ public class Menu : MonoBehaviour
                 }
         }
     }
-    public void DontSavingBGMusic()
-    {
-        gameObject.GetComponent<SoundManager>().DestroyBGMusic();
-    }
+   
     public void Resume()
     {
         SceneManager.LoadScene(resume);
@@ -64,12 +65,15 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
         Time.timeScale = 1f;
-        if (SceneManager.GetActiveScene().name != ("Disclamer") & SceneManager.GetActiveScene().name != ("MainMenu"))
-            DontSavingBGMusic();
+        /*if (SceneManager.GetActiveScene().name == ("Disclamer") & SceneManager.GetActiveScene().name == ("MainMenu"))
+        {
+            Destroy(BackgoungMusic);
+        }*/
     }
     public void OpenSceneMenu()
     {
         SceneManager.LoadScene("MainMenu");
+        Destroy(BackgoungMusic);
     }
     //Метод продолжения игры при смене уровня 
    public void startingTime (bool startTime)

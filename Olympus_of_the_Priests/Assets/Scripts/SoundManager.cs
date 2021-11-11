@@ -23,7 +23,10 @@ public class SoundManager : MonoBehaviour
     }
     public void DestroyBGMusic()
     {
-        Destroy(BGMusic[0]);
+        if (SceneManager.GetActiveScene().name != ("Disclamer") & SceneManager.GetActiveScene().name != ("MainMenu"))
+        {
+            Destroy(BGMusic[0]);
+        }
     }
 
     public AudioSource audioSorce;
