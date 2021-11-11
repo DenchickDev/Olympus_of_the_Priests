@@ -151,7 +151,33 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(stateSystem.isActiveSetState && stateSystem.state != State.Rollover)
+        #if UNITY_STANDALONE || UNITY_EDITOR
+            ControlByDesktop();
+        #endif
+
+        //print(stateSystem.state.ToString());
+        CalculateState();
+        anim.SetInteger("stateAnim", (int)stateSystem.state);
+        //Debug.Log("ddddd");
+        //if (state == State.Combustion || state == State.Jumping)
+        //    print(state.ToString());
+        //print(GetComponent<SpriteRenderer>().color.g);
+        //Debug.DrawLine(transform.position, new Vector3(transform.position.x + 100, transform.position.y, transform.position.z));
+        
+    }
+    //Метод срабатывает сразу же после полного срабатывания метода Update
+    private void LateUpdate()
+    {
+        #if UNITY_STANDALONE || UNITY_EDITOR
+            if (actionButtons.CheckRollover() && isGrounded && stateSystem.isActiveSetState && !actionButtons.CheckJump())
+            {
+                OnRollover();
+            }
+        #endif
+    }
+    void ControlByDesktop()
+    {
+        if (stateSystem.isActiveSetState && stateSystem.state != State.Rollover)
         {
             if (actionButtons.CheckJump() && isGrounded)
             {
@@ -177,23 +203,6 @@ public class Player : MonoBehaviour
         else
         {
             Movement();
-        }
-        print(stateSystem.state.ToString());
-        CalculateState();
-        anim.SetInteger("stateAnim", (int)stateSystem.state);
-        //Debug.Log("ddddd");
-        //if (state == State.Combustion || state == State.Jumping)
-        //    print(state.ToString());
-        //print(GetComponent<SpriteRenderer>().color.g);
-        //Debug.DrawLine(transform.position, new Vector3(transform.position.x + 100, transform.position.y, transform.position.z));
-        
-    }
-    //Метод срабатывает сразу же после полного срабатывания метода Update
-    private void LateUpdate()
-    {
-        if (actionButtons.CheckRollover() && isGrounded && stateSystem.isActiveSetState && !actionButtons.CheckJump())
-        {
-            OnRollover();
         }
     }
     public void OnControl()
@@ -291,7 +300,7 @@ public class Player : MonoBehaviour
     }
 
     //Метод обрабатывает прыжок
-    void Jump()
+    public void Jump()
     {
         rb.AddForce(transform.up * 8f, ForceMode2D.Impulse);
         soundManager.PlayJumpSound();
@@ -618,6 +627,45 @@ public class Player : MonoBehaviour
         int randomInt = Random.Range(0, soundsRun.Length);
         audioSource.PlayOneShot(soundsRun[randomInt]);
     }
+
+    #if UNITY_IOS || UNITY_ANDROID || UNITY_EDITOR
+    /// <summary>
+    /// Обрабатываем прыжок для сенсорных экранов
+    /// </summary>
+    public void JumpTouchscreen()
+    {
+        print(isGrounded);
+        if (stateSystem.isActiveSetState && stateSystem.state != State.Rollover &&
+            actionButtons.isEnableJump() && isGrounded)
+        {
+            Jump();
+        }
+    }
+
+    /// <summary>
+    /// Обрабатываем подкат для сенсорных экранов
+    /// </summary>
+    public void RolloverTouchscreen()
+    {
+        if (actionButtons.isEnableRollover() && isGrounded &&
+            stateSystem.isActiveSetState && stateSystem.state != State.Jumping)
+        {
+            OnRollover();
+        }
+    }
+
+    /// <summary>
+    /// Обрабатываем удар для сенсорных экранов
+    /// </summary>
+    public void AttackTouchscreen()
+    {
+        if (actionButtons.isEnableAttack())
+        {
+            stateSystem.state = State.Stab;
+            soundManager.PlayHitSound();
+        }
+    }
+    #endif
 }
 
 

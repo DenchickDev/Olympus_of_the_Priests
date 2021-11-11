@@ -13,8 +13,22 @@ public class Main : MonoBehaviour
     public GameObject WinScreen; 
     public GameObject PauseButton;
     private bool CheckPause = false;
-   
 
+    private void Start()
+    {
+        GameObject sword = GameObject.Find("Sword");
+        GameObject arrowUp = GameObject.Find("ArrowUp");
+        GameObject arrowDawn = GameObject.Find("ArrowDawn");
+#if UNITY_STANDALONE || UNITY_EDITOR
+        sword.SetActive(false);
+        arrowUp.SetActive(false);
+        arrowDawn.SetActive(false);
+#else
+        sword.SetActive(true);
+        arrowUp.SetActive(true);
+        arrowDawn.SetActive(true);
+#endif
+    }
 
 
     public void Lose()
