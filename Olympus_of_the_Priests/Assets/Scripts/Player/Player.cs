@@ -153,6 +153,8 @@ public class Player : MonoBehaviour
     {
         #if UNITY_STANDALONE || UNITY_EDITOR
             ControlByDesktop();
+        #else
+            MoveForever();
         #endif
 
         //print(stateSystem.state.ToString());
@@ -191,14 +193,7 @@ public class Player : MonoBehaviour
         }
         if (controlMode)
         {
-            if (actionButtons.isEnableMoveForever())
-            {
-                rb.velocity = new Vector2(speed, rb.velocity.y);
-            }
-            else
-            {
-                rb.velocity = new Vector2(0, rb.velocity.y);
-            }
+            MoveForever();
         }
         else
         {
@@ -297,6 +292,21 @@ public class Player : MonoBehaviour
             isMovement = false;
         }
 
+    }
+
+    /// <summary>
+    /// Отвечает за постоянное движение персонажа
+    /// </summary>
+    void MoveForever()
+    {
+        if (actionButtons.isEnableMoveForever())
+        {
+            rb.velocity = new Vector2(speed, rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
     }
 
     //Метод обрабатывает прыжок
